@@ -5,18 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from "./components/home/home.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { DialogDirective } from './directives/dialog.directive';
 
 @NgModule({
     declarations: [
-        AppComponent
-    ],
+        AppComponent,    ],
     providers: [],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HomeComponent,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        DialogComponent, 
+        DialogDirective
     ]
 })
 export class AppModule { }

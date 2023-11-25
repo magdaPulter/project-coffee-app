@@ -8,13 +8,14 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { DialogComponent } from '../dialog/dialog.component';
+import { CoffeeListComponent } from "../coffee-list/coffee-list.component";
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatRadioModule,MatCheckboxModule, ReactiveFormsModule, MatDialogModule, MatButtonModule],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    standalone: true,
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    imports: [CommonModule, MatFormFieldModule, MatInputModule, MatRadioModule, MatCheckboxModule, ReactiveFormsModule, MatDialogModule, MatButtonModule, CoffeeListComponent]
 })
 export class HomeComponent {
   

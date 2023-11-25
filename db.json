@@ -1,0 +1,28 @@
+{
+  "coffee": [
+    {
+      "name": "nan",
+      "id": 1
+    },
+    {
+      "name": "some",
+      "id": 2
+    },
+    {
+      "name": "nana",
+      "origin": "",
+      "description": "",
+      "process": "",
+      "characteristic": "",
+      "id": 3
+    },
+    {
+      "name": "nana",
+      "origin": "kenia",
+      "description": "das",
+      "process": "1",
+      "characteristic": "",
+      "id": 4
+    }
+  ]
+}

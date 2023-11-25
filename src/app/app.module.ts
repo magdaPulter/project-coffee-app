@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from "./components/home/home.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './components/dialog/dialog.component';
-import { DialogDirective } from './directives/dialog.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -19,7 +19,7 @@ import { DialogDirective } from './directives/dialog.directive';
         HomeComponent,
         BrowserAnimationsModule,
         DialogComponent, 
-        DialogDirective
+        HttpClientModule
     ]
 })
 export class AppModule { }

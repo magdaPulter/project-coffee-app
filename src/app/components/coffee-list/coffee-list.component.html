@@ -1,13 +1,4 @@
-
 <div class="cards-list">
-    <mat-card class="card" *ngFor="let coffee of coffeeList$ | async">
-        <mat-card-header>
-            <mat-card-title>{{coffee.name}}</mat-card-title>
-            <mat-card-subtitle>Start</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>Lorem ipsum</mat-card-content>
-        <mat-card-actions>
-            <button mat-raised-button [routerLink]="'coffee/'+ coffee.id">Details</button>
-        </mat-card-actions>
-    </mat-card>
+    <app-card *ngFor="let coffee of coffeeList$ | async" [coffee]="coffee">
+    </app-card>
 </div>

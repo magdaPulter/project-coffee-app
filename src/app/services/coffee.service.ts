@@ -22,8 +22,8 @@ export class CoffeeService {
     return this._httpClient.get<CoffeeModel>(`http://localhost:3000/coffee/${id}`)
   }
 
-  update(coffee: CoffeeModel,id: string ): Observable<CoffeeModel> {
-    return this._httpClient.put<CoffeeModel>(`http://localhost:3000/coffee/${id}`,coffee)
+  update(coffee: CoffeeModel): Observable<CoffeeModel> {
+    return this._httpClient.put<CoffeeModel>(`http://localhost:3000/coffee/${coffee.id}`,coffee)
   }
 
   delete(id: string): Observable<CoffeeModel> {

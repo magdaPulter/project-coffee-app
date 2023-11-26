@@ -1,1 +1,4 @@
-<p>detail works!</p>
+<div *ngIf="coffeeDetail$ | async as coffee ">
+    <h1>{{coffee.name}}</h1>
+    <p>{{coffee.description}}</p>
+</div>

@@ -5,11 +5,12 @@ import { Observable } from 'rxjs';
 import { CoffeeModel } from 'src/app/models/coffee.model';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-coffee-list',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatCardModule],
+  imports: [CommonModule, MatButtonModule, MatCardModule, RouterLink],
   templateUrl: './coffee-list.component.html',
   styleUrls: ['./coffee-list.component.scss']
 })

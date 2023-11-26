@@ -1,1 +1,6 @@
-<p>detail works!</p>
+<div *ngIf="coffeeDetail$ | async as coffee ">
+    <h1>{{coffee.name}}</h1>
+    <p>{{coffee.description}}</p>
+    <button mat-raised-button (click)="onUpdate()">Update</button>
+    <button mat-raised-button (click)="onDelete(coffee.id!)">Delete</button>
+</div>

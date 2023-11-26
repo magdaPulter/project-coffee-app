@@ -23,6 +23,30 @@
       "process": "1",
       "characteristic": "",
       "id": 4
+    },
+    {
+      "name": "kiangau",
+      "origin": "kenia",
+      "description": "sd",
+      "process": "",
+      "characteristic": {},
+      "id": 5
+    },
+    {
+      "name": "new",
+      "origin": "",
+      "description": "hjk",
+      "process": "1",
+      "characteristic": {},
+      "id": 6
+    },
+    {
+      "name": "nana",
+      "origin": "",
+      "description": "",
+      "process": "",
+      "characteristic": {},
+      "id": "id"
     }
   ]
 }

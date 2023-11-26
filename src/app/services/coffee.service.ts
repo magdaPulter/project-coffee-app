@@ -8,7 +8,6 @@ import { CoffeeModel } from '../models/coffee.model';
 })
 export class CoffeeService {
 
-
   constructor(private _httpClient: HttpClient) { }
 
   getAll(): Observable<CoffeeModel[]> {
@@ -17,5 +16,17 @@ export class CoffeeService {
 
   create(coffee: CoffeeModel): Observable<void> {
     return this._httpClient.post<void>('http://localhost:3000/coffee',coffee);
+  }
+
+  getOne(id: string): Observable<CoffeeModel> {
+    return this._httpClient.get<CoffeeModel>(`http://localhost:3000/coffee/${id}`)
+  }
+
+  update(coffee: CoffeeModel,id: string ): Observable<CoffeeModel> {
+    return this._httpClient.put<CoffeeModel>(`http://localhost:3000/coffee/${id}`,coffee)
+  }
+
+  delete(id: string): Observable<CoffeeModel> {
+    return this._httpClient.delete<CoffeeModel>(`http://localhost:3000/coffee/${id}`)
   }
 }

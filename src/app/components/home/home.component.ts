@@ -9,27 +9,28 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { DialogComponent } from '../dialog/dialog.component';
 import { CoffeeListComponent } from "../coffee-list/coffee-list.component";
+import { DialogFormDirective } from 'src/app/directives/dialog-form.directive';
 
 @Component({
     selector: 'app-home',
     standalone: true,
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
-    imports: [CommonModule, MatFormFieldModule, MatInputModule, MatRadioModule, MatCheckboxModule, ReactiveFormsModule, MatDialogModule, MatButtonModule, CoffeeListComponent]
+    imports: [CommonModule, MatFormFieldModule, MatInputModule, MatRadioModule, MatCheckboxModule, ReactiveFormsModule, MatDialogModule, MatButtonModule, CoffeeListComponent, DialogFormDirective]
 })
 export class HomeComponent {
   
-  constructor(private _matDialog: MatDialog) { }
+  // constructor(private _matDialog: MatDialog) { }
 
-  openDialog() {
-    const dialogRef = this._matDialog.open(
-      DialogComponent
-    )
-    dialogRef
-      .afterClosed()
-      .subscribe(result => {
-          console.log('The dialog was closed');
-          console.log(result)
-        });      
-  }
+  // openDialog() {
+  //   const dialogRef = this._matDialog.open(
+  //     DialogComponent
+  //   )
+  //   dialogRef
+  //     .afterClosed()
+  //     .subscribe(result => {
+  //         console.log('The dialog was closed');
+  //         console.log(result)
+  //       });      
+  // }
 }

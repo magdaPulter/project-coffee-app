@@ -1,4 +1,5 @@
 <div class="cards-list">
     <app-card *ngFor="let coffee of coffeeList$ | async" [coffee]="coffee">
+        <button mat-raised-button [routerLink]="'coffee/'+ coffee.id">Details</button>
     </app-card>
 </div>

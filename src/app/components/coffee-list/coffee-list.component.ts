@@ -13,7 +13,7 @@ import { CardComponent } from "../card/card.component";
     standalone: true,
     templateUrl: './coffee-list.component.html',
     styleUrls: ['./coffee-list.component.scss'],
-    imports: [CommonModule, CardComponent]
+    imports: [CommonModule, CardComponent, RouterLink, MatButtonModule]
 })
 export class CoffeeListComponent {
   

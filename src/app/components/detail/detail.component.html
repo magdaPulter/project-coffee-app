@@ -1,6 +1,4 @@
-<div *ngIf="coffeeDetail$ | async as coffee ">
-    <h1>{{coffee.name}}</h1>
-    <p>{{coffee.description}}</p>
+<app-card *ngIf="coffeeDetail$ | async as coffee" [coffee]="coffee">
     <button mat-raised-button (click)="onUpdate()">Update</button>
     <button mat-raised-button (click)="onDelete(coffee.id!)">Delete</button>
-</div>
+</app-card>

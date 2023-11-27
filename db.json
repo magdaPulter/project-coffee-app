@@ -10,14 +10,6 @@
     },
     {
       "name": "nana",
-      "origin": "",
-      "description": "",
-      "process": "",
-      "characteristic": "",
-      "id": 3
-    },
-    {
-      "name": "nana",
       "origin": "kenia",
       "description": "das",
       "process": "1",
@@ -31,6 +23,14 @@
       "process": "",
       "characteristic": {},
       "id": 5
+    },
+    {
+      "name": "Kiangau",
+      "origin": "Kenia",
+      "description": "very nice, but too acidic",
+      "process": "1",
+      "characteristic": {},
+      "id": 6
     }
   ]
 }

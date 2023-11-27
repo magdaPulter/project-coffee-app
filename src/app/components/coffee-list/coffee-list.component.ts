@@ -6,13 +6,14 @@ import { CoffeeModel } from 'src/app/models/coffee.model';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { RouterLink } from '@angular/router';
+import { CardComponent } from "../card/card.component";
 
 @Component({
-  selector: 'app-coffee-list',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule, MatCardModule, RouterLink],
-  templateUrl: './coffee-list.component.html',
-  styleUrls: ['./coffee-list.component.scss']
+    selector: 'app-coffee-list',
+    standalone: true,
+    templateUrl: './coffee-list.component.html',
+    styleUrls: ['./coffee-list.component.scss'],
+    imports: [CommonModule, CardComponent, RouterLink, MatButtonModule]
 })
 export class CoffeeListComponent {
   

@@ -8,13 +8,14 @@ import { CoffeeModel } from '../../models/coffee.model';
 import { CoffeeService } from '../../services/coffee.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
+import { CardComponent } from "../card/card.component";
 
 @Component({
-  selector: 'app-detail',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule],
-  templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.scss']
+    selector: 'app-detail',
+    standalone: true,
+    templateUrl: './detail.component.html',
+    styleUrls: ['./detail.component.scss'],
+    imports: [CommonModule, MatButtonModule, CardComponent]
 })
 export class DetailComponent {
 

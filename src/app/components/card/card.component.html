@@ -1,9 +1,9 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>{{coffee.name}}</mat-card-title>
-        <mat-card-subtitle>Start</mat-card-subtitle>
+        <mat-card-subtitle>{{coffee.origin}}</mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content>Lorem ipsum</mat-card-content>
+    <mat-card-content>{{coffee.description}}</mat-card-content>
     <mat-card-actions>
         <ng-content></ng-content>
         <!-- <button mat-raised-button [routerLink]="'coffee/'+ coffee.id">Details</button> -->

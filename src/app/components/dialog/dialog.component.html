@@ -8,12 +8,14 @@
             <mat-form-field>
                 <mat-label>Name</mat-label>
                 <input matInput formControlName="name">
+                <mat-error *ngIf="coffeeForm.get('name')!.invalid">name is required</mat-error>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <mat-label>Origin</mat-label>
                 <input matInput formControlName="origin">
+                <mat-error *ngIf="coffeeForm.get('origin')!.invalid">origin is required</mat-error>
             </mat-form-field>
         </div>
         <div>
@@ -33,7 +35,8 @@
         <div>
             <section class="example-section" formGroupName="characteristic">
                 <mat-label>Choose</mat-label>
-                 <mat-checkbox class="example-margin" *ngFor="let taste of taste$ | async" [formControlName]="taste.id">{{taste.name}}</mat-checkbox>
+                <mat-checkbox class="example-margin" *ngFor="let taste of taste$ | async"
+                    [formControlName]="taste.id">{{taste.name}}</mat-checkbox>
             </section>
         </div>
     </mat-dialog-content>

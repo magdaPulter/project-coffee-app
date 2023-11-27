@@ -1,10 +1,6 @@
 {
   "coffee": [
     {
-      "name": "nan",
-      "id": 1
-    },
-    {
       "name": "some",
       "id": 2
     },
@@ -31,6 +27,14 @@
       "process": "1",
       "characteristic": {},
       "id": 6
+    },
+    {
+      "name": "",
+      "origin": "",
+      "description": "",
+      "process": "",
+      "characteristic": {},
+      "id": 7
     }
   ]
 }

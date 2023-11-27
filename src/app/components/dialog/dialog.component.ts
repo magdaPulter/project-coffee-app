@@ -8,13 +8,17 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { CoffeeService } from '../../services/coffee.service';
+import { Observable, of, tap } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { TasteModel } from 'src/app/models/taste.model';
+import { TASTE } from '../../utils/TASTE';
 
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss'],
   standalone: true,
-  imports: [MatDialogModule, MatButtonModule, MatFormFieldModule, MatRadioModule, MatCheckboxModule, MatInputModule, ReactiveFormsModule]
+  imports: [MatDialogModule, MatButtonModule, MatFormFieldModule, MatRadioModule, MatCheckboxModule, MatInputModule, ReactiveFormsModule, CommonModule]
 })
 export class DialogComponent {
   readonly coffeeForm: FormGroup = new FormGroup({
@@ -27,7 +31,13 @@ export class DialogComponent {
 
   constructor(public dialogRef: MatDialogRef<DialogComponent>, private _coffeeService: CoffeeService) { }
 
-
+  readonly taste$: Observable <TasteModel[]>= of(TASTE).pipe(
+    tap((tastes) => {
+      tastes.forEach((taste) => {
+        (this.coffeeForm.get('characteristic') as FormGroup).addControl(taste.id, new FormControl(false))
+      })
+    })
+  )
 
   onNoClick(): void {
     this.dialogRef.close();

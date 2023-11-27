@@ -1,10 +1,6 @@
 {
   "coffee": [
     {
-      "name": "nan",
-      "id": 1
-    },
-    {
       "name": "some",
       "id": 2
     },
@@ -31,6 +27,28 @@
       "process": "1",
       "characteristic": {},
       "id": 6
+    },
+    {
+      "name": "",
+      "origin": "",
+      "description": "",
+      "process": "",
+      "characteristic": {},
+      "id": 7
+    },
+    {
+      "name": "kenia",
+      "origin": "kiangau",
+      "description": "very good",
+      "process": "1",
+      "characteristic": {
+        "1": false,
+        "2": true,
+        "3": true,
+        "4": false,
+        "5": false
+      },
+      "id": 8
     }
   ]
 }

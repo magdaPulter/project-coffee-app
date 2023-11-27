@@ -33,10 +33,7 @@
         <div>
             <section class="example-section" formGroupName="characteristic">
                 <mat-label>Choose</mat-label>
-                <mat-checkbox class="example-margin" [formControlName]="1">Fruity</mat-checkbox>
-                <mat-checkbox class="example-margin" [formControlName]="2">Sweet</mat-checkbox>
-                <mat-checkbox class="example-margin" [formControlName]="3">Nutty/Cocoa</mat-checkbox>
-                <mat-checkbox class="example-margin" [formControlName]="4">Floral</mat-checkbox>
+                 <mat-checkbox class="example-margin" *ngFor="let taste of taste$ | async" [formControlName]="taste.id">{{taste.name}}</mat-checkbox>
             </section>
         </div>
     </mat-dialog-content>

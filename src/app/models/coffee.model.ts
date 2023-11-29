@@ -4,5 +4,5 @@ export interface CoffeeModel {
     readonly description: string;
     readonly process: string;
     readonly characteristic: string[];
-    readonly id?: string 
+    readonly id?: number 
 }

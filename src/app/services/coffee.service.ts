@@ -18,15 +18,15 @@ export class CoffeeService {
     return this._httpClient.post<void>('http://localhost:3000/coffee',coffee);
   }
 
-  getOne(id: string): Observable<CoffeeModel> {
+  getOne(id: number): Observable<CoffeeModel> {
     return this._httpClient.get<CoffeeModel>(`http://localhost:3000/coffee/${id}`)
   }
 
-  update(coffee: CoffeeModel): Observable<CoffeeModel> {
-    return this._httpClient.put<CoffeeModel>(`http://localhost:3000/coffee/${coffee.id}`,coffee)
+  update(id: number, coffee: CoffeeModel): Observable<CoffeeModel> {
+    return this._httpClient.put<CoffeeModel>(`http://localhost:3000/coffee/${id}`,coffee)
   }
 
-  delete(id: string): Observable<CoffeeModel> {
+  delete(id: number): Observable<CoffeeModel> {
     return this._httpClient.delete<CoffeeModel>(`http://localhost:3000/coffee/${id}`)
   }
 }

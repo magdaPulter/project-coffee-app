@@ -9,36 +9,35 @@ import { CoffeeService } from '../../services/coffee.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { CardComponent } from "../card/card.component";
+import { DialogFormDirective } from 'src/app/directives/dialog-form.directive';
 
 @Component({
     selector: 'app-detail',
     standalone: true,
     templateUrl: './detail.component.html',
     styleUrls: ['./detail.component.scss'],
-    imports: [CommonModule, MatButtonModule, CardComponent]
+    imports: [CommonModule, MatButtonModule, CardComponent, DialogFormDirective]
 })
 export class DetailComponent {
 
   readonly coffeeDetail$: Observable<CoffeeModel> = this._activatedRoute.params.pipe(
-    switchMap(params => this._coffeeService.getOne(params['id']))
+    switchMap(params => this._coffeeService.getOne(+params['id']))
   )
 
   constructor(private _coffeeService: CoffeeService, private _activatedRoute: ActivatedRoute, private _router: Router, private _matDialog: MatDialog) {
   }
 
-  onUpdate() {
-    const dialogRef = this._matDialog.open(
-      DialogComponent
+  isClicked: boolean = false
+
+  onUpdate(coffee: CoffeeModel) {
+    this._matDialog.open(
+      DialogComponent, {
+        data: coffee
+      }
     )
-    dialogRef
-      .afterClosed()
-      .subscribe(result => {
-          console.log('The dialog was closed');
-          console.log(result)
-        });  
   }
 
-  onDelete(id: string) {
+  onDelete(id: number) {
     this._coffeeService.delete(id).subscribe(() => {
       this._router.navigate([''])
     })

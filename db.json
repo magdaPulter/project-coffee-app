@@ -1,15 +1,17 @@
 {
   "coffee": [
     {
-      "name": "some",
-      "id": 2
-    },
-    {
       "name": "nana",
       "origin": "kenia",
       "description": "das",
       "process": "1",
-      "characteristic": "",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
       "id": 4
     },
     {
@@ -35,6 +37,90 @@
       "process": "",
       "characteristic": {},
       "id": 7
+    },
+    {
+      "name": "kaka",
+      "origin": "aaa",
+      "description": "",
+      "process": "1",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "id": 8
+    },
+    {
+      "name": "dds",
+      "origin": "",
+      "description": "",
+      "process": "",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "id": 9
+    },
+    {
+      "name": "xxx",
+      "origin": "",
+      "description": "",
+      "process": "",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "id": 10
+    },
+    {
+      "name": "mm",
+      "origin": "",
+      "description": "",
+      "process": "",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "id": 11
+    },
+    {
+      "name": "ddd",
+      "origin": "",
+      "description": "",
+      "process": "",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "id": 12
+    },
+    {
+      "name": "ddd",
+      "origin": "",
+      "description": "",
+      "process": "",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "id": 13
     }
   ]
 }

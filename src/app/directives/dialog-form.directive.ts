@@ -7,9 +7,6 @@ import { DialogComponent } from '../components/dialog/dialog.component';
   standalone: true
 })
 export class DialogFormDirective {
-  // @Input() dialogForm!: boolean 
-  // @Input() dialogForm!: string
-  // @Output() operation: EventEmitter<string> = new EventEmitter<string>()
   constructor(private _matDialog: MatDialog) { }
   
   @HostListener('click')
@@ -22,7 +19,6 @@ export class DialogFormDirective {
       .subscribe(result => {
           console.log('The dialog was closed');
           console.log(result);
-          // this.operation.emit(this.dialogForm)
       });      
   }
 }

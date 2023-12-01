@@ -8,10 +8,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogFormDirective } from './directives/dialog-form.directive';
+import { NavbarComponent } from "./components/navbar/navbar.component";
 
 @NgModule({
     declarations: [
-        AppComponent],
+        AppComponent
+    ],
     providers: [],
     bootstrap: [AppComponent],
     imports: [
@@ -19,9 +21,10 @@ import { DialogFormDirective } from './directives/dialog-form.directive';
         AppRoutingModule,
         HomeComponent,
         BrowserAnimationsModule,
-        DialogComponent, 
-        HttpClientModule, 
+        DialogComponent,
+        HttpClientModule,
         DialogFormDirective,
+        NavbarComponent
     ]
 })
 export class AppModule { }

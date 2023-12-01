@@ -19,18 +19,5 @@ import { DialogFormDirective } from 'src/app/directives/dialog-form.directive';
     imports: [CommonModule, MatFormFieldModule, MatInputModule, MatRadioModule, MatCheckboxModule, ReactiveFormsModule, MatDialogModule, MatButtonModule, CoffeeListComponent, DialogFormDirective]
 })
 export class HomeComponent {
-  
-  // constructor(private _matDialog: MatDialog) { }
 
-  // openDialog() {
-  //   const dialogRef = this._matDialog.open(
-  //     DialogComponent
-  //   )
-  //   dialogRef
-  //     .afterClosed()
-  //     .subscribe(result => {
-  //         console.log('The dialog was closed');
-  //         console.log(result)
-  //       });      
-  // }
 }

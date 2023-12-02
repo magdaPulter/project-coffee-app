@@ -3,7 +3,10 @@
         <mat-card-title>{{coffee.name}}</mat-card-title>
         <mat-card-subtitle>{{coffee.origin}}</mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content>{{coffee.description}}</mat-card-content>
+    <mat-card-content>
+        {{coffee.description}}
+        <img [src]="coffee.image" alt="">
+    </mat-card-content>
     <mat-card-actions>
         <ng-content></ng-content>
         <!-- <button mat-raised-button [routerLink]="'coffee/'+ coffee.id">Details</button> -->

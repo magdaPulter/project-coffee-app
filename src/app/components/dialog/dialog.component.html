@@ -20,6 +20,13 @@
         </div>
         <div>
             <mat-form-field>
+                <mat-label>Image</mat-label>
+                <input matInput formControlName="image">
+                <mat-error *ngIf="coffeeForm.get('image')!.invalid">origin is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
                 <mat-label>Description</mat-label>
                 <textarea matInput formControlName="description"></textarea>
             </mat-form-field>

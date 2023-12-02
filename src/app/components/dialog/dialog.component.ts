@@ -26,6 +26,7 @@ export class DialogComponent implements OnInit {
   readonly coffeeForm: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required]),
     origin: new FormControl('', [Validators.required]),
+    image: new FormControl(''),
     description: new FormControl(''),
     process: new FormControl(''),
     characteristic: new FormGroup({})
@@ -65,6 +66,7 @@ export class DialogComponent implements OnInit {
           name: form.get('name')!.value,
           origin: form.get('origin')!.value,
           description: form.get('description')!.value,
+          image: form.get('image')!.value,
           process: form.get('process')!.value,
           characteristic: form.get('characteristic')!.value
         }).subscribe()

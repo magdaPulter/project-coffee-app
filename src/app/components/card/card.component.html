@@ -4,8 +4,8 @@
         <mat-card-subtitle>{{coffee.origin}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        {{coffee.description}}
         <img [src]="coffee.image" alt="">
+        <p>{{coffee.description}}</p> 
     </mat-card-content>
     <mat-card-actions>
         <ng-content></ng-content>

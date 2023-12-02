@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -16,7 +16,7 @@ import { DialogFormDirective } from 'src/app/directives/dialog-form.directive';
     standalone: true,
     templateUrl: './detail.component.html',
     styleUrls: ['./detail.component.scss'],
-    imports: [CommonModule, MatButtonModule, CardComponent, DialogFormDirective]
+    imports: [CommonModule, MatButtonModule, CardComponent, DialogFormDirective, RouterLink]
 })
 export class DetailComponent {
 

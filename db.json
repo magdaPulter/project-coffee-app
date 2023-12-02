@@ -1,38 +1,11 @@
 {
   "coffee": [
     {
-      "name": "dds",
-      "origin": "jkl",
-      "description": "",
-      "process": "",
-      "characteristic": {
-        "1": true,
-        "2": true,
-        "3": false,
-        "4": false,
-        "5": false
-      },
-      "id": 9
-    },
-    {
-      "name": "mm",
-      "origin": "",
-      "description": "",
-      "process": "",
-      "characteristic": {
-        "1": false,
-        "2": false,
-        "3": false,
-        "4": false,
-        "5": false
-      },
-      "id": 11
-    },
-    {
-      "name": "ddd",
-      "origin": "",
-      "description": "",
-      "process": "",
+      "name": "La Provincia",
+      "origin": "Colombia",
+      "image": "https://assets.epicurious.com/photos/63e54a0664e14d52936a2937/4:3/w_3764,h_2823,c_limit/CoffeeSubscriptions_IG_V1_030922_6350_V1_final.jpg",
+      "description": "Very sweet",
+      "process": "2",
       "characteristic": {
         "1": false,
         "2": false,
@@ -43,10 +16,11 @@
       "id": 12
     },
     {
-      "name": "ddd",
-      "origin": "",
-      "description": "",
-      "process": "",
+      "name": "Mustefa Abakeno",
+      "origin": "Etiopia",
+      "image": "https://assets.epicurious.com/photos/63e54a0664e14d52936a2937/4:3/w_3764,h_2823,c_limit/CoffeeSubscriptions_IG_V1_030922_6350_V1_final.jpg",
+      "description": "With strong acidity, very floral ",
+      "process": "1",
       "characteristic": {
         "1": false,
         "2": false,
@@ -55,6 +29,36 @@
         "5": false
       },
       "id": 13
+    },
+    {
+      "name": "Las Huancas",
+      "origin": "Peru",
+      "description": "high body, very sweet",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Roasted_coffee_beans.jpg/1200px-Roasted_coffee_beans.jpg",
+      "process": "2",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": true
+      },
+      "id": 14
+    },
+    {
+      "name": "new",
+      "origin": "one",
+      "description": "",
+      "image": "",
+      "process": "",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "id": 15
     }
   ]
 }

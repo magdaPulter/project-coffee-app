@@ -1,0 +1,11 @@
+@import '../../styles/config';
+
+.dialog{
+    background-color: $light-secondary;
+}
+
+form {
+    button{
+        @include btn-primary
+    }
+}

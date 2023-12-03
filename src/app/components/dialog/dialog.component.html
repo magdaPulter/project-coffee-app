@@ -1,56 +1,58 @@
-<div>
-    <h1 mat-dialog-title>Coffee Form</h1>
+<div class="dialog">
+    <div>
+        <h1 mat-dialog-title>Coffee Form</h1>
+    </div>
+    <form [formGroup]="coffeeForm" (ngSubmit)="onFormSubmit(coffeeForm)">
+    
+        <mat-dialog-content>
+            <div>
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name">
+                    <mat-error *ngIf="coffeeForm.get('name')!.invalid">name is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Origin</mat-label>
+                    <input matInput formControlName="origin">
+                    <mat-error *ngIf="coffeeForm.get('origin')!.invalid">origin is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Image</mat-label>
+                    <input matInput formControlName="image">
+                    <mat-error *ngIf="coffeeForm.get('image')!.invalid">origin is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Description</mat-label>
+                    <textarea matInput formControlName="description"></textarea>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-radio-group aria-label="Select an option" formControlName="process">
+                    <mat-label>Process</mat-label>
+                    <mat-radio-button value="1">Washed</mat-radio-button>
+                    <mat-radio-button value="2">Natural</mat-radio-button>
+                    <mat-radio-button value="3">Honey</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div>
+                <section class="example-section" formGroupName="characteristic">
+                    <mat-label>Choose</mat-label>
+                    <mat-checkbox class="example-margin" *ngFor="let taste of taste$ | async"
+                        [formControlName]="taste.id">{{taste.name}}</mat-checkbox>
+                </section>
+            </div>
+        </mat-dialog-content>
+    
+        <mat-dialog-actions>
+            <button mat-button [mat-dialog-close]="false">Cancel</button>
+            <button mat-button type="submit" [mat-dialog-close]="coffeeForm">{{data ? "Update" : "Save"}}</button>
+        </mat-dialog-actions>
+    
+    </form>
 </div>
-<form [formGroup]="coffeeForm" (ngSubmit)="onFormSubmit(coffeeForm)">
-
-    <mat-dialog-content>
-        <div>
-            <mat-form-field>
-                <mat-label>Name</mat-label>
-                <input matInput formControlName="name">
-                <mat-error *ngIf="coffeeForm.get('name')!.invalid">name is required</mat-error>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <mat-label>Origin</mat-label>
-                <input matInput formControlName="origin">
-                <mat-error *ngIf="coffeeForm.get('origin')!.invalid">origin is required</mat-error>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <mat-label>Image</mat-label>
-                <input matInput formControlName="image">
-                <mat-error *ngIf="coffeeForm.get('image')!.invalid">origin is required</mat-error>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <mat-label>Description</mat-label>
-                <textarea matInput formControlName="description"></textarea>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-radio-group aria-label="Select an option" formControlName="process">
-                <mat-label>Process</mat-label>
-                <mat-radio-button value="1">Washed</mat-radio-button>
-                <mat-radio-button value="2">Natural</mat-radio-button>
-                <mat-radio-button value="3">Honey</mat-radio-button>
-            </mat-radio-group>
-        </div>
-        <div>
-            <section class="example-section" formGroupName="characteristic">
-                <mat-label>Choose</mat-label>
-                <mat-checkbox class="example-margin" *ngFor="let taste of taste$ | async"
-                    [formControlName]="taste.id">{{taste.name}}</mat-checkbox>
-            </section>
-        </div>
-    </mat-dialog-content>
-
-    <mat-dialog-actions>
-        <button mat-button [mat-dialog-close]="false">Cancel</button>
-        <button mat-button type="submit" [mat-dialog-close]="coffeeForm">{{data ? "Update" : "Save"}}</button>
-    </mat-dialog-actions>
-
-</form>

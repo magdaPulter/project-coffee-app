@@ -1,0 +1,8 @@
+@import '../../styles/config';
+
+app-card{
+    button{
+        @include btn-primary
+    }
+}
+

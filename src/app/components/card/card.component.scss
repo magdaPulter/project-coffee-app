@@ -1,9 +1,23 @@
 .card{
     width: 250px;
-    height: 350px;
+    height: 400px;
     margin: 10px;
+    background-color: rgba(234, 231, 227, 0.8); //light-secondary:
+
+    .content{
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 100%;
+            align-self: center;
+            justify-self: center;
+        }
+    }
+    .action{
+        justify-content: center;
+        align-items: center;
+    }
 }
 
-img{
-    width: 150px;
-}
+
+

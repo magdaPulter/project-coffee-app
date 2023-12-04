@@ -6,4 +6,11 @@
 
 .cards-list{
     display: flex;
+    flex-wrap: wrap;
+
+    button{
+        background-color: rgba(189, 106, 23, 0.8); //dark-primary
+        color: white;
+     }
 }
+

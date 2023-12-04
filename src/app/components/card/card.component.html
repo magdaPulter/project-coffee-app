@@ -1,13 +1,13 @@
 <mat-card class="card">
     <mat-card-header>
-        <mat-card-title>{{coffee.name}}</mat-card-title>
-        <mat-card-subtitle>{{coffee.origin}}</mat-card-subtitle>
+        <mat-card-title><h2>{{coffee.name}}</h2></mat-card-title>
+        <mat-card-subtitle> <h4>{{coffee.origin}}</h4></mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content>
+    <mat-card-content class="content">
         <img [src]="coffee.image" alt="">
-        <p>{{coffee.description}}</p> 
+        <p>{{coffee.description | shortDescription}}</p> 
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions class="action">
         <ng-content></ng-content>
         <!-- <button mat-raised-button [routerLink]="'coffee/'+ coffee.id">Details</button> -->
     </mat-card-actions>

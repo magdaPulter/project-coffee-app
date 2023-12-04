@@ -1,5 +1,9 @@
 @import '../../styles/config';
 
+.detail{
+    height: 100vh;
+}
+
 app-card{
     button{
         @include btn-primary

@@ -9,3 +9,9 @@ $very-light-secondary: rgba(243, 243, 243, 0.8);
     color: $very-light-secondary;
     margin: 10px;
 }
+
+@mixin btn-secondary {
+    // border: none;    
+    // color: $dark-primary;
+    // background-color: $light-primary;
+}

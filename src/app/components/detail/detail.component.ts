@@ -22,12 +22,10 @@ export class DetailComponent {
 
   readonly coffeeDetail$: Observable<CoffeeModel> = this._activatedRoute.params.pipe(
     switchMap(params => this._coffeeService.getOne(+params['id']))
-  )
+    )
 
   constructor(private _coffeeService: CoffeeService, private _activatedRoute: ActivatedRoute, private _router: Router, private _matDialog: MatDialog) {
   }
-
-  isClicked: boolean = false
 
   onUpdate(coffee: CoffeeModel) {
     this._matDialog.open(

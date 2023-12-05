@@ -2,11 +2,37 @@
 
 .detail{
     height: 100vh;
-}
-
-app-card{
     button{
         @include btn-primary
     }
 }
 
+.detail-card {
+    height: 500px;
+    width: 600px;
+    background-color: $light-secondary;
+    border-radius: 20px;
+    margin: auto;
+
+    .title{
+        padding-top: 30px;
+        padding-left: 30px;
+        // margin: 40px 0px 40px 60px
+    }
+    img{
+        width: 250px;
+    }
+    .content{
+        margin: 0px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p{
+            margin-left: 20px;
+        }
+    }
+    .action{
+        display: flex;
+        justify-content: space-around;
+    }
+}

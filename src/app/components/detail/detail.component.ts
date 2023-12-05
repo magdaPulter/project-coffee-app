@@ -9,14 +9,13 @@ import { CoffeeService } from '../../services/coffee.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { CardComponent } from "../card/card.component";
-import { DialogFormDirective } from 'src/app/directives/dialog-form.directive';
 
 @Component({
     selector: 'app-detail',
     standalone: true,
     templateUrl: './detail.component.html',
     styleUrls: ['./detail.component.scss'],
-    imports: [CommonModule, MatButtonModule, CardComponent, DialogFormDirective, RouterLink]
+    imports: [CommonModule, MatButtonModule, CardComponent, RouterLink]
 })
 export class DetailComponent {
 

@@ -74,6 +74,21 @@
         "5": false
       },
       "id": 16
+    },
+    {
+      "name": "new",
+      "origin": "one",
+      "description": "",
+      "image": "",
+      "process": "",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "id": 17
     }
   ]
 }

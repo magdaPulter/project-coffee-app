@@ -1,7 +1,27 @@
 <div class="detail">
     <button mat-raised-button [routerLink]="'/'">Back</button>
-    <app-card class="detail-card" *ngIf="coffeeDetail$ | async as coffee" [coffee]="coffee">
+
+    <div class="detail-card">
+        <div class="detail-card" *ngIf="coffeeDetail$ | async as coffee">
+            <div class="title">
+                <h1>{{coffee.name}}</h1>
+                <h2>{{coffee.origin}}</h2>
+            </div>
+            <div class="content">
+                <img [src]="coffee.image" alt="">
+                <p>{{coffee.description}}</p>
+            </div>
+            <div class="filters">
+            </div>
+            <div class="action">
+                <button mat-raised-button (click)="onUpdate(coffee)">Update</button>
+                <button mat-raised-button (click)="onDelete(coffee.id!)">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <app-card class="detail-card" *ngIf="coffeeDetail$ | async as coffee" [coffee]="coffee">
         <button mat-raised-button  (click)="onUpdate(coffee)">Update</button>
         <button mat-raised-button (click)="onDelete(coffee.id!)">Delete</button>
-    </app-card>  
+    </app-card>   -->
 </div>

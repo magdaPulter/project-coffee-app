@@ -8,7 +8,6 @@
         <p>{{coffee.description | shortDescription}}</p> 
     </mat-card-content>
     <mat-card-actions class="action">
-        <ng-content></ng-content>
-        <!-- <button mat-raised-button [routerLink]="'coffee/'+ coffee.id">Details</button> -->
+        <button mat-raised-button [routerLink]="'coffee/'+ coffee.id">Details</button>
     </mat-card-actions>
 </mat-card>

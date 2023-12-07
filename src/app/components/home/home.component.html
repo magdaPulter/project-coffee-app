@@ -6,4 +6,4 @@
         <!--    <button mat-raised-button class="btn">LogOut</button> -->
     </div>
 </div>
-<app-coffee-list></app-coffee-list>
+<app-coffee-list *ngIf="coffeeList$ | async as list" [coffeeList]="list"></app-coffee-list>

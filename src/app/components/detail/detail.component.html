@@ -11,7 +11,8 @@
                 <img [src]="coffee.image" alt="">
                 <p>{{coffee.description}}</p>
             </div>
-            <div class="filters">
+            <div class="characteristic">
+                <div>process: {{coffee.process.name}}</div>
             </div>
             <div class="action">
                 <button mat-raised-button (click)="onUpdate(coffee)">Update</button>

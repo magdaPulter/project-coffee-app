@@ -35,10 +35,8 @@
             <div>
                 <mat-radio-group aria-label="Select an option" formControlName="process">
                     <mat-label>Process</mat-label>
-                    <mat-radio-button value="1">Washed</mat-radio-button>
-                    <mat-radio-button value="2">Natural</mat-radio-button>
-                    <mat-radio-button value="3">Honey</mat-radio-button>
-                </mat-radio-group>
+                    <mat-radio-button *ngFor="let process of process$ | async" [value]="process" >{{process.name}}</mat-radio-button>
+                 </mat-radio-group>
             </div>
             <div>
                 <section class="example-section" formGroupName="characteristic">

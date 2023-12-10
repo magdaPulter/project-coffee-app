@@ -13,7 +13,9 @@ import { Router } from '@angular/router';
 import { CoffeeService } from '../../services/coffee.service';
 import { CoffeeModel } from '../../models/coffee.model';
 import { TasteModel } from '../../models/taste.model';
-import { TASTE } from '../../utils/TASTE';
+import { TASTE } from 'src/app/utils/taste';
+import { ProcessModel } from 'src/app/models/process-model.model';
+import { PROCESS } from 'src/app/utils/process';
 
 @Component({
   selector: 'app-dialog',
@@ -44,6 +46,8 @@ export class DialogComponent implements OnInit {
       })
     })
   )
+
+  readonly process$: Observable<ProcessModel[]> = of(PROCESS)
 
   ngOnInit(): void {
     this.coffeeForm.patchValue(this.data)

@@ -2,7 +2,7 @@
     <button mat-raised-button [routerLink]="'/'">Back</button>
 
     <div class="detail-card">
-        <div class="detail-card" *ngIf="coffeeDetail$ | async as coffee">
+        <div class="detail-card" *ngIf="coffeeDetailWithCharacteristics$ | async as coffee">
             <div class="title">
                 <h1>{{coffee.name}}</h1>
                 <h2>{{coffee.origin}}</h2>
@@ -11,8 +11,11 @@
                 <img [src]="coffee.image" alt="">
                 <p>{{coffee.description}}</p>
             </div>
-            <div class="characteristic">
+            <div class="details">
                 <div>process: {{coffee.process.name}}</div>
+                <div>characteristics:
+                    <span *ngFor="let char of coffee.characteristic"> {{char.name}}</span>
+                </div>
             </div>
             <div class="action">
                 <button mat-raised-button (click)="onUpdate(coffee)">Update</button>
@@ -20,9 +23,4 @@
             </div>
         </div>
     </div>
-
-    <!-- <app-card class="detail-card" *ngIf="coffeeDetail$ | async as coffee" [coffee]="coffee">
-        <button mat-raised-button  (click)="onUpdate(coffee)">Update</button>
-        <button mat-raised-button (click)="onDelete(coffee.id!)">Delete</button>
-    </app-card>   -->
 </div>

@@ -16,6 +16,7 @@ import { TasteModel } from '../../models/taste.model';
 import { TASTE } from 'src/app/utils/taste';
 import { ProcessModel } from 'src/app/models/process-model.model';
 import { PROCESS } from 'src/app/utils/process';
+import { CoffeeQueryModel } from 'src/app/models/coffee.query-model';
 
 @Component({
   selector: 'app-dialog',
@@ -34,7 +35,7 @@ export class DialogComponent implements OnInit {
     characteristic: new FormGroup({})
   });
 
-  constructor(public dialogRef: MatDialogRef<DialogComponent>, private _coffeeService: CoffeeService, @Inject(MAT_DIALOG_DATA) public data: CoffeeModel, private _router: Router) {
+  constructor(public dialogRef: MatDialogRef<DialogComponent>, private _coffeeService: CoffeeService, @Inject(MAT_DIALOG_DATA) public data: CoffeeQueryModel, private _router: Router) {
   }
 
 

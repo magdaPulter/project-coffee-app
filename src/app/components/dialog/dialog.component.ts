@@ -16,7 +16,6 @@ import { TasteModel } from '../../models/taste.model';
 import { TASTE } from 'src/app/utils/taste';
 import { ProcessModel } from 'src/app/models/process-model.model';
 import { PROCESS } from 'src/app/utils/process';
-
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',

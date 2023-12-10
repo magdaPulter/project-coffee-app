@@ -32,13 +32,13 @@ export class DetailComponent {
   readonly characteristics$: Observable<any> = combineLatest([
     this.coffeeDetail$,
     this.tastes$,
-  ]) .pipe(
+  ]).pipe(
     map(([coffee, taste]) => {
-      const characteristic = this._charArray(coffee.characteristic)  
+      const characteristic = this._charArray(coffee.characteristic)
       return characteristic.map(char => {
         const charMap = taste.reduce((acc, curr) => {
-          return {...acc, [curr.id]: curr}
-        },{} as Record<string, TasteModel>)
+          return { ...acc, [curr.id]: curr }
+        }, {} as Record<string, TasteModel>)
         return {
           id: char.tasteId,
           name: charMap[char.tasteId].name
@@ -54,12 +54,12 @@ export class DetailComponent {
   ]).pipe(
     map(([coffee, taste]) => {
       const characteristic = taste
-     return {...coffee, characteristic }
+      return { ...coffee, characteristic }
     })
-  ) 
+  )
 
 
-  private _charArray(charObject: Record<number, boolean>): {name: string, tasteId: string}[]{
+  private _charArray(charObject: Record<number, boolean>): { name: string, tasteId: string }[] {
     return Object.entries(charObject)
       .filter(([_key, value]) => value)
       .map(([key, _value]) => key)
@@ -68,19 +68,23 @@ export class DetailComponent {
           name: `name ${id}`,
           tasteId: id
         }
-      }) 
+      })
   }
 
   constructor(private _coffeeService: CoffeeService, private _activatedRoute: ActivatedRoute, private _router: Router, private _matDialog: MatDialog) {
-    this.coffeeDetailWithCharacteristics$.subscribe(v=> console.log(v.characteristic))
   }
 
   onUpdate(coffee: CoffeeQueryModel) {
-    this._matDialog.open(
+    const dialogRef = this._matDialog.open(
       DialogComponent, {
       data: coffee
-    }
-    )
+    })
+
+    dialogRef
+      .afterClosed()
+      .subscribe(() => {
+        this._router.navigate([`/coffee/${coffee.id}`])
+      });
   }
 
   onDelete(id: number) {

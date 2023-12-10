@@ -42,15 +42,15 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Roasted_coffee_beans.jpg/1200px-Roasted_coffee_beans.jpg",
       "description": "high body, very sweet",
       "process": {
-        "name": "natural",
-        "id": "2"
+        "name": "washed",
+        "id": "1"
       },
       "characteristic": {
-        "1": false,
-        "2": false,
-        "3": true,
+        "1": true,
+        "2": true,
+        "3": false,
         "4": false,
-        "5": true
+        "5": false
       },
       "id": 14
     },

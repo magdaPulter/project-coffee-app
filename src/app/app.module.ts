@@ -7,7 +7,6 @@ import { HomeComponent } from "./components/home/home.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DialogFormDirective } from './directives/dialog-form.directive';
 import { NavbarComponent } from "./components/navbar/navbar.component";
 
 @NgModule({
@@ -23,7 +22,6 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
         BrowserAnimationsModule,
         DialogComponent,
         HttpClientModule,
-        DialogFormDirective,
         NavbarComponent
     ]
 })

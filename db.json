@@ -5,9 +5,12 @@
       "origin": "Colombia",
       "image": "https://assets.epicurious.com/photos/63e54a0664e14d52936a2937/4:3/w_3764,h_2823,c_limit/CoffeeSubscriptions_IG_V1_030922_6350_V1_final.jpg",
       "description": "Very sweet",
-      "process": "2",
+      "process": {
+        "name": "washed",
+        "id": "1"
+      },
       "characteristic": {
-        "1": false,
+        "1": true,
         "2": false,
         "3": false,
         "4": false,
@@ -20,11 +23,14 @@
       "origin": "Etiopia",
       "image": "https://assets.epicurious.com/photos/63e54a0664e14d52936a2937/4:3/w_3764,h_2823,c_limit/CoffeeSubscriptions_IG_V1_030922_6350_V1_final.jpg",
       "description": "With strong acidity, very floral ",
-      "process": "1",
+      "process": {
+        "name": "natural",
+        "id": "2"
+      },
       "characteristic": {
         "1": false,
         "2": true,
-        "3": true,
+        "3": false,
         "4": false,
         "5": false
       },
@@ -33,15 +39,18 @@
     {
       "name": "Las Huancas",
       "origin": "Peru",
-      "description": "high body, very sweet",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Roasted_coffee_beans.jpg/1200px-Roasted_coffee_beans.jpg",
-      "process": "2",
+      "description": "high body, very sweet",
+      "process": {
+        "name": "natural",
+        "id": "2"
+      },
       "characteristic": {
         "1": false,
-        "2": false,
+        "2": true,
         "3": false,
         "4": false,
-        "5": true
+        "5": false
       },
       "id": 14
     },
@@ -50,26 +59,32 @@
       "origin": "Indonesia",
       "image": "https://assets.epicurious.com/photos/63e54a0664e14d52936a2937/4:3/w_3764,h_2823,c_limit/CoffeeSubscriptions_IG_V1_030922_6350_V1_final.jpg",
       "description": "\n​\n\n\n309 / 5,000\nTranslation results\nTranslation result\nKirura is one of 13 processing stations gathered as the Komothai group. Komothai was founded in 1959 and has 9,951 members, 1,047 of whom supply their coffee to Kirura. The station is run by a three-person board of directors, subject to changes consistent with the guidelines of Komothai's general board.",
-      "process": "2",
+      "process": {
+        "name": "washed",
+        "id": "1"
+      },
       "characteristic": {
-        "1": false,
-        "2": true,
+        "1": true,
+        "2": false,
         "3": false,
-        "4": true,
-        "5": true
+        "4": false,
+        "5": false
       },
       "id": 15
     },
     {
       "name": "Kurura",
       "origin": "Kenia",
-      "description": "Kirura is one of 13 processing stations gathered as the Komothai group. Komothai was founded in 1959 and has 9,951 members, 1,047 of whom supply their coffee to Kirura. The station is run by a three-person board of directors, subject to changes consistent with the guidelines of Komothai's general board.",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Roasted_coffee_beans.jpg/1200px-Roasted_coffee_beans.jpg",
-      "process": "1",
+      "description": "Kirura is one of 13 processing stations gathered as the Komothai group. Komothai was founded in 1959 and has 9,951 members, 1,047 of whom supply their coffee to Kirura. The station is run by a three-person board of directors, subject to changes consistent with the guidelines of Komothai's general board.",
+      "process": {
+        "name": "washed",
+        "id": "1"
+      },
       "characteristic": {
-        "1": true,
+        "1": false,
         "2": true,
-        "3": true,
+        "3": false,
         "4": false,
         "5": false
       },

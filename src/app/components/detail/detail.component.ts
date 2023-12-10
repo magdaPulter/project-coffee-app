@@ -4,15 +4,15 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { CoffeeModel } from '../../models/coffee.model';
 import { CoffeeService } from '../../services/coffee.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { CardComponent } from "../card/card.component";
 import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
-import { CoffeeQueryModel } from 'src/app/models/coffee.query-model';
-import { TasteModel } from 'src/app/models/taste.model';
 import { TASTE } from 'src/app/utils/taste';
+import { CoffeeModel } from 'src/models/coffee.model';
+import { TasteModel } from 'src/models/taste.model';
+import { CoffeeQueryModel } from 'src/models/coffee.query-model';
 
 @Component({
   selector: 'app-detail',

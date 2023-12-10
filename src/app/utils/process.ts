@@ -1,4 +1,4 @@
-import { ProcessModel } from "../models/process-model.model";
+import { ProcessModel } from "../../models/process.model";
 
 export const PROCESS: ProcessModel[] = [
     {

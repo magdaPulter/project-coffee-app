@@ -1,5 +1,4 @@
-import { ProcessModel } from "./process-model.model";
-import { TasteModel } from "./taste.model";
+import { ProcessModel } from "./process.model";
 
 export interface CoffeeQueryModel {
     readonly name: string;

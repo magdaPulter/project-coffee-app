@@ -1,4 +1,4 @@
-import { ProcessModel } from "./process-model.model";
+import { ProcessModel } from "./process.model";
 
 export interface CoffeeModel {
     readonly name: string;

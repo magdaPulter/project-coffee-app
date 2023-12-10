@@ -11,12 +11,11 @@ import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { CoffeeService } from '../../services/coffee.service';
-import { CoffeeModel } from '../../models/coffee.model';
-import { TasteModel } from '../../models/taste.model';
 import { TASTE } from 'src/app/utils/taste';
-import { ProcessModel } from 'src/app/models/process-model.model';
 import { PROCESS } from 'src/app/utils/process';
-import { CoffeeQueryModel } from 'src/app/models/coffee.query-model';
+import { TasteModel } from 'src/models/taste.model';
+import { ProcessModel } from 'src/models/process.model';
+import { CoffeeQueryModel } from 'src/models/coffee.query-model';
 
 @Component({
   selector: 'app-dialog',

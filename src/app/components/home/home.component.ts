@@ -9,9 +9,9 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { BehaviorSubject, Observable, Subject, switchMap } from 'rxjs';
 import { CoffeeListComponent } from '../coffee-list/coffee-list.component';
-import { CoffeeModel } from '../../models/coffee.model';
 import { CoffeeService } from '../../services/coffee.service';
 import { DialogComponent } from '../dialog/dialog.component';
+import { CoffeeModel } from 'src/models/coffee.model';
 
 @Component({
   selector: 'app-home',

@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { CoffeeModel } from 'src/app/models/coffee.model';
 import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { ShortDescriptionPipe } from 'src/app/pipes/short-description.pipe';
+import { CoffeeModel } from 'src/models/coffee.model';
 
 @Component({
   selector: 'app-card',

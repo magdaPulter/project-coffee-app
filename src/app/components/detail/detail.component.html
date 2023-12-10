@@ -2,7 +2,7 @@
     <button mat-raised-button [routerLink]="'/'">Back</button>
 
     <div class="detail-card">
-        <div class="detail-card" *ngIf="coffeeDetailWithCharacteristics$ | async as coffee">
+        <div class="detail-card-content" *ngIf="coffeeDetailWithCharacteristics$ | async as coffee">
             <div class="title">
                 <h1>{{coffee.name}}</h1>
                 <h2>{{coffee.origin}}</h2>

@@ -6,6 +6,6 @@ export interface CoffeeModel {
     readonly image: string;
     readonly description: string;
     readonly process: ProcessModel;
-    readonly characteristic: Record<number, boolean> ;
+    readonly characteristic: string[];
     readonly id?: number 
 }

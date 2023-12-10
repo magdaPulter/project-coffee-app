@@ -7,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ShortDescriptionPipe implements PipeTransform {
 
   transform(description: string): string {
-    return description.length > 30 ? `${description.slice(0,30)}...` : description
+    return description.length > 25 ? `${description.slice(0,25)}...` : description
   }
 
 }

@@ -14,25 +14,33 @@
     border-radius: 20px;
     margin: auto;
 
-    .title{
-        padding-top: 30px;
-        padding-left: 30px;
-        // margin: 40px 0px 40px 60px
-    }
-    img{
-        width: 250px;
-    }
-    .content{
-        margin: 0px 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        p{
-            margin-left: 20px;
+    .detail-card-content{
+        .details{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+        }
+        .title{
+            padding-top: 30px;
+            padding-left: 30px;
+            // margin: 40px 0px 40px 60px
+        }
+        img{
+            width: 250px;
+        }
+        .content{
+            margin: 0px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            p{
+                margin-left: 20px;
+            }
+        }
+        .action{
+            display: flex;
+            justify-content: space-around;
         }
     }
-    .action{
-        display: flex;
-        justify-content: space-around;
-    }
+  
 }

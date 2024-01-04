@@ -3,7 +3,7 @@
     {
       "name": "La Provincia",
       "origin": "Colombia",
-      "image": "https://assets.epicurious.com/photos/63e54a0664e14d52936a2937/4:3/w_3764,h_2823,c_limit/CoffeeSubscriptions_IG_V1_030922_6350_V1_final.jpg",
+      "image": "",
       "description": "ripe fruit is hand-picked by farmers and processed on their farms. They are pulped and fermented in bags, buckets or tanks for 16 to 38 hours. After fermentation, the coffee is washed in clean water and laid out on terraces to dry, which takes 8 to 14 days.",
       "process": {
         "name": "washed",
@@ -21,7 +21,7 @@
     {
       "name": "Fugi Ikizere",
       "origin": "Rwanda",
-      "image": "https://assets.epicurious.com/photos/63e54a0664e14d52936a2937/4:3/w_3764,h_2823,c_limit/CoffeeSubscriptions_IG_V1_030922_6350_V1_final.jpg",
+      "image": "",
       "description": "she initiated the creation of the Ikizere group of farmers in Rwanda, composed of 60 single mothers who were supposed to grow coffee together and thus achieve financial and personal success. The Ikizere group meets regularly to share their experiences and learn from each other. Baho supports women through training in good agricultural practices (GAP), coffee cultivation and high-quality processing.",
       "process": {
         "name": "natural",
@@ -39,7 +39,7 @@
     {
       "name": "Las Huancas",
       "origin": "Peru",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Roasted_coffee_beans.jpg/1200px-Roasted_coffee_beans.jpg",
+      "image": "",
       "description": "Huancas has a warm, tropical climate, favorable for growing coffee and other plants. Farmers also use the richness of the local mountains and their microclimate, which allows them to grow coffees with distinctive flavors.",
       "process": {
         "name": "natural",
@@ -57,7 +57,7 @@
     {
       "name": "Java Pegasing",
       "origin": "Indonesia",
-      "image": "https://assets.epicurious.com/photos/63e54a0664e14d52936a2937/4:3/w_3764,h_2823,c_limit/CoffeeSubscriptions_IG_V1_030922_6350_V1_final.jpg",
+      "image": "",
       "description": "\n​\n\n\n309 / 5,000\nTranslation results\nTranslation result\nKirura is one of 13 processing stations gathered as the Komothai group. Komothai was founded in 1959 and has 9,951 members, 1,047 of whom supply their coffee to Kirura. The station is run by a three-person board of directors, subject to changes consistent with the guidelines of Komothai's general board.",
       "process": {
         "name": "anaerobic",
@@ -75,7 +75,7 @@
     {
       "name": "Kurura",
       "origin": "Kenia",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Roasted_coffee_beans.jpg/1200px-Roasted_coffee_beans.jpg",
+      "image": "",
       "description": "Kirura is one of 13 processing stations gathered as the Komothai group. Komothai was founded in 1959 and has 9,951 members, 1,047 of whom supply their coffee to Kirura. The station is run by a three-person board of directors, subject to changes consistent with the guidelines of Komothai's general board.",
       "process": {
         "name": "washed",
@@ -90,5 +90,6 @@
       },
       "id": 16
     }
-  ]
+  ],
+  "files": []
 }

@@ -3,7 +3,8 @@
         <h1 mat-dialog-title>Coffee Form</h1>
     </div>
     <form [formGroup]="coffeeForm" (ngSubmit)="onFormSubmit(coffeeForm)">
-    
+        <input type="file" class="file-input" #fileInput
+        (change)="onFileSelected($event)" >        
         <mat-dialog-content>
             <div>
                 <mat-form-field>

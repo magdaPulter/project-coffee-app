@@ -89,7 +89,37 @@
         "5": false
       },
       "id": 16
+    },
+    {
+      "name": "nowa kawa",
+      "origin": "Kenia",
+      "description": "",
+      "image": "",
+      "process": "",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "id": 17
     }
   ],
-  "files": []
+  "files": [
+    {
+      "id": "ff44c85b-e6e4-46f9-98de-bbd9e4a41d69",
+      "name": "file-1704446001705.jpeg",
+      "originalName": "pobrane.jpeg",
+      "mimetype": "image/jpeg",
+      "size": 8144
+    },
+    {
+      "id": "395b4cd7-eccc-456f-9e96-31cf125023be",
+      "name": "file-1704446989198.jpeg",
+      "originalName": "pobrane (1).jpeg",
+      "mimetype": "image/jpeg",
+      "size": 5112
+    }
+  ]
 }

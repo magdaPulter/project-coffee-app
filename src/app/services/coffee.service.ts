@@ -29,4 +29,8 @@ export class CoffeeService {
   delete(id: number): Observable<CoffeeModel> {
     return this._httpClient.delete<CoffeeModel>(`http://localhost:3000/coffee/${id}`)
   }
+
+  upload(file: FormData): Observable<void> {
+    return this._httpClient.post<void> ('http://localhost:3000/files', file)
+  }
 }

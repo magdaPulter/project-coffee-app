@@ -10,9 +10,9 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { CardComponent } from "../card/card.component";
 import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
 import { TASTE } from 'src/app/utils/taste';
-import { CoffeeModel } from 'src/models/coffee.model';
-import { TasteModel } from 'src/models/taste.model';
-import { CoffeeQueryModel } from 'src/models/coffee.query-model';
+import { CoffeeModel } from 'src/app/models/coffee.model';
+import { TasteModel } from 'src/app/models/taste.model';
+import { CoffeeQueryModel } from 'src/app/models/coffee.query-model';
 
 @Component({
   selector: 'app-detail',

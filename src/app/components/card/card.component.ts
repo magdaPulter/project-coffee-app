@@ -4,7 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { ShortDescriptionPipe } from 'src/app/pipes/short-description.pipe';
-import { CoffeeModel } from 'src/models/coffee.model';
+import { CoffeeModel } from 'src/app/models/coffee.model';
 
 @Component({
   selector: 'app-card',

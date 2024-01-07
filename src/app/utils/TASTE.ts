@@ -1,4 +1,4 @@
-import { TasteModel } from "../../models/taste.model";
+import { TasteModel } from "../models/taste.model";
 
 export const TASTE: TasteModel[] = [
   {

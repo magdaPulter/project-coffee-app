@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
@@ -8,38 +8,16 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { Observable, of } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { map, tap } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CoffeeService } from '../../services/coffee.service';
 import { PROCESS } from 'src/app/utils/process';
-import { TasteModel } from 'src/models/taste.model';
-import { ProcessModel } from 'src/models/process.model';
-import { CoffeeQueryModel } from 'src/models/coffee.query-model';
-import { HttpClient } from '@angular/common/http';
+import { TasteModel } from 'src/app/models/taste.model';
+import { ProcessModel } from 'src/app/models/process.model';
+import { CoffeeQueryModel } from 'src/app/models/coffee.query-model';
+import { UploadFileService } from 'src/app/services/upload-file.service';
+import { TASTE } from 'src/app/utils/taste';
 
-
-export const TASTE: TasteModel[] = [
-  {
-    name: 'fruity',
-    id: '1'
-  },
-  {
-    name: 'sweet',
-    id: '2'
-  },
-  {
-    name: 'acidic',
-    id: '3'
-  },
-  {
-    name: 'floral',
-    id: '4'
-  },
-  {
-    name: 'nutty/cocoa',
-    id: '5'
-  },
-];
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
@@ -57,7 +35,7 @@ export class DialogComponent implements OnInit {
     characteristic: new FormGroup({})
   });
 
-  constructor(public dialogRef: MatDialogRef<DialogComponent>, private _coffeeService: CoffeeService, @Inject(MAT_DIALOG_DATA) public data: CoffeeQueryModel, private _router: Router, private http: HttpClient) {
+  constructor(public dialogRef: MatDialogRef<DialogComponent>, private _coffeeService: CoffeeService, @Inject(MAT_DIALOG_DATA) public data: CoffeeQueryModel, private _router: Router, private _uploadFileService: UploadFileService) {
   }
 
 
@@ -75,12 +53,12 @@ export class DialogComponent implements OnInit {
   ngOnInit(): void {
     this.coffeeForm.patchValue(this.data)
   }
-
+  
   onFileSelected(event: any){ // change the type 
     const file = event.target.files[0]
     const formData = new FormData()
     formData.append('file', file, file.name)
-    this._coffeeService.upload(formData).subscribe()
+    this._uploadFileService.upload(formData).subscribe()
   }
 
   onFormSubmit(form: FormGroup) {

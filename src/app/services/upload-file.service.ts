@@ -20,7 +20,7 @@ export class UploadFileService {
     return this._httpClient.get<FileModel[]>('http://localhost:3000/files')
   } 
 
-  getOneImage(imageId: string): Observable<FileModel> {
-    return this._httpClient.get<FileModel>(`http://localhost:3000/files/${imageId}`)
+  getOneImage(imageId: string): Observable<string> {
+    return this._httpClient.get<string>(`http://localhost:3000/files/${imageId}`)
   }
 }

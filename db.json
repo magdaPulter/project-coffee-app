@@ -10,9 +10,9 @@
         "id": "1"
       },
       "characteristic": {
-        "1": true,
+        "1": false,
         "2": false,
-        "3": true,
+        "3": false,
         "4": false,
         "5": false
       },
@@ -93,8 +93,8 @@
     {
       "name": "nowa kawa",
       "origin": "Kenia",
+      "image": "http://localhost:3000/files/ff44c85b-e6e4-46f9-98de-bbd9e4a41d69",
       "description": "",
-      "image": "",
       "process": "",
       "characteristic": {
         "1": false,
@@ -104,6 +104,51 @@
         "5": false
       },
       "id": 17
+    },
+    {
+      "name": "kawa",
+      "origin": "kawa",
+      "image": "http://localhost:3000/files/395b4cd7-eccc-456f-9e96-31cf125023be",
+      "description": "",
+      "process": "",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "id": 18
+    },
+    {
+      "name": "kawa",
+      "origin": "kawa",
+      "image": "http://localhost:3000/files/e64edaf5-54d9-4a6e-a6be-2302290560cb",
+      "description": "",
+      "process": "",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "id": 19
+    },
+    {
+      "name": "Kawa",
+      "origin": "kawa",
+      "image": "http://localhost:3000/files/ff44c85b-e6e4-46f9-98de-bbd9e4a41d69",
+      "description": "",
+      "process": "",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "id": 20
     }
   ],
   "files": [
@@ -120,6 +165,34 @@
       "originalName": "pobrane (1).jpeg",
       "mimetype": "image/jpeg",
       "size": 5112
+    },
+    {
+      "id": "b1096af2-c455-4068-bdfc-269eed58a89a",
+      "name": "file-1704708879820",
+      "originalName": "IMG_9618-e1476943925492-1920x1280.jpg",
+      "mimetype": "image/jpeg",
+      "size": 538003
+    },
+    {
+      "id": "039ea0cc-9687-49d5-bb71-2deee699f318",
+      "name": "file-1704709274254",
+      "originalName": "kawa-easy-resize-com_5d0c.jpg.webp",
+      "mimetype": "image/webp",
+      "size": 59886
+    },
+    {
+      "id": "20532141-9ea2-4d18-9303-8e000780d40e",
+      "name": "file-1704709297790",
+      "originalName": "pobrane (1).jpeg",
+      "mimetype": "image/jpeg",
+      "size": 5112
+    },
+    {
+      "id": "e64edaf5-54d9-4a6e-a6be-2302290560cb",
+      "name": "file-1704878895265",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
     }
   ]
 }

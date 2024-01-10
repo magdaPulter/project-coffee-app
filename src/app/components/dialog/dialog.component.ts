@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, Inject, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
@@ -7,16 +7,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
-import { Observable, of } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
-import { ActivatedRoute, Router } from '@angular/router';
+import { BehaviorSubject, Observable, combineLatest, of } from 'rxjs';
+import { map, switchMap, take, takeLast, tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { FileModel } from '../../models/file.model';
 import { CoffeeService } from '../../services/coffee.service';
-import { PROCESS } from 'src/app/utils/process';
-import { TasteModel } from 'src/app/models/taste.model';
-import { ProcessModel } from 'src/app/models/process.model';
-import { CoffeeQueryModel } from 'src/app/models/coffee.query-model';
-import { UploadFileService } from 'src/app/services/upload-file.service';
-import { TASTE } from 'src/app/utils/taste';
+import { CoffeeQueryModel } from '../../models/coffee.query-model';
+import { UploadFileService } from '../../services/upload-file.service';
+import { TasteModel } from '../../models/taste.model';
+import { TASTE } from '../../utils/taste';
+import { ProcessModel } from '../../models/process.model';
+import { PROCESS } from '../../utils/process';
 
 @Component({
   selector: 'app-dialog',
@@ -34,11 +35,14 @@ export class DialogComponent implements OnInit {
     process: new FormControl(''),
     characteristic: new FormGroup({})
   });
+ 
+  private _uploadedFileNameSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  public uploadedFileName$: Observable<string> = this._uploadedFileNameSubject.asObservable();
+
+  readonly allFiles$: Observable<FileModel[]> = this._uploadFileService.getFile()
 
   constructor(public dialogRef: MatDialogRef<DialogComponent>, private _coffeeService: CoffeeService, @Inject(MAT_DIALOG_DATA) public data: CoffeeQueryModel, private _router: Router, private _uploadFileService: UploadFileService) {
   }
-
-
 
   readonly taste$: Observable<TasteModel[]> = of(TASTE).pipe(
     tap((tastes) => {
@@ -53,13 +57,30 @@ export class DialogComponent implements OnInit {
   ngOnInit(): void {
     this.coffeeForm.patchValue(this.data)
   }
-  
-  onFileSelected(event: any){ // change the type 
+
+  onFileSelected(event: any) { // change the type 
     const file = event.target.files[0]
     const formData = new FormData()
     formData.append('file', file, file.name)
     this._uploadFileService.upload(formData).subscribe()
+    this._uploadedFileNameSubject.next(file.name) 
   }
+
+  onfileSave(){
+    this.uploadedFileUrl$.pipe(
+      tap(fileUrl => {
+        this.coffeeForm.get('image')?.patchValue(fileUrl)
+      })
+    ).subscribe()
+  }
+
+  readonly uploadedFileUrl$: Observable<string> = combineLatest([
+    this.allFiles$,
+    this.uploadedFileName$
+  ]).pipe(map(([allFiles, uploadedName]) => {
+      const fileId = allFiles.filter(file => file.originalName === uploadedName)[0].id
+      return `http://localhost:3000/files/${fileId}`
+  }))
 
   onFormSubmit(form: FormGroup) {
     if (form.valid) {
@@ -73,10 +94,10 @@ export class DialogComponent implements OnInit {
           name: form.get('name')!.value,
           origin: form.get('origin')!.value,
           description: form.get('description')!.value,
-          image: form.get('image')!.value,
+          image: form.get('image')!.value, 
           process: form.get('process')!.value,
           characteristic: form.get('characteristic')!.value
-        }).subscribe()
+        }).subscribe()   
       }
     }
   }

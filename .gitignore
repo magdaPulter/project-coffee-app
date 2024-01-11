@@ -6,7 +6,8 @@
 /out-tsc
 /bazel-out
 
-database/files/
+database/files/*
+!database/files/.gitkeep
 
 # Node
 /node_modules

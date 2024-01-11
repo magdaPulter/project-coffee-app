@@ -12,8 +12,8 @@ export class UploadFileService {
   constructor(private _httpClient: HttpClient) { }
 
 
-  upload(file: FormData): Observable<void> {
-    return this._httpClient.post<void> ('http://localhost:3000/files', file)
+  upload(file: FormData): Observable<FileModel> {
+    return this._httpClient.post<FileModel> ('http://localhost:3000/files', file)
   }
   
   getFile(): Observable<FileModel[]> {

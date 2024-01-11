@@ -3,7 +3,7 @@
     {
       "name": "La Provincia",
       "origin": "Colombia",
-      "image": "",
+      "image": "http://localhost:3000/files/395b4cd7-eccc-456f-9e96-31cf125023be",
       "description": "ripe fruit is hand-picked by farmers and processed on their farms. They are pulped and fermented in bags, buckets or tanks for 16 to 38 hours. After fermentation, the coffee is washed in clean water and laid out on terraces to dry, which takes 8 to 14 days.",
       "process": {
         "name": "washed",
@@ -93,7 +93,7 @@
     {
       "name": "nowa kawa",
       "origin": "Kenia",
-      "image": "http://localhost:3000/files/ff44c85b-e6e4-46f9-98de-bbd9e4a41d69",
+      "image": "http://localhost:3000/files/039ea0cc-9687-49d5-bb71-2deee699f318",
       "description": "",
       "process": "",
       "characteristic": {
@@ -149,6 +149,21 @@
         "5": false
       },
       "id": 20
+    },
+    {
+      "name": "kawa",
+      "origin": "kawa",
+      "image": "http://localhost:3000/files/ff44c85b-e6e4-46f9-98de-bbd9e4a41d69",
+      "description": "",
+      "process": "",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "id": 21
     }
   ],
   "files": [
@@ -193,6 +208,62 @@
       "originalName": "coffee-brain-caffeine-neuroscincces.webp",
       "mimetype": "image/webp",
       "size": 112750
+    },
+    {
+      "id": "59692cd5-ab5f-45a5-9db3-72b9854d1cdc",
+      "name": "file-1704990966221",
+      "originalName": "pobrane (1).jpeg",
+      "mimetype": "image/jpeg",
+      "size": 5112
+    },
+    {
+      "id": "967a1523-975f-466c-9eb8-2219733fec28",
+      "name": "file-1704990979076",
+      "originalName": "pobrane.jpeg",
+      "mimetype": "image/jpeg",
+      "size": 8144
+    },
+    {
+      "id": "8526d937-a666-485f-9680-7f59bf6ba517",
+      "name": "file-1704990995560",
+      "originalName": "pobrane.jpeg",
+      "mimetype": "image/jpeg",
+      "size": 8144
+    },
+    {
+      "id": "220f80a3-3bfa-4194-ac16-326170f0b3a8",
+      "name": "file-1704991335231",
+      "originalName": "pobrane.jpeg",
+      "mimetype": "image/jpeg",
+      "size": 8144
+    },
+    {
+      "id": "975122c0-b931-4b02-b0da-cfef70884a9d",
+      "name": "file-1704992790524",
+      "originalName": "kawa-easy-resize-com_5d0c.jpg.webp",
+      "mimetype": "image/webp",
+      "size": 59886
+    },
+    {
+      "id": "d18cfb84-be29-4b33-a258-dd089bd5cd83",
+      "name": "file-1704992847459",
+      "originalName": "IMG_9618-e1476943925492-1920x1280.jpg",
+      "mimetype": "image/jpeg",
+      "size": 538003
+    },
+    {
+      "id": "580b7935-0325-4550-8b06-144148f17a3c",
+      "name": "file-1704992854718",
+      "originalName": "IMG_9618-e1476943925492-1920x1280.jpg",
+      "mimetype": "image/jpeg",
+      "size": 538003
+    },
+    {
+      "id": "72be154e-a38f-4fe0-a6a3-13f0d021385d",
+      "name": "file-1704992905041",
+      "originalName": "pobrane (1).jpeg",
+      "mimetype": "image/jpeg",
+      "size": 5112
     }
   ]
 }

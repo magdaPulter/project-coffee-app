@@ -3,7 +3,7 @@
     {
       "name": "La Provincia",
       "origin": "Colombia",
-      "image": "http://localhost:3000/files/395b4cd7-eccc-456f-9e96-31cf125023be",
+      "image": "http://localhost:3000/files/04888641-d7f7-49ff-931c-c5fe1700221f",
       "description": "ripe fruit is hand-picked by farmers and processed on their farms. They are pulped and fermented in bags, buckets or tanks for 16 to 38 hours. After fermentation, the coffee is washed in clean water and laid out on terraces to dry, which takes 8 to 14 days.",
       "process": {
         "name": "washed",
@@ -21,7 +21,7 @@
     {
       "name": "Fugi Ikizere",
       "origin": "Rwanda",
-      "image": "",
+      "image": "http://localhost:3000/files/cb770c4e-aa31-4057-a8ec-fee5d9c58f57",
       "description": "she initiated the creation of the Ikizere group of farmers in Rwanda, composed of 60 single mothers who were supposed to grow coffee together and thus achieve financial and personal success. The Ikizere group meets regularly to share their experiences and learn from each other. Baho supports women through training in good agricultural practices (GAP), coffee cultivation and high-quality processing.",
       "process": {
         "name": "natural",
@@ -29,10 +29,10 @@
       },
       "characteristic": {
         "1": false,
-        "2": true,
+        "2": false,
         "3": false,
-        "4": true,
-        "5": true
+        "4": false,
+        "5": false
       },
       "id": 13
     },
@@ -136,9 +136,9 @@
       "id": 19
     },
     {
-      "name": "Kawa",
+      "name": "koawa",
       "origin": "kawa",
-      "image": "http://localhost:3000/files/ff44c85b-e6e4-46f9-98de-bbd9e4a41d69",
+      "image": "http://localhost:3000/files/25e4f764-5d22-4076-8c95-96235a8b4f69",
       "description": "",
       "process": "",
       "characteristic": {
@@ -151,10 +151,10 @@
       "id": 20
     },
     {
-      "name": "kawa",
+      "name": "kwa",
       "origin": "kawa",
-      "image": "http://localhost:3000/files/ff44c85b-e6e4-46f9-98de-bbd9e4a41d69",
       "description": "",
+      "image": "http://localhost:3000/files/ae8b169c-dcf4-49a9-b963-c0ef3e70557d",
       "process": "",
       "characteristic": {
         "1": false,
@@ -264,6 +264,104 @@
       "originalName": "pobrane (1).jpeg",
       "mimetype": "image/jpeg",
       "size": 5112
+    },
+    {
+      "id": "d6a6634f-02a4-438f-b326-ecfae5f453d4",
+      "name": "file-1704993471569",
+      "originalName": "pobrane (1).jpeg",
+      "mimetype": "image/jpeg",
+      "size": 5112
+    },
+    {
+      "id": "04888641-d7f7-49ff-931c-c5fe1700221f",
+      "name": "file-1704993499248",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "0a6bfa71-4358-4c4b-92d3-03868f62bc57",
+      "name": "file-1704993507371",
+      "originalName": "pobrane (1).jpeg",
+      "mimetype": "image/jpeg",
+      "size": 5112
+    },
+    {
+      "id": "d963f5ff-722f-447a-bfaa-2b282ebfefde",
+      "name": "file-1704993523583",
+      "originalName": "IMG_9618-e1476943925492-1920x1280.jpg",
+      "mimetype": "image/jpeg",
+      "size": 538003
+    },
+    {
+      "id": "8bd23e1d-b0c6-4fab-95f0-14e3403bc0c0",
+      "name": "file-1704993553190",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "16036c64-d897-445a-bf38-4ae2af13875c",
+      "name": "file-1704993566679",
+      "originalName": "pobrane.jpeg",
+      "mimetype": "image/jpeg",
+      "size": 8144
+    },
+    {
+      "id": "c67eba5f-c1de-42f8-9784-1167f4a2760b",
+      "name": "file-1704993577362",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "862521a4-9e99-4d60-8cd4-63ad3e12998e",
+      "name": "file-1704994960550",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "fe8920e2-3b03-4371-8971-53650d6a79f4",
+      "name": "file-1704997175776",
+      "originalName": "IMG_9618-e1476943925492-1920x1280.jpg",
+      "mimetype": "image/jpeg",
+      "size": 538003
+    },
+    {
+      "id": "bc428db3-259b-4ba3-8dad-00342bd683bc",
+      "name": "file-1704997188594",
+      "originalName": "kawa-easy-resize-com_5d0c.jpg.webp",
+      "mimetype": "image/webp",
+      "size": 59886
+    },
+    {
+      "id": "73157333-02cc-4be9-8534-88a444c1f7e1",
+      "name": "file-1705046803106",
+      "originalName": "pobrane.jpeg",
+      "mimetype": "image/jpeg",
+      "size": 8144
+    },
+    {
+      "id": "25e4f764-5d22-4076-8c95-96235a8b4f69",
+      "name": "file-1705046817494",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "ae8b169c-dcf4-49a9-b963-c0ef3e70557d",
+      "name": "file-1705046829749",
+      "originalName": "kawa-easy-resize-com_5d0c.jpg.webp",
+      "mimetype": "image/webp",
+      "size": 59886
+    },
+    {
+      "id": "cb770c4e-aa31-4057-a8ec-fee5d9c58f57",
+      "name": "file-1705046933799",
+      "originalName": "IMG_9618-e1476943925492-1920x1280.jpg",
+      "mimetype": "image/jpeg",
+      "size": 538003
     }
   ]
 }

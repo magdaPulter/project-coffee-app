@@ -7,8 +7,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
-import { BehaviorSubject, Observable, combineLatest, of } from 'rxjs';
-import { map, switchMap, take, takeLast, tap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { FileModel } from '../../models/file.model';
 import { CoffeeService } from '../../services/coffee.service';
@@ -36,11 +36,6 @@ export class DialogComponent implements OnInit {
     characteristic: new FormGroup({})
   });
  
-  private _uploadedFileNameSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
-  public uploadedFileName$: Observable<string> = this._uploadedFileNameSubject.asObservable();
-
-  readonly allFiles$: Observable<FileModel[]> = this._uploadFileService.getFile()
-
   constructor(public dialogRef: MatDialogRef<DialogComponent>, private _coffeeService: CoffeeService, @Inject(MAT_DIALOG_DATA) public data: CoffeeQueryModel, private _router: Router, private _uploadFileService: UploadFileService) {
   }
 
@@ -58,29 +53,12 @@ export class DialogComponent implements OnInit {
     this.coffeeForm.patchValue(this.data)
   }
 
-  onFileSelected(event: any) { // change the type 
-    const file = event.target.files[0]
-    const formData = new FormData()
-    formData.append('file', file, file.name)
-    this._uploadFileService.upload(formData).subscribe()
-    this._uploadedFileNameSubject.next(file.name) 
-  }
+  onFileSelected(event: Event) : void { 
+    this._uploadFileService.upload(event).subscribe((uploadedFile) => {
+      this.coffeeForm.get('image')?.patchValue(`http://localhost:3000/files/${uploadedFile.id}`)
+    }) 
+  } 
 
-  onfileSave(){
-    this.uploadedFileUrl$.pipe(
-      tap(fileUrl => {
-        this.coffeeForm.get('image')?.patchValue(fileUrl)
-      })
-    ).subscribe()
-  }
-
-  readonly uploadedFileUrl$: Observable<string> = combineLatest([
-    this.allFiles$,
-    this.uploadedFileName$
-  ]).pipe(map(([allFiles, uploadedName]) => {
-      const fileId = allFiles.filter(file => file.originalName === uploadedName)[0].id
-      return `http://localhost:3000/files/${fileId}`
-  }))
 
   onFormSubmit(form: FormGroup) {
     if (form.valid) {

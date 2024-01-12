@@ -8,19 +8,14 @@ import { FileModel } from '../models/file.model';
 })
 export class UploadFileService {
   
-
   constructor(private _httpClient: HttpClient) { }
-
-
-  upload(file: FormData): Observable<FileModel> {
-    return this._httpClient.post<FileModel> ('http://localhost:3000/files', file)
-  }
   
-  getFile(): Observable<FileModel[]> {
-    return this._httpClient.get<FileModel[]>('http://localhost:3000/files')
-  } 
-
-  getOneImage(imageId: string): Observable<string> {
-    return this._httpClient.get<string>(`http://localhost:3000/files/${imageId}`)
+  upload(event: Event): Observable<FileModel>{
+      const files = (event.target as HTMLInputElement).files as FileList
+      const file = files[0]
+      const formData = new FormData()
+      formData.append('file', file, file.name)
+      
+      return this._httpClient.post<FileModel> ('http://localhost:3000/files', formData)
   }
 }

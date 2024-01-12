@@ -36,8 +36,6 @@ export class DialogComponent implements OnInit {
     characteristic: new FormGroup({})
   });
  
-  readonly allFiles$: Observable<FileModel[]> = this._uploadFileService.getFile()
-
   constructor(public dialogRef: MatDialogRef<DialogComponent>, private _coffeeService: CoffeeService, @Inject(MAT_DIALOG_DATA) public data: CoffeeQueryModel, private _router: Router, private _uploadFileService: UploadFileService) {
   }
 
@@ -56,15 +54,9 @@ export class DialogComponent implements OnInit {
   }
 
   onFileSelected(event: Event) : void { 
-    if((event.target as HTMLInputElement).files && (event.target as HTMLInputElement).files) {
-        const files = (event.target as HTMLInputElement).files as FileList
-        const file = files[0]
-        const formData = new FormData()
-        formData.append('file', file, file.name)
-        this._uploadFileService.upload(formData).subscribe((uploadedFile)=>{
-          this.coffeeForm.get('image')?.patchValue(`http://localhost:3000/files/${uploadedFile.id}`)
-        })  
-    }
+    this._uploadFileService.upload(event).subscribe((uploadedFile) => {
+      this.coffeeForm.get('image')?.patchValue(`http://localhost:3000/files/${uploadedFile.id}`)
+    }) 
   } 
 
 

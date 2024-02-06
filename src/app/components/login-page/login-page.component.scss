@@ -12,10 +12,6 @@ form {
 .buttons {
   width: 200px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-}
-
-.btn.active {
-  background-color: rgba(189, 106, 23, 0.8);
-  color: white;
 }

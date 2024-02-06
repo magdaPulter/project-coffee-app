@@ -164,6 +164,21 @@
         "5": false
       },
       "id": 21
+    },
+    {
+      "name": "kawa1",
+      "origin": "kawa1",
+      "image": "http://localhost:3000/files/3f9ef8c6-a037-42fb-ad1e-7afcf4d58ae1",
+      "description": "",
+      "process": "",
+      "characteristic": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "id": 22
     }
   ],
   "files": [
@@ -359,6 +374,20 @@
     {
       "id": "cb770c4e-aa31-4057-a8ec-fee5d9c58f57",
       "name": "file-1705046933799",
+      "originalName": "IMG_9618-e1476943925492-1920x1280.jpg",
+      "mimetype": "image/jpeg",
+      "size": 538003
+    },
+    {
+      "id": "9327d6da-b86c-4ecb-b43e-5a63f6cb74e9",
+      "name": "file-1707242683276",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "3f9ef8c6-a037-42fb-ad1e-7afcf4d58ae1",
+      "name": "file-1707242702582",
       "originalName": "IMG_9618-e1476943925492-1920x1280.jpg",
       "mimetype": "image/jpeg",
       "size": 538003

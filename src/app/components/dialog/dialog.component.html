@@ -3,7 +3,7 @@
         <h1 mat-dialog-title>Coffee Form</h1>
     </div>
     <form [formGroup]="coffeeForm" (ngSubmit)="onFormSubmit(coffeeForm)">
-        <input type="file" (change)="onFileSelected($event)">   
+        <input type="file" (change)="onFileSelected($event)">
         <!-- <button type="button" mat-button (click)="onfileSave()">Save File</button> -->
         <mat-dialog-content>
             <div>
@@ -22,13 +22,6 @@
             </div>
             <div>
                 <mat-form-field>
-                    <mat-label>Image</mat-label>
-                    <input matInput formControlName="image">
-                    <mat-error *ngIf="coffeeForm.get('image')!.invalid">origin is required</mat-error>
-                </mat-form-field>
-            </div>
-            <div>
-                <mat-form-field>
                     <mat-label>Description</mat-label>
                     <textarea matInput formControlName="description"></textarea>
                 </mat-form-field>
@@ -36,8 +29,9 @@
             <div>
                 <mat-radio-group aria-label="Select an option" formControlName="process">
                     <mat-label>Process</mat-label>
-                    <mat-radio-button *ngFor="let process of process$ | async" [value]="process" >{{process.name}}</mat-radio-button>
-                 </mat-radio-group>
+                    <mat-radio-button *ngFor="let process of process$ | async"
+                        [value]="process">{{process.name}}</mat-radio-button>
+                </mat-radio-group>
             </div>
             <div>
                 <section class="example-section" formGroupName="characteristic">
@@ -47,11 +41,11 @@
                 </section>
             </div>
         </mat-dialog-content>
-    
+
         <mat-dialog-actions>
             <button mat-button [mat-dialog-close]="false">Cancel</button>
             <button mat-button type="submit" [mat-dialog-close]="coffeeForm">{{data ? "Update" : "Save"}}</button>
         </mat-dialog-actions>
-    
+
     </form>
 </div>

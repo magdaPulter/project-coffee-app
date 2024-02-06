@@ -4,7 +4,6 @@
     </div>
     <form [formGroup]="coffeeForm" (ngSubmit)="onFormSubmit(coffeeForm)">
         <input type="file" (change)="onFileSelected($event)">
-        <!-- <button type="button" mat-button (click)="onfileSave()">Save File</button> -->
         <mat-dialog-content>
             <div>
                 <mat-form-field>
@@ -42,10 +41,10 @@
             </div>
         </mat-dialog-content>
 
-        <mat-dialog-actions>
+        <mat-dialog-actions class="form-btn">
             <button mat-button [mat-dialog-close]="false">Cancel</button>
-            <button mat-button type="submit" [mat-dialog-close]="coffeeForm">{{data ? "Update" : "Save"}}</button>
+            <button mat-button type="submit" [mat-dialog-close]="coffeeForm" class="confirm-btn">{{data ? "Update" :
+                "Save"}}</button>
         </mat-dialog-actions>
-
     </form>
 </div>

@@ -1,7 +1,25 @@
-import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, Inject, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  AfterContentChecked,
+  AfterContentInit,
+  AfterViewInit,
+  Component,
+  Inject,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import {
+  MAT_DIALOG_DATA,
+  MatDialogModule,
+  MatDialogRef,
+} from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
@@ -24,7 +42,16 @@ import { PROCESS } from '../../utils/process';
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss'],
   standalone: true,
-  imports: [MatDialogModule, MatButtonModule, MatFormFieldModule, MatRadioModule, MatCheckboxModule, MatInputModule, ReactiveFormsModule, CommonModule]
+  imports: [
+    MatDialogModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    CommonModule,
+  ],
 })
 export class DialogComponent implements OnInit {
   readonly coffeeForm: FormGroup = new FormGroup({
@@ -33,49 +60,60 @@ export class DialogComponent implements OnInit {
     image: new FormControl(''),
     description: new FormControl(''),
     process: new FormControl(''),
-    characteristic: new FormGroup({})
+    characteristic: new FormGroup({}),
   });
- 
-  constructor(public dialogRef: MatDialogRef<DialogComponent>, private _coffeeService: CoffeeService, @Inject(MAT_DIALOG_DATA) public data: CoffeeQueryModel, private _router: Router, private _uploadFileService: UploadFileService) {
-  }
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogComponent>,
+    private _coffeeService: CoffeeService,
+    @Inject(MAT_DIALOG_DATA) public data: CoffeeQueryModel,
+    private _router: Router,
+    private _uploadFileService: UploadFileService
+  ) {}
 
   readonly taste$: Observable<TasteModel[]> = of(TASTE).pipe(
     tap((tastes) => {
       tastes.forEach((taste) => {
-        (this.coffeeForm.get('characteristic') as FormGroup).addControl(taste.id, new FormControl(false))
-      })
+        (this.coffeeForm.get('characteristic') as FormGroup).addControl(
+          taste.id,
+          new FormControl(false)
+        );
+      });
     })
-  )
+  );
 
-  readonly process$: Observable<ProcessModel[]> = of(PROCESS)
+  readonly process$: Observable<ProcessModel[]> = of(PROCESS);
 
   ngOnInit(): void {
-    this.coffeeForm.patchValue(this.data)
+    this.coffeeForm.patchValue(this.data);
   }
 
-  onFileSelected(event: Event) : void { 
+  onFileSelected(event: Event): void {
     this._uploadFileService.upload(event).subscribe((uploadedFile) => {
-      this.coffeeForm.get('image')?.patchValue(`http://localhost:3000/files/${uploadedFile.id}`)
-    }) 
-  } 
-
+      this.coffeeForm
+        .get('image')
+        ?.patchValue(`http://localhost:3000/files/${uploadedFile.id}`);
+      // `http://localhost:3000/files/${uploadedFile.id}`
+    });
+  }
 
   onFormSubmit(form: FormGroup) {
     if (form.valid) {
       if (this.data) {
-        this._coffeeService.update(this.data.id!, form.value
-        ).subscribe(() => {
-          this._router.navigate([''])
-        })
+        this._coffeeService.update(this.data.id!, form.value).subscribe(() => {
+          this._router.navigate(['']);
+        });
       } else {
-        this._coffeeService.create({
-          name: form.get('name')!.value,
-          origin: form.get('origin')!.value,
-          description: form.get('description')!.value,
-          image: form.get('image')!.value, 
-          process: form.get('process')!.value,
-          characteristic: form.get('characteristic')!.value
-        }).subscribe()   
+        this._coffeeService
+          .create({
+            name: form.get('name')!.value,
+            origin: form.get('origin')!.value,
+            description: form.get('description')!.value,
+            image: form.get('image')!.value,
+            process: form.get('process')!.value,
+            characteristic: form.get('characteristic')!.value,
+          })
+          .subscribe();
       }
     }
   }

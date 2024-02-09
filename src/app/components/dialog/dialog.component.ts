@@ -90,10 +90,7 @@ export class DialogComponent implements OnInit {
 
   onFileSelected(event: Event): void {
     this._uploadFileService.upload(event).subscribe((uploadedFile) => {
-      this.coffeeForm
-        .get('image')
-        ?.patchValue(`http://localhost:3000/files/${uploadedFile.id}`);
-      // `http://localhost:3000/files/${uploadedFile.id}`
+      this.coffeeForm.get('image')?.patchValue(uploadedFile.id);
     });
   }
 

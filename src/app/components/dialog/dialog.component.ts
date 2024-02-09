@@ -30,7 +30,7 @@ import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { FileModel } from '../../models/file.model';
 import { CoffeeService } from '../../services/coffee.service';
-import { CoffeeQueryModel } from '../../models/coffee.query-model';
+import { CoffeeQueryModel } from '../../querymodels/coffee.query-model';
 import { UploadFileService } from '../../services/upload-file.service';
 import { TasteModel } from '../../models/taste.model';
 import { TASTE } from '../../utils/taste';

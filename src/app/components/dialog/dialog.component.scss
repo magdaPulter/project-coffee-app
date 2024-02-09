@@ -1,11 +1,16 @@
-@import '../../styles/config';
+@import "../../styles/config";
 
-.dialog{
-    background-color: $light-secondary;
+.dialog {
+  background-color: $light-secondary;
 }
 
 form {
-    button{
-        @include btn-primary
-    }
+  button.confirm-btn {
+    @include btn-primary;
+  }
+}
+
+.form-btn {
+  display: flex;
+  justify-content: end;
 }

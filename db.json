@@ -3,7 +3,7 @@
     {
       "name": "La Provincia",
       "origin": "Colombia",
-      "image": "http://localhost:3000/files/04888641-d7f7-49ff-931c-c5fe1700221f",
+      "image": "a85c1858-2227-43c9-abd9-088d90f56a78",
       "description": "ripe fruit is hand-picked by farmers and processed on their farms. They are pulped and fermented in bags, buckets or tanks for 16 to 38 hours. After fermentation, the coffee is washed in clean water and laid out on terraces to dry, which takes 8 to 14 days.",
       "process": {
         "name": "washed",
@@ -21,7 +21,7 @@
     {
       "name": "Fugi Ikizere",
       "origin": "Rwanda",
-      "image": "http://localhost:3000/files/cb770c4e-aa31-4057-a8ec-fee5d9c58f57",
+      "image": "f1f9d88b-7bb8-42fa-9812-fe2e66e4917a",
       "description": "she initiated the creation of the Ikizere group of farmers in Rwanda, composed of 60 single mothers who were supposed to grow coffee together and thus achieve financial and personal success. The Ikizere group meets regularly to share their experiences and learn from each other. Baho supports women through training in good agricultural practices (GAP), coffee cultivation and high-quality processing.",
       "process": {
         "name": "natural",
@@ -39,7 +39,7 @@
     {
       "name": "Las Huancas",
       "origin": "Peru",
-      "image": "",
+      "image": "43e6b159-a792-4d8b-9369-d9e018081dbe",
       "description": "Huancas has a warm, tropical climate, favorable for growing coffee and other plants. Farmers also use the richness of the local mountains and their microclimate, which allows them to grow coffees with distinctive flavors.",
       "process": {
         "name": "natural",
@@ -47,10 +47,10 @@
       },
       "characteristic": {
         "1": false,
-        "2": true,
+        "2": false,
         "3": false,
         "4": false,
-        "5": true
+        "5": false
       },
       "id": 14
     },
@@ -73,97 +73,19 @@
       "id": 15
     },
     {
-      "name": "Kurura",
-      "origin": "Kenia",
-      "image": "",
-      "description": "Kirura is one of 13 processing stations gathered as the Komothai group. Komothai was founded in 1959 and has 9,951 members, 1,047 of whom supply their coffee to Kirura. The station is run by a three-person board of directors, subject to changes consistent with the guidelines of Komothai's general board.",
-      "process": {
-        "name": "washed",
-        "id": "1"
-      },
+      "name": "kawa",
+      "origin": "kawa",
+      "description": "",
+      "image": "3fffc14e-28fb-4af4-aa12-872c1c40451d",
+      "process": "",
       "characteristic": {
         "1": false,
-        "2": true,
+        "2": false,
         "3": false,
         "4": false,
         "5": false
       },
       "id": 16
-    },
-    {
-      "name": "nowa kawa",
-      "origin": "Kenia",
-      "image": "http://localhost:3000/files/039ea0cc-9687-49d5-bb71-2deee699f318",
-      "description": "",
-      "process": "",
-      "characteristic": {
-        "1": false,
-        "2": false,
-        "3": false,
-        "4": false,
-        "5": false
-      },
-      "id": 17
-    },
-    {
-      "name": "kawa",
-      "origin": "kawa",
-      "image": "http://localhost:3000/files/395b4cd7-eccc-456f-9e96-31cf125023be",
-      "description": "",
-      "process": "",
-      "characteristic": {
-        "1": false,
-        "2": false,
-        "3": false,
-        "4": false,
-        "5": false
-      },
-      "id": 18
-    },
-    {
-      "name": "kawa",
-      "origin": "kawa",
-      "image": "http://localhost:3000/files/e64edaf5-54d9-4a6e-a6be-2302290560cb",
-      "description": "",
-      "process": "",
-      "characteristic": {
-        "1": false,
-        "2": false,
-        "3": false,
-        "4": false,
-        "5": false
-      },
-      "id": 19
-    },
-    {
-      "name": "koawa",
-      "origin": "kawa",
-      "image": "http://localhost:3000/files/25e4f764-5d22-4076-8c95-96235a8b4f69",
-      "description": "",
-      "process": "",
-      "characteristic": {
-        "1": false,
-        "2": false,
-        "3": false,
-        "4": false,
-        "5": false
-      },
-      "id": 20
-    },
-    {
-      "name": "kwa",
-      "origin": "kawa",
-      "description": "",
-      "image": "http://localhost:3000/files/ae8b169c-dcf4-49a9-b963-c0ef3e70557d",
-      "process": "",
-      "characteristic": {
-        "1": false,
-        "2": false,
-        "3": false,
-        "4": false,
-        "5": false
-      },
-      "id": 21
     }
   ],
   "files": [
@@ -362,6 +284,97 @@
       "originalName": "IMG_9618-e1476943925492-1920x1280.jpg",
       "mimetype": "image/jpeg",
       "size": 538003
+    },
+    {
+      "id": "9327d6da-b86c-4ecb-b43e-5a63f6cb74e9",
+      "name": "file-1707242683276",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "3f9ef8c6-a037-42fb-ad1e-7afcf4d58ae1",
+      "name": "file-1707242702582",
+      "originalName": "IMG_9618-e1476943925492-1920x1280.jpg",
+      "mimetype": "image/jpeg",
+      "size": 538003
+    },
+    {
+      "id": "28674d29-2f1d-4828-93a9-27430ba9640b",
+      "name": "file-1707290944039",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "9538fe5c-5a27-4a6e-bfdb-c500eba2ee53",
+      "name": "file-1707291231905",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "cffbed0c-6bc2-4cf3-b7fc-304f54d82d00",
+      "name": "file-1707291439279",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "b7171821-c27d-4af4-a55a-e265c77b17d6",
+      "name": "file-1707291749828",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "150d7fae-4342-464c-acb9-08137c63de66",
+      "name": "file-1707292258903",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "094ff3a9-290f-4c85-b3be-287d32b4c085",
+      "name": "file-1707292459927",
+      "originalName": "pobrane (1).jpeg",
+      "mimetype": "image/jpeg",
+      "size": 5112
+    },
+    {
+      "id": "a85c1858-2227-43c9-abd9-088d90f56a78",
+      "name": "file-1707292526514",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "f1f9d88b-7bb8-42fa-9812-fe2e66e4917a",
+      "name": "file-1707292575043",
+      "originalName": "pobrane (1).jpeg",
+      "mimetype": "image/jpeg",
+      "size": 5112
+    },
+    {
+      "id": "8d8e7a15-1505-41fa-b46a-8cebbd710b1d",
+      "name": "file-1707414985585",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "43e6b159-a792-4d8b-9369-d9e018081dbe",
+      "name": "file-1707466389912",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "3fffc14e-28fb-4af4-aa12-872c1c40451d",
+      "name": "file-1707466403860",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
     }
   ]
 }

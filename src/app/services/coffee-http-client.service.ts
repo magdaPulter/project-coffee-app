@@ -34,4 +34,8 @@ export class CoffeeHttpClientService {
   public upload<T>(url: string, formData: FormData) {
     return this._httpClient.post<T>(`${this.URL}${url}`, formData);
   }
+
+  public displayUrl<T>(url: string) {
+    return `${this.URL}${url}`;
+  }
 }

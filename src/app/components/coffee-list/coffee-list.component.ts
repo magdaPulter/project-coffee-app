@@ -4,21 +4,16 @@ import { CoffeeService } from '../../services/coffee.service';
 import { Observable } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
-import { CardComponent } from "../card/card.component";
-import { CoffeeModel } from 'src/app/models/coffee.model';
+import { CardComponent } from '../card/card.component';
+import { CoffeeWithUrlQueryModel } from 'src/app/querymodels/coffeeWithUrl.querymodel';
 
 @Component({
-    selector: 'app-coffee-list',
-    standalone: true,
-    templateUrl: './coffee-list.component.html',
-    styleUrls: ['./coffee-list.component.scss'],
-    imports: [CommonModule, CardComponent, RouterLink, MatButtonModule]
+  selector: 'app-coffee-list',
+  standalone: true,
+  templateUrl: './coffee-list.component.html',
+  styleUrls: ['./coffee-list.component.scss'],
+  imports: [CommonModule, CardComponent, RouterLink, MatButtonModule],
 })
-export class CoffeeListComponent{
-
-  @Input() coffeeList!: CoffeeModel[]
-  // readonly coffeeList$: Observable<CoffeeModel[]> = this._coffeeService.getAll()
-
-  // constructor(private _coffeeService: CoffeeService) {
-  // }
+export class CoffeeListComponent {
+  @Input() coffeeList!: CoffeeWithUrlQueryModel[];
 }

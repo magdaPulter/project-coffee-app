@@ -4,15 +4,21 @@ import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { ShortDescriptionPipe } from 'src/app/pipes/short-description.pipe';
-import { CoffeeModel } from 'src/app/models/coffee.model';
+import { CoffeeWithUrlQueryModel } from 'src/app/querymodels/coffeeWithUrl.querymodel';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule, MatCardModule, RouterLink, MatButtonModule, ShortDescriptionPipe],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    RouterLink,
+    MatButtonModule,
+    ShortDescriptionPipe,
+  ],
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+  styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  @Input() coffee!: CoffeeModel 
+  @Input() coffee!: CoffeeWithUrlQueryModel;
 }

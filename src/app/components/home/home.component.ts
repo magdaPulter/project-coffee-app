@@ -13,33 +13,41 @@ import { CoffeeListComponent } from '../coffee-list/coffee-list.component';
 import { CoffeeModel } from '../../models/coffee.model';
 import { CoffeeService } from '../../services/coffee.service';
 import { DialogComponent } from '../dialog/dialog.component';
+import { CoffeeWithUrlQueryModel } from 'src/app/querymodels/coffeeWithUrl.querymodel';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatRadioModule, MatCheckboxModule, ReactiveFormsModule, MatDialogModule, MatButtonModule, CoffeeListComponent]
+  imports: [
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatButtonModule,
+    CoffeeListComponent,
+  ],
 })
 export class HomeComponent {
-  private _refreshListSubject: BehaviorSubject<void> = new BehaviorSubject<void>(void 0);
-  readonly coffeeList$: Observable<CoffeeModel[]> = this._refreshListSubject.asObservable().pipe(
-    switchMap(() => this._coffeeService.getAll())
-  )
-  constructor(private _matDialog: MatDialog, private _coffeeService: CoffeeService) { }
-
-
+  private _refreshListSubject: BehaviorSubject<void> =
+    new BehaviorSubject<void>(void 0);
+  readonly coffeeList$: Observable<CoffeeWithUrlQueryModel[]> =
+    this._refreshListSubject
+      .asObservable()
+      .pipe(switchMap(() => this._coffeeService.getAllWithUrl()));
+  constructor(
+    private _matDialog: MatDialog,
+    private _coffeeService: CoffeeService
+  ) {}
 
   openDialog() {
-    const dialogRef = this._matDialog.open(
-      DialogComponent
-    )
-    dialogRef
-      .afterClosed()
-      .subscribe(() => {
-        this._refreshListSubject.next()
-      }
-      );
+    const dialogRef = this._matDialog.open(DialogComponent);
+    dialogRef.afterClosed().subscribe(() => {
+      this._refreshListSubject.next();
+    });
   }
-
 }

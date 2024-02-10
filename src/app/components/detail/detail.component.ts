@@ -13,6 +13,7 @@ import { TASTE } from 'src/app/utils/taste';
 import { CoffeeModel } from 'src/app/models/coffee.model';
 import { TasteModel } from 'src/app/models/taste.model';
 import { CoffeeQueryModel } from 'src/app/querymodels/coffee.query-model';
+import { CoffeeWithUrlQueryModel } from 'src/app/querymodels/coffeeWithUrl.querymodel';
 
 @Component({
   selector: 'app-detail',
@@ -22,9 +23,9 @@ import { CoffeeQueryModel } from 'src/app/querymodels/coffee.query-model';
   imports: [CommonModule, MatButtonModule, CardComponent, RouterLink],
 })
 export class DetailComponent {
-  readonly coffeeDetail$: Observable<CoffeeModel> =
+  readonly coffeeDetail$: Observable<CoffeeWithUrlQueryModel> =
     this._activatedRoute.params.pipe(
-      switchMap((params) => this._coffeeService.getOne(+params['id']))
+      switchMap((params) => this._coffeeService.getOneWithUrl(+params['id']))
     );
 
   readonly tastes$: Observable<TasteModel[]> = of(TASTE);

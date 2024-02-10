@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { CoffeeModel } from 'src/app/models/coffee.model';
 import { CoffeeHttpClientService } from './coffee-http-client.service';
+import { CoffeeWithUrlQueryModel } from '../querymodels/coffeeWithUrl.querymodel';
 
 @Injectable({
   providedIn: 'root',
@@ -27,5 +28,29 @@ export class CoffeeService {
 
   delete(id: number): Observable<CoffeeModel> {
     return this._coffeeHttpClientService.delete<CoffeeModel>('coffee', id);
+  }
+
+  displayUrl(image: string): string {
+    return this._coffeeHttpClientService.displayUrl(`files/${image}`);
+  }
+
+  getAllWithUrl(): Observable<CoffeeWithUrlQueryModel[]> {
+    return this.getAll().pipe(
+      map((coffees) => {
+        return coffees.map((coffee) => {
+          const imageUrl = this.displayUrl(coffee.image);
+          return { ...coffee, imageUrl };
+        });
+      })
+    );
+  }
+
+  getOneWithUrl(id: number): Observable<CoffeeWithUrlQueryModel> {
+    return this.getOne(id).pipe(
+      map((coffee) => {
+        const imageUrl = this.displayUrl(coffee.image);
+        return { ...coffee, imageUrl };
+      })
+    );
   }
 }

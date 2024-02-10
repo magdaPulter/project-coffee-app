@@ -13,6 +13,7 @@ import { CoffeeListComponent } from '../coffee-list/coffee-list.component';
 import { CoffeeModel } from '../../models/coffee.model';
 import { CoffeeService } from '../../services/coffee.service';
 import { DialogComponent } from '../dialog/dialog.component';
+import { CoffeeWithUrlQueryModel } from 'src/app/querymodels/coffeeWithUrl.querymodel';
 
 @Component({
   selector: 'app-home',
@@ -34,15 +35,14 @@ import { DialogComponent } from '../dialog/dialog.component';
 export class HomeComponent {
   private _refreshListSubject: BehaviorSubject<void> =
     new BehaviorSubject<void>(void 0);
-  readonly coffeeList$: Observable<CoffeeModel[]> = this._refreshListSubject
-    .asObservable()
-    .pipe(switchMap(() => this._coffeeService.getAll()));
+  readonly coffeeList$: Observable<CoffeeWithUrlQueryModel[]> =
+    this._refreshListSubject
+      .asObservable()
+      .pipe(switchMap(() => this._coffeeService.getAllWithUrl()));
   constructor(
     private _matDialog: MatDialog,
     private _coffeeService: CoffeeService
-  ) {
-    this._coffeeService.getAllWithUrl().subscribe((val) => console.log(val));
-  }
+  ) {}
 
   openDialog() {
     const dialogRef = this._matDialog.open(DialogComponent);

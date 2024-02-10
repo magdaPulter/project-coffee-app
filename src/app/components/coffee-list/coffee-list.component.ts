@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { CardComponent } from '../card/card.component';
-import { CoffeeModel } from 'src/app/models/coffee.model';
+import { CoffeeWithUrlQueryModel } from 'src/app/querymodels/coffeeWithUrl.querymodel';
 
 @Component({
   selector: 'app-coffee-list',
@@ -15,5 +15,5 @@ import { CoffeeModel } from 'src/app/models/coffee.model';
   imports: [CommonModule, CardComponent, RouterLink, MatButtonModule],
 })
 export class CoffeeListComponent {
-  @Input() coffeeList!: CoffeeModel[];
+  @Input() coffeeList!: CoffeeWithUrlQueryModel[];
 }

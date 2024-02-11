@@ -1,4 +1,4 @@
-export interface SignUp {
+export interface SignUpModel {
   readonly email: string;
   readonly password: string;
 }

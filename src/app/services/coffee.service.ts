@@ -30,7 +30,7 @@ export class CoffeeService {
     return this._coffeeHttpClientService.delete<CoffeeModel>('coffee', id);
   }
 
-  displayUrl(image: string): string {
+  displayImageUrl(image: string): string {
     return this._coffeeHttpClientService.displayUrl(`files/${image}`);
   }
 
@@ -38,7 +38,7 @@ export class CoffeeService {
     return this.getAll().pipe(
       map((coffees) => {
         return coffees.map((coffee) => {
-          const imageUrl = this.displayUrl(coffee.image);
+          const imageUrl = this.displayImageUrl(coffee.image);
           return { ...coffee, imageUrl };
         });
       })
@@ -48,7 +48,7 @@ export class CoffeeService {
   getOneWithUrl(id: number): Observable<CoffeeWithUrlQueryModel> {
     return this.getOne(id).pipe(
       map((coffee) => {
-        const imageUrl = this.displayUrl(coffee.image);
+        const imageUrl = this.displayImageUrl(coffee.image);
         return { ...coffee, imageUrl };
       })
     );

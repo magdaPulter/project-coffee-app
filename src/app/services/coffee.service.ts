@@ -15,7 +15,10 @@ export class CoffeeService {
   }
 
   create(coffee: CoffeeModel): Observable<void> {
-    return this._coffeeHttpClientService.post<void>('coffee', coffee);
+    return this._coffeeHttpClientService.post<void, CoffeeModel>(
+      'coffee',
+      coffee
+    );
   }
 
   getOne(id: number): Observable<CoffeeModel> {

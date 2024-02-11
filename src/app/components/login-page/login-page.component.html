@@ -11,7 +11,8 @@
                         <input type="text" formControlName="email" placeholder="Email">
                         <input type="text" formControlName="password" placeholder="Password">
                         <div class="submit">
-                            <p>Don't have an account?<span class="sign-up-btn" (click)="onSignUp(false)"> Sign up</span>
+                            <p>Don't have an account?<span class="sign-up-btn" (click)="onRegister(false)"> Sign
+                                    up</span>
                             </p>
                             <button class="submit-btn" mat-raised-button type="submit">Login</button>
                         </div>
@@ -34,7 +35,8 @@
                         <input type="text" formControlName="password" placeholder="Password">
                         <input type="text" formControlName="confirmPassword" placeholder="Confirm Password">
                         <div class="submit">
-                            <p>Already have an account?<span class="sign-up-btn" (click)="onSignUp(true)"> Login</span>
+                            <p>Already have an account?<span class="sign-up-btn" (click)="onRegister(true)">
+                                    Login</span>
                             </p>
                             <button class="submit-btn" mat-raised-button type="submit">Login</button>
                         </div>

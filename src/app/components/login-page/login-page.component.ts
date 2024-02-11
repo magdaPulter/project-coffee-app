@@ -34,7 +34,7 @@ export class LoginPageComponent {
   public isRegistered$: Observable<boolean> =
     this._isRegisteredSubject.asObservable();
 
-  onSignUp(isRegistered: boolean) {
+  onRegister(isRegistered: boolean) {
     this._isRegisteredSubject.next(isRegistered);
   }
 

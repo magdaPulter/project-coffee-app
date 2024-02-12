@@ -8,7 +8,7 @@
                 </div>
                 <div class="form">
                     <form [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmitted(loginForm)">
-                        <input type="text" formControlName="email" placeholder="Email">
+                        <input type="email" formControlName="email" placeholder="Email">
                         <input type="text" formControlName="password" placeholder="Password">
                         <div class="submit">
                             <p>Don't have an account?<span class="sign-up-btn" (click)="onRegister(false)"> Sign
@@ -31,9 +31,10 @@
                 </div>
                 <div class="form">
                     <form [formGroup]="registerForm" (ngSubmit)="onregisterFormSubmitted(registerForm)">
-                        <input type="text" formControlName="email" placeholder="Email">
+                        <input type="email" formControlName="email" placeholder="Email">
                         <input type="text" formControlName="password" placeholder="Password">
                         <input type="text" formControlName="confirmPassword" placeholder="Confirm Password">
+                        <span *ngIf="registerForm.errors?.['passwordMatchError']">Password does not match!</span>
                         <div class="submit">
                             <p>Already have an account?<span class="sign-up-btn" (click)="onRegister(true)">
                                     Login</span>

@@ -426,5 +426,13 @@
       "mimetype": "image/jpeg",
       "size": 82541
     }
+  ],
+  "register": [
+    {
+      "email": "12@12",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 1
+    }
   ]
 }

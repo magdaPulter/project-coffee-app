@@ -44,6 +44,20 @@
             margin-bottom: 30px;
             border-radius: 8px;
             padding: 20px;
+            width: 375px;
+          }
+
+          .input-password {
+            height: 52px;
+            background-color: #eff1f9;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 8px;
+
+            span {
+              align-self: center;
+              margin-right: 20px;
+            }
           }
 
           .sign-up-btn {

@@ -12,6 +12,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { RegisterService } from '../../services/register.service';
 import { matchPassword } from 'src/app/utils/match-password';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login-page',
@@ -24,6 +26,7 @@ import { matchPassword } from 'src/app/utils/match-password';
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
+    FontAwesomeModule,
   ],
 })
 export class LoginPageComponent {
@@ -41,6 +44,19 @@ export class LoginPageComponent {
       validators: [matchPassword],
     }
   );
+
+  faEye = faEye;
+  faEyeSlash = faEyeSlash;
+
+  private _isvisible: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    true
+  );
+  public is_isvisible$: Observable<boolean> = this._isvisible.asObservable();
+
+  viewPassword() {
+    this._isvisible.next(!this._isvisible.getValue());
+  }
+
   private _isRegisteredSubject: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(true);
   public isRegistered$: Observable<boolean> =
@@ -56,11 +72,13 @@ export class LoginPageComponent {
 
   onregisterFormSubmitted(registerForm: FormGroup): void {
     if (registerForm.valid) {
-      this._registerService.create({
-        email: registerForm.get('email')!.value,
-        password: registerForm.get('password')!.value,
-        confirmPassword: registerForm.get('confirmPassword')!.value,
-      });
+      this._registerService
+        .create({
+          email: registerForm.get('email')!.value,
+          password: registerForm.get('password')!.value,
+          confirmPassword: registerForm.get('confirmPassword')!.value,
+        })
+        .subscribe();
     }
   }
 }

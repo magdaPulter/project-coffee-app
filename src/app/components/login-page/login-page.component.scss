@@ -1,17 +1,103 @@
-.content {
+.login-form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 200px;
+  justify-content: center;
+  margin-top: 80px;
+
+  .container {
+    background-color: #ffffff;
+    width: 443px;
+    height: 537px;
+    border-radius: 12px;
+    padding: 44px 34px 44px 34px;
+    display: flex;
+
+    .content {
+      width: 375px;
+      height: 449px;
+
+      .title {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        h4 {
+          margin-bottom: 10px;
+        }
+        p {
+          margin: 0;
+        }
+      }
+      .form {
+        margin-top: 30px;
+        width: max-width;
+        form {
+          display: flex;
+          flex-direction: column;
+
+          span {
+            font-size: smaller;
+          }
+
+          input {
+            height: 52px;
+            border: none;
+            background-color: #eff1f9;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            padding: 20px;
+            width: 375px;
+          }
+
+          .input-password {
+            height: 52px;
+            background-color: #eff1f9;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 8px;
+
+            span {
+              align-self: center;
+              margin-right: 20px;
+            }
+          }
+
+          .sign-up-btn {
+            color: #5570f1;
+            cursor: pointer;
+          }
+          .submit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .submit-btn {
+              background-color: #53545c;
+              color: #ffffff;
+              width: 180px;
+              height: 58px;
+              font-size: 20px;
+              margin: 30px 0;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-form {
-  margin-top: 20px;
-}
+// .content {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   margin-top: 200px;
+// }
 
-.buttons {
-  width: 200px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+// form {
+//   margin-top: 20px;
+// }
+
+// .buttons {
+//   width: 200px;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+// }

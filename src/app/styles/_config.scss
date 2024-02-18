@@ -1,17 +1,17 @@
 $dark-primary: rgba(189, 106, 23, 0.8);
-$light-primary:  rgba(241, 204, 168, 0.8);
+$light-primary: rgba(241, 204, 168, 0.8);
 // $dark-secondary:
 $light-secondary: rgba(234, 231, 227, 0.8);
 $very-light-secondary: rgba(243, 243, 243, 0.8);
 
 @mixin btn-primary {
-    background-color: $dark-primary;
-    color: $very-light-secondary;
-    margin: 10px;
+  background-color: $dark-primary;
+  color: $very-light-secondary;
+  margin: 10px;
 }
 
 @mixin btn-secondary {
-    // border: none;    
-    // color: $dark-primary;
-    // background-color: $light-primary;
+  // border: none;
+  // color: $dark-primary;
+  // background-color: $light-primary;
 }

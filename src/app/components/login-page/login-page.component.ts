@@ -13,7 +13,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { RegisterService } from '../../services/register.service';
 import { matchPassword } from 'src/app/utils/match-password';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login-page',
@@ -45,9 +44,6 @@ export class LoginPageComponent {
     }
   );
 
-  faEye = faEye;
-  faEyeSlash = faEyeSlash;
-
   private _isvisible: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
     true
   );
@@ -58,7 +54,7 @@ export class LoginPageComponent {
   }
 
   private _isRegisteredSubject: BehaviorSubject<boolean> =
-    new BehaviorSubject<boolean>(true);
+    new BehaviorSubject<boolean>(false);
   public isRegistered$: Observable<boolean> =
     this._isRegisteredSubject.asObservable();
 

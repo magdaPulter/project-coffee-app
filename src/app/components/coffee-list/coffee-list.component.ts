@@ -6,14 +6,30 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { CardComponent } from '../card/card.component';
 import { CoffeeWithUrlQueryModel } from 'src/app/querymodels/coffeeWithUrl.querymodel';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-coffee-list',
   standalone: true,
   templateUrl: './coffee-list.component.html',
   styleUrls: ['./coffee-list.component.scss'],
-  imports: [CommonModule, CardComponent, RouterLink, MatButtonModule],
+  imports: [
+    CommonModule,
+    CardComponent,
+    RouterLink,
+    MatButtonModule,
+    MatTableModule,
+  ],
 })
 export class CoffeeListComponent {
   @Input() coffeeList!: CoffeeWithUrlQueryModel[];
+
+  displayedColumns: string[] = [
+    'image',
+    'name',
+    'unitPrice',
+    'inStock',
+    'origin',
+    'status',
+  ];
 }

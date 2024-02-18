@@ -1,81 +1,141 @@
 .login-form {
   display: flex;
   justify-content: center;
-  margin-top: 80px;
+  align-items: center;
+  margin-top: 119px;
 
   .container {
     background-color: #ffffff;
     width: 443px;
-    height: 537px;
-    border-radius: 12px;
+    height: 548px;
+    border-radius: 30px;
     padding: 44px 34px 44px 34px;
     display: flex;
 
     .content {
+      display: flex;
+      flex-direction: column;
       width: 375px;
-      height: 449px;
+      height: 460px;
+      justify-content: space-between;
 
       .title {
         display: flex;
         align-items: center;
         flex-direction: column;
-        h4 {
+        h3 {
           margin-bottom: 10px;
+          font-weight: 400;
+          font-size: 22px;
+          span {
+            color: #be40d3;
+          }
         }
         p {
           margin: 0;
+          color: #8b8d97;
+          font-size: 16px;
+          font-weight: 200;
         }
       }
       .form {
-        margin-top: 30px;
-        width: max-width;
+        height: 340px;
+
         form {
           display: flex;
           flex-direction: column;
 
-          span {
-            font-size: smaller;
-          }
-
-          input {
-            height: 52px;
-            border: none;
-            background-color: #eff1f9;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            padding: 20px;
-            width: 375px;
-          }
-
-          .input-password {
-            height: 52px;
-            background-color: #eff1f9;
+          .input-field {
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            border-radius: 8px;
+            height: 52px;
+            border: solid 0.5px black;
+            border-radius: 20px;
+            padding: 20px;
+            background-color: #eff1f9;
+            margin: 12px 0px;
 
-            span {
-              align-self: center;
-              margin-right: 20px;
+            input {
+              width: 300px;
+              border: none;
+              background-color: #eff1f9;
+              padding: 10px 10px;
+              outline: none;
+              font-size: 17px;
+              font-family: Avenir Next;
+              line-height: 23.22px;
+            }
+
+            span img {
+              cursor: pointer;
             }
           }
 
-          .sign-up-btn {
-            color: #5570f1;
-            cursor: pointer;
-          }
-          .submit {
+          .sub-content {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            justify-content: space-between;
+            height: 198px;
+            .submit {
+              display: flex;
+              justify-content: center;
+              height: 64px;
 
-            .submit-btn {
-              background-color: #53545c;
-              color: #ffffff;
-              width: 180px;
-              height: 58px;
-              font-size: 20px;
-              margin: 30px 0;
+              button.submit-btn {
+                align-self: self-end;
+                background-color: #000000;
+                color: #ffffff;
+                width: 180px;
+                height: 58px;
+                border-radius: 20px;
+                padding: 16px;
+                font-size: 19px;
+              }
+            }
+            .recover-pass {
+              margin-top: 0px;
+              color: #be40d3;
+              font-size: 16px;
+              font-weight: 200;
+              align-self: self-end;
+            }
+            .sign-up {
+              p {
+                text-align: center;
+                color: #8b8d97;
+                font-weight: 200;
+                span {
+                  color: #be40d3;
+                  font-size: 16px;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+        .icon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}
+
+.login-form {
+  .container.register {
+    height: 600px;
+
+    .content {
+      .form {
+        form {
+          .sub-content {
+            justify-content: center;
+            .sign-up {
+              p {
+                margin-bottom: 40px;
+              }
             }
           }
         }
@@ -83,21 +143,3 @@
     }
   }
 }
-
-// .content {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   margin-top: 200px;
-// }
-
-// form {
-//   margin-top: 20px;
-// }
-
-// .buttons {
-//   width: 200px;
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-// }

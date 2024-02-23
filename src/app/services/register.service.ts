@@ -21,10 +21,10 @@ export class RegisterService {
     return this._coffeeHttpClientService.get<SignUpModel[]>('register');
   }
 
-  isMatch(): void {
-    this.getAll().pipe(
+  isAuthenticated(): Observable<boolean> {
+    return this.getAll().pipe(
       map((registerValues) => {
-        return registerValues.map((value) => {
+        return registerValues.some((value) => {
           return (
             localStorage.getItem('email') === value.email &&
             localStorage.getItem('password') === value.password

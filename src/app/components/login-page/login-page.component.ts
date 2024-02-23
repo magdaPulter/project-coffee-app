@@ -10,9 +10,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BehaviorSubject, Observable, map, tap } from 'rxjs';
+import { Router } from '@angular/router';
 import { RegisterService } from '../../services/register.service';
-import { matchPassword } from 'src/app/utils/match-password';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { matchPassword } from 'src/app/utils/match-password';
 
 @Component({
   selector: 'app-login-page',
@@ -58,7 +59,10 @@ export class LoginPageComponent {
   public isRegistered$: Observable<boolean> =
     this._isRegisteredSubject.asObservable();
 
-  constructor(private _registerService: RegisterService) {}
+  constructor(
+    private _registerService: RegisterService,
+    private _router: Router
+  ) {}
 
   onRegister(isRegistered: boolean) {
     this._isRegisteredSubject.next(isRegistered);
@@ -71,21 +75,16 @@ export class LoginPageComponent {
     localStorage.setItem('email', loginEmail);
     localStorage.setItem('password', loginPassword);
 
-    // this._registerService
-    //   .getAll()
-    //   .pipe(
-    //     map((registerValues) => {
-    //       return registerValues.map(
-    //         (value) =>
-    //           localStorage.getItem('email') === value.email &&
-    //           localStorage.getItem('password') === value.password
-    //       );
-    //     }),
-    //     tap((res) => {
-    //       console.log(res.includes(true));
-    //     })
-    //   )
-    //   .subscribe();
+    this._registerService
+      .isAuthenticated()
+      .pipe(
+        map((isAuthenticated) => {
+          if (isAuthenticated) {
+            this._router.navigate(['/']);
+          }
+        })
+      )
+      .subscribe();
   }
 
   onregisterFormSubmitted(registerForm: FormGroup): void {

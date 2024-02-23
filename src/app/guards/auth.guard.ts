@@ -4,10 +4,15 @@ import { RegisterService } from '../services/register.service';
 import { map } from 'rxjs';
 
 export const authGuard: CanActivateFn = (route, state) => {
-  // const router = inject(Router);
-  // const registerService = inject(RegisterService);
-  // const emailStored = localStorage.getItem('email');
-  // const passwordStored = localStorage.getItem('password');
+  const registerService = inject(RegisterService);
 
-  return true;
+  return registerService.isAuthenticated().pipe(
+    map((isAuthenticated) => {
+      if (isAuthenticated) {
+        return true;
+      } else {
+        return false;
+      }
+    })
+  );
 };

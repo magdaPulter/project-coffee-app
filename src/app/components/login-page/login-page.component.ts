@@ -96,6 +96,7 @@ export class LoginPageComponent {
           confirmPassword: registerForm.get('confirmPassword')!.value,
         })
         .subscribe();
+      this._router.navigate(['/']);
     }
   }
 }

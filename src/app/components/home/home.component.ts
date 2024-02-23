@@ -9,11 +9,11 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 import { CoffeeListComponent } from '../coffee-list/coffee-list.component';
-import { CoffeeModel } from '../../models/coffee.model';
+import { CoffeeWithUrlQueryModel } from '../../querymodels/coffeeWithUrl.querymodel';
 import { CoffeeService } from '../../services/coffee.service';
 import { DialogComponent } from '../dialog/dialog.component';
-import { CoffeeWithUrlQueryModel } from 'src/app/querymodels/coffeeWithUrl.querymodel';
 
 @Component({
   selector: 'app-home',
@@ -41,7 +41,8 @@ export class HomeComponent {
       .pipe(switchMap(() => this._coffeeService.getAllWithUrl()));
   constructor(
     private _matDialog: MatDialog,
-    private _coffeeService: CoffeeService
+    private _coffeeService: CoffeeService,
+    private _router: Router
   ) {}
 
   openDialog() {
@@ -49,5 +50,10 @@ export class HomeComponent {
     dialogRef.afterClosed().subscribe(() => {
       this._refreshListSubject.next();
     });
+  }
+
+  logOut() {
+    localStorage.clear();
+    this._router.navigate(['/login']);
   }
 }

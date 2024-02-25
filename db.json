@@ -1,21 +1,18 @@
 {
   "coffee": [
     {
-      "name": "La Provincia",
-      "origin": "Colombia",
-      "image": "a85c1858-2227-43c9-abd9-088d90f56a78",
+      "name": "La Provincia - Columbia ",
+      "code": null,
+      "category": "Coffee",
+      "price": null,
+      "quantity": "3",
+      "quantityUnit": null,
+      "quantityInStock": null,
+      "discount": null,
       "description": "ripe fruit is hand-picked by farmers and processed on their farms. They are pulped and fermented in bags, buckets or tanks for 16 to 38 hours. After fermentation, the coffee is washed in clean water and laid out on terraces to dry, which takes 8 to 14 days.",
-      "process": {
-        "name": "washed",
-        "id": "1"
-      },
-      "characteristic": {
-        "1": false,
-        "2": false,
-        "3": false,
-        "4": false,
-        "5": false
-      },
+      "longDescription": null,
+      "date": null,
+      "image": "a85c1858-2227-43c9-abd9-088d90f56a78",
       "id": 12
     },
     {
@@ -86,21 +83,6 @@
         "5": false
       },
       "id": 16
-    },
-    {
-      "name": "kawa",
-      "origin": "kawa",
-      "image": "f4c14c9f-93c8-46c5-8032-09f3ec60794f",
-      "description": "",
-      "process": "",
-      "characteristic": {
-        "1": false,
-        "2": false,
-        "3": false,
-        "4": false,
-        "5": false
-      },
-      "id": 17
     }
   ],
   "files": [

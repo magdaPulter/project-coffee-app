@@ -16,21 +16,18 @@
       "id": 12
     },
     {
-      "name": "Fugi Ikizere",
-      "origin": "Rwanda",
-      "image": "f1f9d88b-7bb8-42fa-9812-fe2e66e4917a",
+      "name": "Fugi Ikizere - Rwanda",
+      "code": null,
+      "category": "Coffee",
+      "price": null,
+      "quantity": null,
+      "quantityUnit": null,
+      "quantityInStock": null,
+      "discount": null,
       "description": "she initiated the creation of the Ikizere group of farmers in Rwanda, composed of 60 single mothers who were supposed to grow coffee together and thus achieve financial and personal success. The Ikizere group meets regularly to share their experiences and learn from each other. Baho supports women through training in good agricultural practices (GAP), coffee cultivation and high-quality processing.",
-      "process": {
-        "name": "natural",
-        "id": "2"
-      },
-      "characteristic": {
-        "1": false,
-        "2": false,
-        "3": false,
-        "4": false,
-        "5": false
-      },
+      "longDescription": null,
+      "date": null,
+      "image": "f1f9d88b-7bb8-42fa-9812-fe2e66e4917a",
       "id": 13
     },
     {
@@ -52,37 +49,19 @@
       "id": 14
     },
     {
-      "name": "Java Pegasing",
-      "origin": "Indonesia",
-      "image": "eda0d44f-b5df-4927-b83a-eab78bed8eb0",
+      "name": "Java Pegasing - Indonesia",
+      "code": null,
+      "category": null,
+      "price": "88",
+      "quantity": null,
+      "quantityUnit": null,
+      "quantityInStock": null,
+      "discount": null,
       "description": "\n​\n\n\n309 / 5,000\nTranslation results\nTranslation result\nKirura is one of 13 processing stations gathered as the Komothai group. Komothai was founded in 1959 and has 9,951 members, 1,047 of whom supply their coffee to Kirura. The station is run by a three-person board of directors, subject to changes consistent with the guidelines of Komothai's general board.",
-      "process": {
-        "name": "anaerobic",
-        "id": "4"
-      },
-      "characteristic": {
-        "1": false,
-        "2": false,
-        "3": false,
-        "4": false,
-        "5": false
-      },
+      "longDescription": null,
+      "date": null,
+      "image": "eda0d44f-b5df-4927-b83a-eab78bed8eb0",
       "id": 15
-    },
-    {
-      "name": "kawa",
-      "origin": "kawa",
-      "image": "06b40dd6-24a8-4469-baad-dd294abef412",
-      "description": "",
-      "process": "",
-      "characteristic": {
-        "1": false,
-        "2": false,
-        "3": false,
-        "4": false,
-        "5": false
-      },
-      "id": 16
     }
   ],
   "files": [

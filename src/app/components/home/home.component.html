@@ -4,4 +4,5 @@
         <button mat-raised-button class="btn" (click)="logOut()">LogOut</button>
     </div>
 </div>
-<app-coffee-list *ngIf="coffeeList$ | async as list" [coffeeList]="list"></app-coffee-list>
+<app-coffee-list *ngIf="coffeeList$ | async as list" [coffeeList]="list" (deleted)="coffeeDeleted($event)"
+    (updated)="coffeeUpdated($event)"></app-coffee-list>

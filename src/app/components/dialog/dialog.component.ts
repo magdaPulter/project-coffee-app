@@ -43,6 +43,8 @@ import { CoffeeModel } from 'src/app/models/coffee.model';
   ],
 })
 export class DialogComponent implements OnInit {
+  date: string = new Date().toString();
+
   readonly coffeeForm: FormGroup = new FormGroup({
     name: new FormControl(),
     code: new FormControl(),
@@ -54,7 +56,7 @@ export class DialogComponent implements OnInit {
     discount: new FormControl(),
     description: new FormControl(),
     longDescription: new FormControl(),
-    date: new FormControl(),
+    date: new FormControl(this.date),
     image: new FormControl(),
   });
 

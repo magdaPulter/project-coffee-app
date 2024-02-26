@@ -1,13 +1,4 @@
-import {
-  AfterContentChecked,
-  AfterContentInit,
-  AfterViewInit,
-  Component,
-  Inject,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -30,12 +21,9 @@ import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { FileModel } from '../../models/file.model';
 import { CoffeeService } from '../../services/coffee.service';
-import { CoffeeQueryModel } from '../../querymodels/coffee.query-model';
 import { UploadFileService } from '../../services/upload-file.service';
-import { TasteModel } from '../../models/taste.model';
-import { TASTE } from '../../utils/taste';
-import { ProcessModel } from '../../models/process.model';
-import { PROCESS } from '../../utils/process';
+import { MatSelectModule } from '@angular/material/select';
+import { CoffeeModel } from 'src/app/models/coffee.model';
 
 @Component({
   selector: 'app-dialog',
@@ -51,38 +39,36 @@ import { PROCESS } from '../../utils/process';
     MatInputModule,
     ReactiveFormsModule,
     CommonModule,
+    MatSelectModule,
   ],
 })
 export class DialogComponent implements OnInit {
+  date: string = new Date().toString();
+
   readonly coffeeForm: FormGroup = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    origin: new FormControl('', [Validators.required]),
-    image: new FormControl(''),
-    description: new FormControl(''),
-    process: new FormControl(''),
-    characteristic: new FormGroup({}),
+    name: new FormControl(),
+    code: new FormControl(),
+    category: new FormControl(),
+    price: new FormControl(),
+    quantity: new FormControl(),
+    quantityUnit: new FormControl(),
+    quantityInStock: new FormControl(),
+    discount: new FormControl(),
+    description: new FormControl(),
+    longDescription: new FormControl(),
+    date: new FormControl(this.date),
+    image: new FormControl(),
   });
+
+  readonly categories: string[] = ['Coffee', 'Accesories'];
 
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
     private _coffeeService: CoffeeService,
-    @Inject(MAT_DIALOG_DATA) public data: CoffeeQueryModel,
+    @Inject(MAT_DIALOG_DATA) public data: CoffeeModel,
     private _router: Router,
     private _uploadFileService: UploadFileService
   ) {}
-
-  readonly taste$: Observable<TasteModel[]> = of(TASTE).pipe(
-    tap((tastes) => {
-      tastes.forEach((taste) => {
-        (this.coffeeForm.get('characteristic') as FormGroup).addControl(
-          taste.id,
-          new FormControl(false)
-        );
-      });
-    })
-  );
-
-  readonly process$: Observable<ProcessModel[]> = of(PROCESS);
 
   ngOnInit(): void {
     this.coffeeForm.patchValue(this.data);
@@ -104,11 +90,18 @@ export class DialogComponent implements OnInit {
         this._coffeeService
           .create({
             name: form.get('name')!.value,
-            origin: form.get('origin')!.value,
+            code: form.get('code')!.value,
+            category: form.get('category')!.value,
+            price: form.get('price')!.value,
+            quantity: form.get('quantity')!.value,
+            quantityUnit: form.get('quantityUnit')!.value,
+            quantityInStock: form.get('quantityInStock')!.value,
+            discount: form.get('discount')!.value,
             description: form.get('description')!.value,
+            longDescription: form.get('longDescription')!.value,
+            date: form.get('date')!.value,
             image: form.get('image')!.value,
-            process: form.get('process')!.value,
-            characteristic: form.get('characteristic')!.value,
+            published: true,
           })
           .subscribe();
       }

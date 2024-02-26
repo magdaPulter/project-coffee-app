@@ -1,11 +1,16 @@
-import { ProcessModel } from "./process.model";
-
 export interface CoffeeModel {
-    readonly name: string;
-    readonly origin: string;
-    readonly image: string;
-    readonly description: string;
-    readonly process: ProcessModel;
-    readonly characteristic: Record<number, boolean> ;
-    readonly id?: number 
+  readonly name: string;
+  readonly code: number;
+  readonly category: string[];
+  readonly price: string;
+  readonly quantity: string;
+  readonly quantityUnit: string;
+  readonly quantityInStock: number;
+  readonly discount: number;
+  readonly description: string;
+  readonly longDescription: string;
+  readonly date: string;
+  readonly image: string;
+  readonly published: boolean;
+  readonly id?: number;
 }

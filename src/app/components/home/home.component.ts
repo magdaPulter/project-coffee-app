@@ -14,6 +14,7 @@ import { CoffeeListComponent } from '../coffee-list/coffee-list.component';
 import { CoffeeWithUrlQueryModel } from '../../querymodels/coffeeWithUrl.querymodel';
 import { CoffeeService } from '../../services/coffee.service';
 import { DialogComponent } from '../dialog/dialog.component';
+import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
 
 @Component({
   selector: 'app-home',
@@ -55,5 +56,26 @@ export class HomeComponent {
   logOut() {
     localStorage.clear();
     this._router.navigate(['/login']);
+  }
+
+  coffeeDeleted(id: number) {
+    const dialogRef = this._matDialog.open(DialogDeleteComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this._coffeeService.delete(id).subscribe(() => {
+          this._refreshListSubject.next();
+        });
+      }
+    });
+  }
+  coffeeUpdated(coffee: CoffeeWithUrlQueryModel) {
+    const dialogRef = this._matDialog.open(DialogComponent, {
+      data: coffee,
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this._refreshListSubject.next();
+    });
   }
 }

@@ -22,6 +22,7 @@
                         </div>
                         <div class="sub-content">
                             <p class="recover-pass">Recover Password</p>
+                            <p *ngIf="!(isAuthentycated$| async)" class="incorrect">Inncorect email or/and password!</p>
                             <div class="sign-up">
                                 <p>Don't have an account?<span class="sign-up-btn" (click)="onRegister(false)"> Sign
                                         up</span>
@@ -67,7 +68,7 @@
                             </span>
                         </div>
                         <div class="sub-content">
-                            <p *ngIf="registerForm.errors?.['passwordMatchError']" class="recover-pass">Password
+                            <p class="incorrect" *ngIf="registerForm.errors?.['passwordMatchError']">Password
                                 does not match!</p>
                             <div class="sign-up">
                                 <p>Already have an account?<span class="sign-up-btn" (click)="onRegister(true)">

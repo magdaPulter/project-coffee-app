@@ -9,7 +9,7 @@ import {
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { BehaviorSubject, Observable, map, tap } from 'rxjs';
+import { BehaviorSubject, Observable, map, shareReplay, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { RegisterService } from '../../services/register.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -59,6 +59,11 @@ export class LoginPageComponent {
   public isRegistered$: Observable<boolean> =
     this._isRegisteredSubject.asObservable();
 
+  private _isAuthentycatedSubject: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(true);
+  public isAuthentycated$: Observable<boolean> =
+    this._isAuthentycatedSubject.asObservable();
+
   constructor(
     private _registerService: RegisterService,
     private _router: Router
@@ -81,6 +86,9 @@ export class LoginPageComponent {
         map((isAuthenticated) => {
           if (isAuthenticated) {
             this._router.navigate(['/']);
+          } else {
+            console.log('nottt');
+            this._isAuthentycatedSubject.next(false);
           }
         })
       )

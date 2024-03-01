@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 import { RegisterService } from '../../services/register.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { matchPassword } from 'src/app/utils/match-password';
+import { LoginFormComponent } from '../login-form/login-form.component';
 
 @Component({
   selector: 'app-login-page',
@@ -27,13 +28,14 @@ import { matchPassword } from 'src/app/utils/match-password';
     MatButtonModule,
     MatFormFieldModule,
     FontAwesomeModule,
+    LoginFormComponent,
   ],
 })
 export class LoginPageComponent {
-  readonly loginForm: FormGroup = new FormGroup({
-    email: new FormControl(null, Validators.email),
-    password: new FormControl(null, [Validators.required]),
-  });
+  // readonly loginForm: FormGroup = new FormGroup({
+  //   email: new FormControl(null, Validators.email),
+  //   password: new FormControl(null, [Validators.required]),
+  // });
   readonly registerForm: FormGroup = new FormGroup(
     {
       email: new FormControl(null, Validators.email),
@@ -59,11 +61,6 @@ export class LoginPageComponent {
   public isRegistered$: Observable<boolean> =
     this._isRegisteredSubject.asObservable();
 
-  private _isAuthentycatedSubject: BehaviorSubject<boolean> =
-    new BehaviorSubject<boolean>(true);
-  public isAuthentycated$: Observable<boolean> =
-    this._isAuthentycatedSubject.asObservable();
-
   constructor(
     private _registerService: RegisterService,
     private _router: Router
@@ -73,22 +70,13 @@ export class LoginPageComponent {
     this._isRegisteredSubject.next(isRegistered);
   }
 
-  onLoginFormSubmitted(loginForm: FormGroup): void {
-    const loginEmail = loginForm.get('email')!.value;
-    const loginPassword = loginForm.get('password')!.value;
-
-    localStorage.setItem('email', loginEmail);
-    localStorage.setItem('password', loginPassword);
-
+  loginFormHandeled(): void {
     this._registerService
       .isAuthenticated()
       .pipe(
         map((isAuthenticated) => {
           if (isAuthenticated) {
             this._router.navigate(['/']);
-          } else {
-            console.log('nottt');
-            this._isAuthentycatedSubject.next(false);
           }
         })
       )

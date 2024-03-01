@@ -1,88 +1,10 @@
 <section class="login-form">
     <ng-container *ngIf="isRegistered$ | async as isRegistered else isNotRegistered">
-        <div class="container">
-            <div class="content">
-                <div class="title">
-                    <h3>Welcome Back!</h3>
-                    <p>Login to your account</p>
-                </div>
-                <div class="form">
-                    <form [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmitted(loginForm)">
-                        <div class="input-field">
-                            <img class="icon" src="../../../assets/message_icon.png" alt="message icon">
-                            <input type="email" formControlName="email" placeholder="Email">
-                        </div>
-                        <div class="input-field">
-                            <img class=" icon" src="../../../assets/lock_icon.png" alt="lock icon">
-                            <input [type]="(is_isvisible$ | async ) ? 'password' : 'text'" formControlName="password"
-                                placeholder="Password">
-                            <span (click)="viewPassword()"><img class="icon"
-                                    [src]="(is_isvisible$ | async ) ? '../../../assets/eye_slash_visible.png' : '../../../assets/eye_visible.png'">
-                            </span>
-                        </div>
-                        <div class="sub-content">
-                            <p class="recover-pass">Recover Password</p>
-                            <p *ngIf="!(isAuthentycated$| async)" class="incorrect">Inncorect email or/and password!</p>
-                            <div class="sign-up">
-                                <p>Don't have an account?<span class="sign-up-btn" (click)="onRegister(false)"> Sign
-                                        up</span>
-                                </p>
-                            </div>
-                            <div class="submit">
-                                <button class="submit-btn" mat-raised-button type="submit">Login</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+        <app-login-form (loginFormSubmit)="loginFormHandeled()" (registered)="onRegister($event)"></app-login-form>
     </ng-container>
 
     <ng-template #isNotRegistered>
-        <div class="container register">
-            <div class="content">
-                <div class="title">
-                    <h3>Get started with <span>Coffee Shop</span></h3>
-                    <p>Create your account</p>
-                </div>
-                <div class="form">
-                    <form [formGroup]="registerForm" (ngSubmit)="onregisterFormSubmitted(registerForm)">
-                        <div class="input-field">
-                            <img class="icon" src="../../../assets/message_icon.png" alt="message icon">
-                            <input type="email" formControlName="email" placeholder="Email">
-                        </div>
-                        <div class="input-field">
-                            <img class=" icon" src="../../../assets/lock_icon.png" alt="lock icon">
-                            <input [type]="(is_isvisible$ | async ) ? 'password' : 'text'" formControlName="password"
-                                placeholder="Password">
-                            <span (click)="viewPassword()"><img class="icon"
-                                    [src]="(is_isvisible$ | async ) ? '../../../assets/eye_slash_visible.png' : '../../../assets/eye_visible.png'">
-                            </span>
-                        </div>
-                        <div class="input-field">
-                            <img class=" icon" src="../../../assets/lock_icon.png" alt="lock icon">
-                            <input [type]="(is_isvisible$ | async ) ? 'password' : 'text'"
-                                formControlName="confirmPassword" placeholder="Confirm Password">
-                            <span (click)="viewPassword()"><img class="icon"
-                                    [src]="(is_isvisible$ | async ) ? '../../../assets/eye_slash_visible.png' : '../../../assets/eye_visible.png'">
-                            </span>
-                        </div>
-                        <div class="sub-content">
-                            <p class="incorrect" *ngIf="registerForm.errors?.['passwordMatchError']">Password
-                                does not match!</p>
-                            <div class="sign-up">
-                                <p>Already have an account?<span class="sign-up-btn" (click)="onRegister(true)">
-                                        Login</span>
-                                </p>
-                            </div>
-                            <div class="submit">
-                                <button class="submit-btn" mat-raised-button type="submit">Login</button>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-        </div>
+        <app-register-form (registerFormSubmitted)="registerFormHandled($event)"
+            (registered)="onRegister($event)"></app-register-form>
     </ng-template>
 </section>

@@ -37,7 +37,6 @@ export class RegisterFormComponent {
     true
   );
   public is_isvisible$: Observable<boolean> = this._isvisible.asObservable();
-  readonly isVisible = this.is_isvisible$.subscribe();
 
   viewPassword() {
     this._isvisible.next(!this._isvisible.getValue());

@@ -19,15 +19,15 @@ export class CoffeeListComponent {
     new EventEmitter<CoffeeWithUrlQueryModel>();
 
   displayedColumns: string[] = [
-    'image',
+    'action',
     'name',
     'category',
     'unitPrice',
     'inStock',
     'discount',
-    'status',
     'totalValue',
-    'remove',
+    'status',
+    'delete',
   ];
 
   onDelete(id: number) {

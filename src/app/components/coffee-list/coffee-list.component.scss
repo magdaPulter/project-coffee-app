@@ -1,7 +1,58 @@
+.inventory-container {
+  max-width: 1311px;
+  max-height: 650px;
+  border-radius: 12px;
+  background-color: #ffffff;
+
+  p {
+    font-size: 17px;
+    font-weight: 400;
+    color: #45464e;
+    // font-family: Avenir Next;
+  }
+}
+
 img.image {
   width: 60px;
 }
 
-img {
+.icon {
+  width: 20px;
   cursor: pointer;
+}
+
+th,
+td {
+  // text-align: center;
+  font-size: 15px;
+  line-height: 20.49px;
+  font-family: Avenir Next;
+  font-weight: 400;
+  color: #2c2d33;
+}
+
+td {
+  color: #6e7079;
+}
+
+td:not(#name) {
+  text-align: center;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: 10px;
+    width: 36px;
+    border-radius: 8px;
+  }
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: none;
+}
+
+.mat-mdc-table mdc-table {
+  border-bottom: none;
 }

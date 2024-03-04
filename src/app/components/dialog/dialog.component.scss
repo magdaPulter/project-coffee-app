@@ -1,18 +1,168 @@
-@import "../../styles/config";
+.dialog-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-.dialog {
-  background-color: $light-secondary;
-  width: 500px;
-  // height: 1000px;
-}
-
-form {
-  button.confirm-btn {
-    @include btn-primary;
+  img.icon {
+    margin-right: 35px;
+    margin-top: 25px;
+    cursor: pointer;
   }
 }
 
-.form-btn {
+form {
   display: flex;
-  justify-content: end;
+  flex-direction: column;
+  .content {
+    display: flex;
+    justify-content: space-between;
+    // font-family: Avenir Next;
+
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 275px;
+      height: 450px;
+      margin-right: 20px;
+
+      input,
+      .select {
+        font-family: Avenir Next;
+        width: 275px;
+        height: 52px;
+        border-radius: 15px;
+        border: 0.5px solid #000000;
+        padding: 8px 16px 8px 16px;
+        outline: none;
+      }
+
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+      }
+
+      .discount-field {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        input {
+          width: 109px;
+        }
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+    .middle-column {
+      display: flex;
+      flex-direction: column;
+      max-width: 275px;
+      height: 450px;
+      margin-right: 20px;
+      span {
+        font-family: Avenir Next;
+        color: #53545c;
+        font-size: 12px;
+        line-height: 16.39px;
+      }
+
+      textarea {
+        resize: none;
+        width: 275px;
+        height: 163px;
+        border-radius: 15px;
+        padding: 16px 2px 2px 16px;
+        margin-bottom: 30px;
+        border: 0.5px solid #000000;
+        outline: none;
+        font-family: Avenir Next;
+      }
+      .date-field {
+        width: 175.5px;
+        height: 52px;
+        background-color: #fff;
+        border: 0.5px solid #000000;
+        border-radius: 15px;
+        margin-top: 8px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        input {
+          border: none;
+          outline: none;
+          color: #abafb1;
+          width: 120px;
+          font-size: 16px;
+          height: 24px;
+          font-family: Avenir Next;
+        }
+      }
+    }
+    .right-column {
+      .upload {
+        background-color: #f8f6f1;
+        border-radius: 15px;
+        border: 0.5px solid #000000;
+        width: 275px;
+        height: 263px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+
+        input[type="file"]::file-selector-button {
+          background-color: #f8f6f1;
+          border: none;
+          cursor: pointer;
+          color: #5570f1;
+          font-family: Avenir Next;
+        }
+        img.icon {
+          color: #5570f1;
+        }
+      }
+    }
+
+    .slide-toggle {
+      margin-top: 30px;
+      text-align: center;
+    }
+  }
+  .form-btn {
+    width: 295px;
+    align-self: flex-end;
+    display: flex;
+    margin-right: 20px;
+    justify-content: space-between;
+
+    .btn {
+      width: 135px;
+      height: 36px;
+      border-radius: 12px;
+      background-color: #1c1d22;
+      color: #fff;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      font-family: Avenir Next;
+      line-height: 19.12px;
+    }
+    .cancel {
+      background-color: #8b8d97;
+    }
+  }
+
+  span {
+    font-family: Avenir Next;
+    color: #abafb1;
+    font-size: 14px;
+    line-height: 16.94px;
+  }
+}
+.icon {
+  width: 24px;
+  height: 24px;
 }

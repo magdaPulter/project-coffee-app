@@ -1,10 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {
   MAT_DIALOG_DATA,
@@ -16,14 +11,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
-import { Observable, of } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import { Router } from '@angular/router';
-import { FileModel } from '../../models/file.model';
-import { CoffeeService } from '../../services/coffee.service';
-import { UploadFileService } from '../../services/upload-file.service';
 import { MatSelectModule } from '@angular/material/select';
-import { CoffeeModel } from 'src/app/models/coffee.model';
+import { Router } from '@angular/router';
+import { CoffeeService } from '../../services/coffee.service';
+import { CoffeeModel } from '../../models/coffee.model';
+import { UploadFileService } from '../../services/upload-file.service';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-dialog',
@@ -40,27 +33,29 @@ import { CoffeeModel } from 'src/app/models/coffee.model';
     ReactiveFormsModule,
     CommonModule,
     MatSelectModule,
+    MatSlideToggleModule,
   ],
 })
 export class DialogComponent implements OnInit {
-  date: string = new Date().toString();
+  date: string = new Date().toLocaleDateString();
 
   readonly coffeeForm: FormGroup = new FormGroup({
     name: new FormControl(),
     code: new FormControl(),
-    category: new FormControl(),
+    category: new FormControl('Choose Product Category'),
     price: new FormControl(),
     quantity: new FormControl(),
-    quantityUnit: new FormControl(),
-    quantityInStock: new FormControl(),
+    producer: new FormControl('Choose Product Category'),
     discount: new FormControl(),
     description: new FormControl(),
     longDescription: new FormControl(),
     date: new FormControl(this.date),
+    published: new FormControl(),
     image: new FormControl(),
   });
 
   readonly categories: string[] = ['Coffee', 'Accesories'];
+  readonly producer: string[] = ['Coffee Roastery', 'Hario', 'Aeropress'];
 
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
@@ -94,8 +89,7 @@ export class DialogComponent implements OnInit {
             category: form.get('category')!.value,
             price: form.get('price')!.value,
             quantity: form.get('quantity')!.value,
-            quantityUnit: form.get('quantityUnit')!.value,
-            quantityInStock: form.get('quantityInStock')!.value,
+            producer: form.get('producer')!.value,
             discount: form.get('discount')!.value,
             description: form.get('description')!.value,
             longDescription: form.get('longDescription')!.value,

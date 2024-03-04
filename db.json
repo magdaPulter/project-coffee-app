@@ -32,36 +32,47 @@
     },
     {
       "name": "Las Huancas",
-      "origin": "Peru",
-      "image": "43e6b159-a792-4d8b-9369-d9e018081dbe",
+      "code": null,
+      "category": "Coffee",
+      "price": null,
+      "quantity": null,
+      "producer": null,
+      "discount": null,
       "description": "Huancas has a warm, tropical climate, favorable for growing coffee and other plants. Farmers also use the richness of the local mountains and their microclimate, which allows them to grow coffees with distinctive flavors.",
-      "process": {
-        "name": "natural",
-        "id": "2"
-      },
-      "characteristic": {
-        "1": false,
-        "2": false,
-        "3": false,
-        "4": false,
-        "5": false
-      },
+      "longDescription": null,
+      "date": "Sun Mar 03 2024 10:39:08 GMT+0100 (czas środkowoeuropejski standardowy)",
+      "image": "43e6b159-a792-4d8b-9369-d9e018081dbe",
       "id": 14
     },
     {
       "name": "Java Pegasing - Indonesia",
       "code": null,
-      "category": null,
+      "category": "Coffee",
       "price": "88",
       "quantity": null,
-      "quantityUnit": null,
-      "quantityInStock": null,
+      "producer": null,
       "discount": null,
-      "description": "\n​\n\n\n309 / 5,000\nTranslation results\nTranslation result\nKirura is one of 13 processing stations gathered as the Komothai group. Komothai was founded in 1959 and has 9,951 members, 1,047 of whom supply their coffee to Kirura. The station is run by a three-person board of directors, subject to changes consistent with the guidelines of Komothai's general board.",
+      "description": "309 / 5,000\nTranslation results\nTranslation result\nKirura is one of 13 processing stations gathered as the Komothai group. Komothai was founded in 1959 and has 9,951 members, 1,047 of whom supply their coffee to Kirura. The station is run by a three-person board of directors, subject to changes consistent with the guidelines of Komothai's general board.",
       "longDescription": null,
       "date": null,
+      "published": null,
       "image": "eda0d44f-b5df-4927-b83a-eab78bed8eb0",
       "id": 15
+    },
+    {
+      "name": "coffeee",
+      "code": null,
+      "category": null,
+      "price": null,
+      "quantity": null,
+      "producer": "Hario",
+      "discount": null,
+      "description": null,
+      "longDescription": null,
+      "date": "Sun Mar 03 2024 11:37:20 GMT+0100 (czas środkowoeuropejski standardowy)",
+      "image": null,
+      "published": true,
+      "id": 16
     }
   ],
   "files": [
@@ -386,6 +397,27 @@
       "originalName": "honey+beans+on+farm.jpeg",
       "mimetype": "image/jpeg",
       "size": 82541
+    },
+    {
+      "id": "0f9781e0-83e9-4df0-b75d-a6a3260366e5",
+      "name": "file-1709457723160",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "87f79c58-fa33-418a-9258-6bd5a5cdc16d",
+      "name": "file-1709457863116",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "61147ed1-a64b-4ab1-9ff0-861db2f0977d",
+      "name": "file-1709458021392",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
     }
   ],
   "register": [

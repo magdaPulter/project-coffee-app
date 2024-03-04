@@ -1,90 +1,63 @@
 <div class="dialog">
-    <div>
-        <h1 mat-dialog-title>Coffee Form</h1>
+    <div class="dialog-title">
+        <h1 mat-dialog-title>NEW PRODUCT</h1>
+        <img [mat-dialog-close]="false" class="icon" src="../../../assets/x_icon.png" alt="close icon">
     </div>
     <form [formGroup]="coffeeForm" (ngSubmit)="onFormSubmit(coffeeForm)">
         <mat-dialog-content>
-            <div>
-                <mat-form-field>
-                    <mat-label>Product Name</mat-label>
-                    <input matInput formControlName="name">
-                    <mat-error *ngIf="coffeeForm.get('name')!.invalid">name is required</mat-error>
-                </mat-form-field>
+            <div class="content">
+                <div class="left-column">
+                    <input type="text" formControlName="name" placeholder="Product Name">
+                    <input type="number" formControlName="code" placeholder="Product Code">
+                    <div class="select">
+                        <!-- <label for="category">Select category</label> -->
+                        <select id="category" formControlName="category" placeholder="Category">
+                            <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+                        </select>
+                    </div>
+
+                    <input type="text" formControlName="price" placeholder="Selling Price">
+                    <span>$99,000.00</span>
+                    <input type="text" formControlName="quantity" placeholder="Quantity in Stock">
+                    <div class="select">
+                        <select name="producer" id="producer" formControlName="producer" placeholder="Producer">
+                            <option *ngFor="let producer of producer" [value]="producer">{{producer}}</option>
+                        </select>
+                    </div>
+                    <div class="discount-field">
+                        <input type="number" formControlName="discount" placeholder="% Discount">
+                        <mat-slide-toggle>
+                            <span>Add Discount</span>
+                        </mat-slide-toggle>
+                    </div>
+
+                </div>
+                <div class="middle-column">
+                    <textarea type="text" formControlName="description" placeholder="Short Description"></textarea>
+                    <textarea type="text" formControlName="longDescription"
+                        placeholder="Product Long Description"></textarea>
+                    <span>Date Added</span>
+                    <div class="date-field">
+                        <img class="icon" src="../../../assets/calendar.png" alt="calendar icon">
+                        <input type="text" formControlName="date" readonly placeholder="Date">
+                    </div>
+                </div>
+                <div class="right-column">
+                    <div class="upload">
+                        <img class="icon" src="../../../assets/upload_cloud.png" alt="upload icon">
+                        <input type="file" (change)="onFileSelected($event)">
+                    </div>
+                    <mat-slide-toggle formControlName="published" class="slide-toggle">
+                        <span>Save Unpublished</span>
+                    </mat-slide-toggle>
+                </div>
             </div>
-            <div>
-                <mat-form-field>
-                    <mat-label>Product Code</mat-label>
-                    <input matInput formControlName="code">
-                </mat-form-field>
-            </div>
-            <div>
-                <mat-form-field appearance="fill">
-                    <mat-label>Select Product Category</mat-label>
-                    <mat-select formControlName="category">
-                        <mat-option *ngFor="let item of categories" [value]="item">
-                            {{item}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <!-- <mat-form-field>
-                    <mat-label>Category</mat-label>
-                    <input matInput formControlName="category">
-                </mat-form-field> -->
-            </div>
-            <div>
-                <mat-form-field>
-                    <mat-label>Price</mat-label>
-                    <input matInput formControlName="price">
-                </mat-form-field>
-            </div>
-            <div>
-                <mat-form-field>
-                    <mat-label>Quantity</mat-label>
-                    <input matInput formControlName="quantity">
-                </mat-form-field>
-            </div>
-            <div>
-                <mat-form-field>
-                    <mat-label>Quantity Unit</mat-label>
-                    <input matInput formControlName="quantityUnit">
-                </mat-form-field>
-            </div>
-            <div>
-                <!-- <input type="number"> -->
-                <mat-form-field>
-                    <mat-label>Quantity In Stock</mat-label>
-                    <input matInput formControlName="quantityInStock">
-                </mat-form-field>
-            </div>
-            <div>
-                <mat-form-field>
-                    <mat-label>Discount</mat-label>
-                    <input matInput formControlName="discount">
-                </mat-form-field>
-            </div>
-            <div>
-                <mat-form-field>
-                    <mat-label>Description</mat-label>
-                    <textarea matInput formControlName="description"></textarea>
-                </mat-form-field>
-            </div>
-            <div>
-                <mat-form-field>
-                    <mat-label>Long Description</mat-label>
-                    <textarea matInput formControlName="longDescription"></textarea>
-                </mat-form-field>
-            </div>
-            <mat-form-field>
-                <mat-label>Date</mat-label>
-                <input matInput formControlName="date" readonly>
-            </mat-form-field>
         </mat-dialog-content>
-        <input type="file" (change)="onFileSelected($event)">
 
         <mat-dialog-actions class="form-btn">
-            <button mat-button [mat-dialog-close]="false">Cancel</button>
-            <button mat-button type="submit" [mat-dialog-close]="coffeeForm" class="confirm-btn">{{data ? "Update" :
+            <button class="btn" type="submit" [mat-dialog-close]="coffeeForm">{{data ? "Update" :
                 "Save"}}</button>
+            <button class="btn cancel" [mat-dialog-close]="false">Cancel</button>
         </mat-dialog-actions>
     </form>
 </div>

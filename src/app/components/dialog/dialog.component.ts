@@ -42,10 +42,10 @@ export class DialogComponent implements OnInit {
   readonly coffeeForm: FormGroup = new FormGroup({
     name: new FormControl(),
     code: new FormControl(),
-    category: new FormControl('Choose Product Category'),
+    category: new FormControl(),
     price: new FormControl(),
     quantity: new FormControl(),
-    producer: new FormControl('Choose Product Category'),
+    producer: new FormControl(),
     discount: new FormControl(),
     description: new FormControl(),
     longDescription: new FormControl(),

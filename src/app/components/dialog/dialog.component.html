@@ -9,21 +9,17 @@
                 <div class="left-column">
                     <input type="text" formControlName="name" placeholder="Product Name">
                     <input type="number" formControlName="code" placeholder="Product Code">
-                    <div class="select">
-                        <!-- <label for="category">Select category</label> -->
-                        <select id="category" formControlName="category" placeholder="Category">
-                            <option *ngFor="let category of categories" [value]="category">{{category}}</option>
-                        </select>
-                    </div>
-
+                    <select formControlName="category" class="form-select" aria-label="Default select example">
+                        <option [value]="null" disabled>Choose Category</option>
+                        <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+                    </select>
                     <input type="text" formControlName="price" placeholder="Selling Price">
                     <span>$99,000.00</span>
                     <input type="text" formControlName="quantity" placeholder="Quantity in Stock">
-                    <div class="select">
-                        <select name="producer" id="producer" formControlName="producer" placeholder="Producer">
-                            <option *ngFor="let producer of producer" [value]="producer">{{producer}}</option>
-                        </select>
-                    </div>
+                    <select formControlName="producer" class="form-select" aria-label="Default select example">
+                        <option [value]="null" disabled>Choose Producer</option>
+                        <option *ngFor="let producer of producer" [value]="producer">{{producer}}</option>
+                    </select>
                     <div class="discount-field">
                         <input type="number" formControlName="discount" placeholder="% Discount">
                         <mat-slide-toggle>

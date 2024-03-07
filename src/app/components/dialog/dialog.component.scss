@@ -27,7 +27,7 @@ form {
       margin-right: 20px;
 
       input,
-      .select {
+      select {
         font-family: Avenir Next;
         width: 275px;
         height: 52px;
@@ -35,6 +35,8 @@ form {
         border: 0.5px solid #000000;
         padding: 8px 16px 8px 16px;
         outline: none;
+        font-size: 14px;
+        color: #53545c;
       }
 
       input[type="number"]::-webkit-inner-spin-button,
@@ -111,7 +113,7 @@ form {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: auto;
+        // margin: auto;
 
         input[type="file"]::file-selector-button {
           background-color: #f8f6f1;

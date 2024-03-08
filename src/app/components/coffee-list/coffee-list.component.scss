@@ -1,3 +1,11 @@
+::ng-deep .mat-mdc-paginator-container {
+  font-size: 15px;
+  line-height: 20.49px;
+  font-family: Avenir Next;
+  font-weight: 400;
+  color: #2c2d33;
+}
+
 .inventory-container {
   max-width: 1311px;
   max-height: 650px;
@@ -23,7 +31,6 @@ img.image {
 
 th,
 td {
-  // text-align: center;
   font-size: 15px;
   line-height: 20.49px;
   font-family: Avenir Next;

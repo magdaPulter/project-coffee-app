@@ -1,5 +1,20 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  AfterContentChecked,
+  AfterContentInit,
+  AfterViewInit,
+  Component,
+  DoCheck,
+  Inject,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {
   MAT_DIALOG_DATA,
@@ -12,11 +27,12 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { CoffeeService } from '../../services/coffee.service';
 import { CoffeeModel } from '../../models/coffee.model';
 import { UploadFileService } from '../../services/upload-file.service';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-dialog',
@@ -38,19 +54,21 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 })
 export class DialogComponent implements OnInit {
   date: string = new Date().toLocaleDateString();
+  code: number = Math.floor(Math.random() * 10000);
 
   readonly coffeeForm: FormGroup = new FormGroup({
-    name: new FormControl(),
-    code: new FormControl(),
+    name: new FormControl('', Validators.required),
+    code: new FormControl(this.code),
     category: new FormControl(),
-    price: new FormControl(),
+    price: new FormControl(null, Validators.required),
     quantity: new FormControl(),
     producer: new FormControl(),
     discount: new FormControl(),
+    discountToggle: new FormControl(),
     description: new FormControl(),
     longDescription: new FormControl(),
     date: new FormControl(this.date),
-    published: new FormControl(),
+    unPublished: new FormControl(),
     image: new FormControl(),
   });
 
@@ -80,6 +98,7 @@ export class DialogComponent implements OnInit {
       if (this.data) {
         this._coffeeService.update(this.data.id!, form.value).subscribe(() => {
           this._router.navigate(['']);
+          console.log(form);
         });
       } else {
         this._coffeeService
@@ -91,11 +110,12 @@ export class DialogComponent implements OnInit {
             quantity: form.get('quantity')!.value,
             producer: form.get('producer')!.value,
             discount: form.get('discount')!.value,
+            discountToggle: form.get('discountToggle')!.value,
             description: form.get('description')!.value,
             longDescription: form.get('longDescription')!.value,
             date: form.get('date')!.value,
             image: form.get('image')!.value,
-            published: true,
+            unPublished: form.get('unPublished')!.value,
           })
           .subscribe();
       }

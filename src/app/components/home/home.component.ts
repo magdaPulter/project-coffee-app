@@ -15,14 +15,7 @@ import { CoffeeWithUrlQueryModel } from '../../querymodels/coffeeWithUrl.querymo
 import { CoffeeService } from '../../services/coffee.service';
 import { DialogComponent } from '../dialog/dialog.component';
 import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
-import {
-  faBagShopping,
-  faChartLine,
-  faFolderClosed,
-  faTriangleExclamation,
-  faPercent,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { InventorySummaryComponent } from '../inventory-summary/inventory-summary.component';
 
 @Component({
   selector: 'app-home',
@@ -39,15 +32,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatDialogModule,
     MatButtonModule,
     CoffeeListComponent,
-    FontAwesomeModule,
+    InventorySummaryComponent,
   ],
 })
 export class HomeComponent {
-  faBagShopping = faBagShopping;
-  faChartLine = faChartLine;
-  faFolderClosed = faFolderClosed;
-  faTriangleExclamation = faTriangleExclamation;
-  faPercent = faPercent;
   private _refreshListSubject: BehaviorSubject<void> =
     new BehaviorSubject<void>(void 0);
   readonly coffeeList$: Observable<CoffeeWithUrlQueryModel[]> =

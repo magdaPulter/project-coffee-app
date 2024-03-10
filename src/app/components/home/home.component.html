@@ -14,41 +14,7 @@
 </div>
 
 <div class="main-content">
-    <div class="inventory-summary">
-        <div class="title">
-            <p>Inventory Summary</p>
-            <button (click)="openDialog()">+ Add a New Product</button>
-        </div>
-        <div class="content">
-            <div class="all-products">
-                <fa-icon [icon]="faBagShopping"></fa-icon>
-                <p>All Products</p>
-                <p class="number">333</p>
-            </div>
-            <div class="published-products">
-                <div class="column">
-                    <fa-icon [icon]="faChartLine"></fa-icon>
-                    <p>All Products</p>
-                    <p class="number">333<span>12%</span></p>
-                </div>
-                <div class="column">
-                    <fa-icon [icon]="faFolderClosed"></fa-icon>
-                    <p>All Products</p>
-                    <p class="number">333<span>12%</span></p>
-                </div>
-            </div>
-            <div class="low-stock">
-                <fa-icon [icon]="faTriangleExclamation"></fa-icon>
-                <p>All Products</p>
-                <p class="number">333</p>
-            </div>
-            <div class="discounted">
-                <fa-icon [icon]="faPercent"></fa-icon>
-                <p>All Products</p>
-                <p class="number">333</p>
-            </div>
-        </div>
-    </div>
+    <app-inventory-summary (productAdded)="openDialog()"></app-inventory-summary>
 
     <div class="inventory-container">
         <p>Inventory Items</p>

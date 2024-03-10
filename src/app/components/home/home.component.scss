@@ -40,97 +40,9 @@
   align-items: center;
   margin-top: 40px;
   width: 100vw;
-  height: 100%;
+  // height: 100%;
   background-color: #edebe7;
   padding-top: 20px;
-  .inventory-summary {
-    width: 1313px;
-    .title {
-      display: flex;
-      justify-content: space-between;
-      font-family: Avenir Next;
-      p {
-        padding-top: 5px;
-      }
-
-      button {
-        width: 230px;
-        height: 36px;
-        border-radius: 15px;
-        border: none;
-        background-color: #1b1c1f;
-        color: #ffffff;
-        text-align: center;
-        font-weight: 300;
-      }
-    }
-    .content {
-      display: flex;
-      justify-content: space-between;
-
-      .all-products,
-      .published-products,
-      .low-stock,
-      .discounted {
-        width: 317px;
-        height: 145px;
-        border-radius: 15px;
-        padding: 11px 15px 11px 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        fa-icon {
-          width: 36px;
-          color: #ffffff;
-          margin: 15px 0px;
-          background-color: rgba(255, 255, 255, 0.16);
-          border-radius: 8px;
-          text-align: center;
-        }
-        p {
-          color: #ffffff;
-          font-family: Avenir Next;
-          font-size: 20px;
-          display: flex;
-          align-items: flex-start;
-          span {
-            font-size: 11px;
-            color: #dbdeee;
-            font-weight: 400;
-            margin-left: 5px;
-          }
-        }
-        .number {
-          font-weight: 600;
-        }
-      }
-      .all-products {
-        height: 145px;
-        background-color: #fa8354;
-      }
-      .published-products {
-        width: 479px;
-        background-color: #be40d3;
-        display: flex;
-        flex-direction: row;
-
-        .column {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          width: 100%;
-        }
-      }
-      .low-stock {
-        width: 230px;
-        background-color: #770512;
-      }
-      .discounted {
-        width: 230px;
-        background-color: #fa8354;
-      }
-    }
-  }
 
   .inventory-container {
     margin-top: 20px;

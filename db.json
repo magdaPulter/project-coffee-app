@@ -4,14 +4,14 @@
       "name": "La Provincia - Columbia ",
       "code": null,
       "category": "Coffee",
-      "price": null,
+      "price": "25",
       "quantity": "3",
-      "quantityUnit": null,
-      "quantityInStock": null,
+      "producer": "Coffee Roastery",
       "discount": null,
       "description": "ripe fruit is hand-picked by farmers and processed on their farms. They are pulped and fermented in bags, buckets or tanks for 16 to 38 hours. After fermentation, the coffee is washed in clean water and laid out on terraces to dry, which takes 8 to 14 days.",
       "longDescription": null,
       "date": null,
+      "published": null,
       "image": "a85c1858-2227-43c9-abd9-088d90f56a78",
       "id": 12
     },
@@ -60,19 +60,19 @@
       "id": 15
     },
     {
-      "name": "coffeee",
-      "code": null,
-      "category": null,
-      "price": null,
-      "quantity": null,
-      "producer": "Hario",
-      "discount": null,
+      "name": "coffee",
+      "code": 1140,
+      "category": "Coffee",
+      "price": "899",
+      "quantity": "7",
+      "producer": "Coffee Roastery",
+      "discount": 0,
       "description": null,
       "longDescription": null,
-      "date": "Sun Mar 03 2024 11:37:20 GMT+0100 (czas środkowoeuropejski standardowy)",
-      "image": null,
-      "published": true,
-      "id": 16
+      "date": "8.03.2024",
+      "unPublished": true,
+      "image": "73599342-08ef-46b1-b322-e93746161599",
+      "id": 18
     }
   ],
   "files": [
@@ -415,6 +415,27 @@
     {
       "id": "61147ed1-a64b-4ab1-9ff0-861db2f0977d",
       "name": "file-1709458021392",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "73599342-08ef-46b1-b322-e93746161599",
+      "name": "file-1709888696140",
+      "originalName": "coffee-brain-caffeine-neuroscincces.webp",
+      "mimetype": "image/webp",
+      "size": 112750
+    },
+    {
+      "id": "38819940-9ba4-41e2-a17b-cfab2b5698cc",
+      "name": "file-1709888734191",
+      "originalName": "pobrane (1).jpeg",
+      "mimetype": "image/jpeg",
+      "size": 5112
+    },
+    {
+      "id": "9339dd87-e29c-4d22-9432-dc8c4af6979e",
+      "name": "file-1709888796968",
       "originalName": "coffee-brain-caffeine-neuroscincces.webp",
       "mimetype": "image/webp",
       "size": 112750

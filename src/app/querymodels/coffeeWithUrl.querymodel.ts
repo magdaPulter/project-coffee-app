@@ -6,11 +6,12 @@ export interface CoffeeWithUrlQueryModel {
   readonly quantity: string;
   readonly producer: string[];
   readonly discount: number;
+  readonly discountToggle: boolean;
   readonly description: string;
   readonly longDescription: string;
   readonly date: string;
   readonly image: string;
-  readonly published: boolean;
+  readonly unPublished: boolean;
   readonly id?: number;
   readonly imageUrl: string;
 }

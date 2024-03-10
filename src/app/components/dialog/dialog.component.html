@@ -8,29 +8,35 @@
             <div class="content">
                 <div class="left-column">
                     <input type="text" formControlName="name" placeholder="Product Name">
-                    <input type="number" formControlName="code" placeholder="Product Code">
-                    <div class="select">
-                        <!-- <label for="category">Select category</label> -->
-                        <select id="category" formControlName="category" placeholder="Category">
-                            <option *ngFor="let category of categories" [value]="category">{{category}}</option>
-                        </select>
-                    </div>
-
+                    <span
+                        *ngIf="!coffeeForm.get('name')?.valid &&(coffeeForm.get('name')!.dirty || coffeeForm.get('name')!.touched)"
+                        class="error">Please
+                        enter the name</span>
+                    <input type="number" formControlName="code" placeholder="Product Code" readonly>
+                    <select formControlName="category" class="form-select" aria-label="Default select example">
+                        <option [value]="null" disabled>Choose Category</option>
+                        <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+                    </select>
                     <input type="text" formControlName="price" placeholder="Selling Price">
+                    <span
+                        *ngIf="!coffeeForm.get('price')?.valid &&(coffeeForm.get('price')!.dirty || coffeeForm.get('price')!.touched)"
+                        class="error">Please
+                        enter the price</span>
                     <span>$99,000.00</span>
                     <input type="text" formControlName="quantity" placeholder="Quantity in Stock">
-                    <div class="select">
-                        <select name="producer" id="producer" formControlName="producer" placeholder="Producer">
-                            <option *ngFor="let producer of producer" [value]="producer">{{producer}}</option>
-                        </select>
-                    </div>
+                    <select formControlName="producer" class="form-select" aria-label="Default select example">
+                        <option [value]="null" disabled>Choose Producer</option>
+                        <option *ngFor="let producer of producer" [value]="producer">{{producer}}</option>
+                    </select>
                     <div class="discount-field">
-                        <input type="number" formControlName="discount" placeholder="% Discount">
-                        <mat-slide-toggle>
+                        <input type="number" formControlName="discount" placeholder="% Discount"
+                            [readonly]="!(coffeeForm.get('discountToggle')!.valueChanges | async)">
+                        <mat-slide-toggle formControlName="discountToggle">
                             <span>Add Discount</span>
                         </mat-slide-toggle>
                     </div>
-
+                    <span *ngIf="!coffeeForm.get('discount')?.valid" class="error">Please select number between 1 and
+                        100</span>
                 </div>
                 <div class="middle-column">
                     <textarea type="text" formControlName="description" placeholder="Short Description"></textarea>
@@ -47,7 +53,7 @@
                         <img class="icon" src="../../../assets/upload_cloud.png" alt="upload icon">
                         <input type="file" (change)="onFileSelected($event)">
                     </div>
-                    <mat-slide-toggle formControlName="published" class="slide-toggle">
+                    <mat-slide-toggle formControlName="unPublished" class="slide-toggle">
                         <span>Save Unpublished</span>
                     </mat-slide-toggle>
                 </div>
@@ -55,7 +61,8 @@
         </mat-dialog-content>
 
         <mat-dialog-actions class="form-btn">
-            <button class="btn" type="submit" [mat-dialog-close]="coffeeForm">{{data ? "Update" :
+            <button type="submit" [mat-dialog-close]="coffeeForm" [disabled]="!coffeeForm.valid" class="btn">{{data ?
+                "Update" :
                 "Save"}}</button>
             <button class="btn cancel" [mat-dialog-close]="false">Cancel</button>
         </mat-dialog-actions>

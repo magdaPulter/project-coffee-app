@@ -1,66 +1,66 @@
-<div class="inventory-container">
-    <p>Inventory Items</p>
-    <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="coffeeList">
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="coffeeList">
 
-            <ng-container matColumnDef="action">
-                <th mat-header-cell *matHeaderCellDef>Action</th>
-                <td mat-cell *matCellDef="let element" class="icon-field"><img (click)="onUpdate(element)"
-                        src="../../../assets/edit.png" class="icon" alt="edit icon"></td>
-            </ng-container>
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td mat-cell *matCellDef="let element" class="icon-field"><img (click)="onUpdate(element)"
+                    src="../../../assets/edit.png" class="icon" alt="edit icon"></td>
+        </ng-container>
 
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef>Product Name</th>
-                <td mat-cell *matCellDef="let element" id="name">
-                    <div class="name">
-                        <img (click)="onUpdate(element)" class="image" [src]="element.imageUrl" alt="">
-                        <span>{{element.name}} </span>
-                    </div>
-                </td>
-            </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Product Name</th>
+            <td mat-cell *matCellDef="let element" id="name">
+                <div class="name">
+                    <img (click)="onUpdate(element)" class="image" [src]="element.imageUrl" alt="">
+                    <span>{{element.name}} </span>
+                </div>
+            </td>
+        </ng-container>
 
-            <ng-container matColumnDef="category">
-                <th mat-header-cell *matHeaderCellDef>Category</th>
-                <td mat-cell *matCellDef="let element"> {{element.category}} </td>
-            </ng-container>
+        <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef>Category</th>
+            <td mat-cell *matCellDef="let element">{{element.category}}</td>
+        </ng-container>
 
-            <ng-container matColumnDef="unitPrice">
-                <th mat-header-cell *matHeaderCellDef>Unit Price</th>
-                <td mat-cell *matCellDef="let element"> 99$</td>
-            </ng-container>
+        <ng-container matColumnDef="unitPrice">
+            <th mat-header-cell *matHeaderCellDef>Unit Price</th>
+            <td mat-cell *matCellDef="let element">${{element.price}}</td>
+        </ng-container>
 
-            <ng-container matColumnDef="inStock">
-                <th mat-header-cell *matHeaderCellDef>In Stock</th>
-                <td mat-cell *matCellDef="let element"> 2</td>
-            </ng-container>
+        <ng-container matColumnDef="inStock">
+            <th mat-header-cell *matHeaderCellDef>In Stock</th>
+            <td mat-cell *matCellDef="let element">{{element.quantity}}</td>
+        </ng-container>
 
-            <ng-container matColumnDef="discount">
-                <th mat-header-cell *matHeaderCellDef>Discount</th>
-                <td mat-cell *matCellDef="let element"> 0%{{element.discount}}</td>
-            </ng-container>
+        <ng-container matColumnDef="discount">
+            <th mat-header-cell *matHeaderCellDef>Discount</th>
+            <td mat-cell *matCellDef="let element">%{{element.discount}} </td>
+        </ng-container>
 
-            <ng-container matColumnDef="totalValue">
-                <th mat-header-cell *matHeaderCellDef>Total Value</th>
-                <td mat-cell *matCellDef="let element">99$</td>
-            </ng-container>
+        <ng-container matColumnDef="totalValue">
+            <th mat-header-cell *matHeaderCellDef>Total Value</th>
+            <td mat-cell *matCellDef="let element">${{element.price*(100-element.discount)/100}}</td>
+        </ng-container>
 
-            <ng-container matColumnDef="status">
-                <th mat-header-cell *matHeaderCellDef>Status</th>
-                <td mat-cell *matCellDef="let element">Published</td>
-            </ng-container>
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let element" class="published">
+                <div ngClass="{{!element.unPublished ? 'publish' : 'unpublish'}}">{{!element.unPublished ?
+                    'Published' : 'Unpublished'}}</div>
+            </td>
+        </ng-container>
 
-            <ng-container matColumnDef="delete">
-                <th mat-header-cell *matHeaderCellDef>Delete</th>
-                <td mat-cell *matCellDef="let element" class="icon-field"> <img (click)="onDelete(element.id!)"
-                        src="../../../assets/remove.png" class="icon" alt="remove icon"></td>
-            </ng-container>
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef>Delete</th>
+            <td mat-cell *matCellDef="let element" class="icon-field"> <img (click)="onDelete(element.id!)"
+                    src="../../../assets/remove.png" class="icon" alt="remove icon"></td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
 
-        <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                       showFirstLastButtons
-                       aria-label="Select page of periodic elements">
-        </mat-paginator> -->
-    </div>
+    <mat-paginator class="paginator" [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page">
+    </mat-paginator>
+
 </div>

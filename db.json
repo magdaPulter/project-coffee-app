@@ -60,36 +60,6 @@
       "id": 15
     },
     {
-      "name": "coffeee",
-      "code": null,
-      "category": "Coffee",
-      "price": "89",
-      "quantity": "78",
-      "producer": "Hario",
-      "discount": 7,
-      "description": null,
-      "longDescription": null,
-      "date": "Sun Mar 03 2024 11:37:20 GMT+0100 (czas środkowoeuropejski standardowy)",
-      "published": false,
-      "image": "9339dd87-e29c-4d22-9432-dc8c4af6979e",
-      "id": 16
-    },
-    {
-      "name": "Coffee",
-      "code": 7836,
-      "category": "Coffee",
-      "price": "100",
-      "quantity": "4",
-      "producer": "Coffee Roastery",
-      "discount": 20,
-      "description": null,
-      "longDescription": null,
-      "date": "8.03.2024",
-      "published": false,
-      "image": "38819940-9ba4-41e2-a17b-cfab2b5698cc",
-      "id": 17
-    },
-    {
       "name": "coffee",
       "code": 1140,
       "category": "Coffee",

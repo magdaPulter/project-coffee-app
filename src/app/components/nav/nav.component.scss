@@ -1,0 +1,35 @@
+.stock-inventory {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  height: 26px;
+  padding: 14px 21px 14px 21px;
+
+  p {
+    height: 36px;
+    width: 150px;
+    background-color: #fef5ea;
+    border-radius: 15px;
+    padding-top: 5px;
+
+    text-align: center;
+
+    .stock {
+      font-size: 15px;
+      font-weight: 300;
+      padding-top: 10px;
+    }
+  }
+  .icon-profile-nav {
+    display: inline;
+  }
+
+  img {
+    width: 24px;
+    margin-left: 10px;
+  }
+  .profile {
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}

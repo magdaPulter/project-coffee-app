@@ -9,13 +9,13 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { Router } from '@angular/router';
 import { CoffeeListComponent } from '../coffee-list/coffee-list.component';
 import { CoffeeWithUrlQueryModel } from '../../querymodels/coffeeWithUrl.querymodel';
 import { CoffeeService } from '../../services/coffee.service';
 import { DialogComponent } from '../dialog/dialog.component';
 import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
 import { InventorySummaryComponent } from '../inventory-summary/inventory-summary.component';
+import { NavComponent } from '../nav/nav.component';
 
 @Component({
   selector: 'app-home',
@@ -24,15 +24,10 @@ import { InventorySummaryComponent } from '../inventory-summary/inventory-summar
   styleUrls: ['./home.component.scss'],
   imports: [
     CommonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatRadioModule,
-    MatCheckboxModule,
-    ReactiveFormsModule,
     MatDialogModule,
-    MatButtonModule,
     CoffeeListComponent,
     InventorySummaryComponent,
+    NavComponent,
   ],
 })
 export class HomeComponent {
@@ -42,10 +37,10 @@ export class HomeComponent {
     this._refreshListSubject
       .asObservable()
       .pipe(switchMap(() => this._coffeeService.getAllWithUrl()));
+
   constructor(
     private _matDialog: MatDialog,
-    private _coffeeService: CoffeeService,
-    private _router: Router
+    private _coffeeService: CoffeeService
   ) {}
 
   openDialog() {
@@ -53,11 +48,6 @@ export class HomeComponent {
     dialogRef.afterClosed().subscribe(() => {
       this._refreshListSubject.next();
     });
-  }
-
-  logOut() {
-    localStorage.clear();
-    this._router.navigate(['/login']);
   }
 
   coffeeDeleted(id: number) {

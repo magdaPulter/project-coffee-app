@@ -1,17 +1,4 @@
-<div class="stock-inventory">
-    <p><span class="stock">Stock Inventory</span></p>
-    <div class="icon-profile-nav">
-        <img src="../../../assets/bell_notification.png" class="icon" alt="bell notification">
-        <img src="../../../assets/message_icon.png" class="icon" alt="message icon">
-        <img src="../../../assets/avatar-female-2.jpg" alt="profile image" class="dropdown profile dropdown-toggle"
-            type="button" data-bs-toggle="dropdown">
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">My account</a></li>
-            <li><a class="dropdown-item" href="#">Shop website</a></li>
-            <li><a class="dropdown-item" href="#" (click)="logOut()">Log Out</a></li>
-        </ul>
-    </div>
-</div>
+<app-nav></app-nav>
 
 <div class="main-content">
     <app-inventory-summary (productAdded)="openDialog()"></app-inventory-summary>

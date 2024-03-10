@@ -10,12 +10,6 @@ $very-light-secondary: rgba(243, 243, 243, 0.8);
   margin: 10px;
 }
 
-@mixin btn-secondary {
-  // border: none;
-  // color: $dark-primary;
-  // background-color: $light-primary;
-}
-
 @mixin form-style {
   .content {
     display: flex;

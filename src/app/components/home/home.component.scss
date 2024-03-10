@@ -1,17 +1,135 @@
-@import '../../styles/config';
+.stock-inventory {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  height: 26px;
+  padding: 14px 21px 14px 21px;
 
-button{
-    @include btn-secondary 
+  p {
+    height: 36px;
+    width: 150px;
+    background-color: #fef5ea;
+    border-radius: 15px;
+    padding-top: 5px;
+
+    text-align: center;
+
+    .stock {
+      font-size: 15px;
+      font-weight: 300;
+      padding-top: 10px;
+    }
+  }
+
+  img {
+    width: 24px;
+    margin-left: 10px;
+  }
+  .profile {
+    border-radius: 50%;
+    cursor: pointer;
+  }
 }
 
-.buttons{
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  width: 100vw;
+  height: 100%;
+  background-color: #edebe7;
+  padding-top: 20px;
+  .inventory-summary {
+    width: 1313px;
+    .title {
+      display: flex;
+      justify-content: space-between;
+      font-family: Avenir Next;
+      p {
+        padding-top: 5px;
+      }
 
-    .log-btns {
-        .btn {
-            margin-left: 20px;
-        }
+      button {
+        width: 230px;
+        height: 36px;
+        border-radius: 15px;
+        border: none;
+        background-color: #1b1c1f;
+        color: #ffffff;
+        text-align: center;
+        font-weight: 300;
+      }
     }
+    .content {
+      display: flex;
+      justify-content: space-between;
+
+      .all-products,
+      .published-products,
+      .low-stock,
+      .discounted {
+        width: 317px;
+        height: 145px;
+        border-radius: 15px;
+        padding: 11px 15px 11px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        fa-icon {
+          width: 32px;
+          color: #ffffff;
+          margin: 15px 0px;
+        }
+        p {
+          color: #ffffff;
+          font-family: Avenir Next;
+        }
+        .number {
+          font-weight: 600;
+        }
+      }
+      .all-products {
+        height: 145px;
+        background-color: #fa8354;
+      }
+      .published-products {
+        width: 479px;
+        background-color: #be40d3;
+        display: flex;
+        flex-direction: row;
+
+        .column {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 100%;
+        }
+      }
+      .low-stock {
+        width: 230px;
+        background-color: #770512;
+      }
+      .discounted {
+        width: 230px;
+        background-color: #fa8354;
+      }
+    }
+  }
+
+  .inventory-container {
+    margin-top: 20px;
+    width: 1313px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    p {
+      padding: 20px 0px 0px 20px;
+    }
+
+    p {
+      font-size: 17px;
+      font-weight: 400;
+      color: #45464e;
+    }
+  }
 }

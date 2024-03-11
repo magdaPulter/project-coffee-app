@@ -1,0 +1,40 @@
+<div class="inventory-summary">
+    <div class="title">
+        <p>Inventory Summary</p>
+        <button (click)="addNewProduct()">+ Add a New Product</button>
+    </div>
+    <div class="content">
+        <div class="all-products">
+            <fa-icon [icon]="faBagShopping"></fa-icon>
+            <p>All Products</p>
+            <p class="number">{{coffeeList.length}}</p>
+        </div>
+        <div class="published-products">
+            <div class="column">
+                <fa-icon [icon]="faChartLine"></fa-icon>
+                <p>Published products</p>
+                <p class="number">{{coffeeList.length - (unPublished$ | async)!}}<span>{{(coffeeList.length -
+                        (unPublished$ | async)!)/coffeeList.length
+                        *100 | number: '1.0-0'}}%</span></p>
+            </div>
+            <div class="column">
+                <fa-icon [icon]="faFolderClosed"></fa-icon>
+                <p>Unpublished</p>
+                <p class="number">{{unPublished$ | async}}<span>{{(unPublished$ | async)!/coffeeList.length
+                        *100 | number: '1.0-0'}}%</span>
+                </p>
+            </div>
+        </div>
+        <div class="low-stock">
+            <fa-icon [icon]="faTriangleExclamation"></fa-icon>
+            <p>Low Stock Alert</p>
+            <p class="number">{{ lowStock$ | async}}
+            </p>
+        </div>
+        <div class="discounted">
+            <fa-icon [icon]="faPercent"></fa-icon>
+            <p>Discounted Items</p>
+            <p class="number">{{discounted$ | async}}</p>
+        </div>
+    </div>
+</div>

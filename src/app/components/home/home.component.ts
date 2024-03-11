@@ -1,28 +1,16 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
+import { map, startWith, switchMap } from 'rxjs/operators';
 import { CoffeeListComponent } from '../coffee-list/coffee-list.component';
 import { CoffeeWithUrlQueryModel } from '../../querymodels/coffeeWithUrl.querymodel';
 import { CoffeeService } from '../../services/coffee.service';
 import { DialogComponent } from '../dialog/dialog.component';
 import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
-import {
-  faBagShopping,
-  faChartLine,
-  faFolderClosed,
-  faTriangleExclamation,
-  faPercent,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { InventorySummaryComponent } from '../inventory-summary/inventory-summary.component';
+import { NavComponent } from '../nav/nav.component';
 
 @Component({
   selector: 'app-home',
@@ -31,33 +19,42 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   styleUrls: ['./home.component.scss'],
   imports: [
     CommonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatRadioModule,
-    MatCheckboxModule,
-    ReactiveFormsModule,
     MatDialogModule,
-    MatButtonModule,
     CoffeeListComponent,
-    FontAwesomeModule,
+    InventorySummaryComponent,
+    NavComponent,
+    ReactiveFormsModule,
   ],
 })
 export class HomeComponent {
-  faBagShopping = faBagShopping;
-  faChartLine = faChartLine;
-  faFolderClosed = faFolderClosed;
-  faTriangleExclamation = faTriangleExclamation;
-  faPercent = faPercent;
+  readonly search: FormControl = new FormControl('');
+
   private _refreshListSubject: BehaviorSubject<void> =
     new BehaviorSubject<void>(void 0);
   readonly coffeeList$: Observable<CoffeeWithUrlQueryModel[]> =
     this._refreshListSubject
       .asObservable()
       .pipe(switchMap(() => this._coffeeService.getAllWithUrl()));
+
+  readonly searchedCoffeeList$: Observable<CoffeeWithUrlQueryModel[]> =
+    combineLatest([
+      this.search.valueChanges.pipe(startWith('')),
+      this.coffeeList$,
+    ]).pipe(
+      map(([searchedValue, list]) => {
+        if (searchedValue === '') {
+          return list;
+        } else {
+          return list.filter((product) =>
+            product.name.toLowerCase().includes(searchedValue.toLowerCase())
+          );
+        }
+      })
+    );
+
   constructor(
     private _matDialog: MatDialog,
-    private _coffeeService: CoffeeService,
-    private _router: Router
+    private _coffeeService: CoffeeService
   ) {}
 
   openDialog() {
@@ -65,11 +62,6 @@ export class HomeComponent {
     dialogRef.afterClosed().subscribe(() => {
       this._refreshListSubject.next();
     });
-  }
-
-  logOut() {
-    localStorage.clear();
-    this._router.navigate(['/login']);
   }
 
   coffeeDeleted(id: number) {

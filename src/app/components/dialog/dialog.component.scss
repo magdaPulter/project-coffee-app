@@ -16,7 +16,6 @@ form {
   .content {
     display: flex;
     justify-content: space-between;
-    // font-family: Avenir Next;
 
     span.error {
       color: red;
@@ -119,7 +118,6 @@ form {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        // margin: auto;
 
         input[type="file"]::file-selector-button {
           background-color: #f8f6f1;
@@ -173,4 +171,12 @@ form {
 .icon {
   width: 24px;
   height: 24px;
+}
+
+@media (max-width: 768px) {
+  form {
+    .content {
+      flex-direction: column;
+    }
+  }
 }

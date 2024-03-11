@@ -1,55 +1,21 @@
-<div class="stock-inventory">
-    <p><span class="stock">Stock Inventory</span></p>
-    <div class="icon-profile-nav">
-        <img src="../../../assets/bell_notification.png" class="icon" alt="bell notification">
-        <img src="../../../assets/message_icon.png" class="icon" alt="message icon">
-        <img src="../../../assets/avatar-female-2.jpg" class="profile" alt="profile image">
-    </div>
-    <!-- <button mat-raised-button class="btn" (click)="logOut()">LogOut</button> -->
+<app-nav></app-nav>
 
-</div>
+<ng-container *ngIf="searchedCoffeeList$ | async as list">
+    <div class="main-content">
+        <app-inventory-summary [coffeeList]="list" (productAdded)="openDialog()"
+            class="inventory-summary"></app-inventory-summary>
 
-<div class="main-content">
-    <div class="inventory-summary">
-        <div class="title">
-            <p>Inventory Summary</p>
-            <button (click)="openDialog()">+ Add a New Product</button>
-        </div>
-        <div class="content">
-            <div class="all-products">
-                <fa-icon [icon]="faBagShopping"></fa-icon>
-                <p>All Products</p>
-                <p class="number">333</p>
-            </div>
-            <div class="published-products">
-                <div class="column">
-                    <fa-icon [icon]="faChartLine"></fa-icon>
-                    <p>All Products</p>
-                    <p class="number">333</p>
-                </div>
-                <div class="column">
-                    <fa-icon [icon]="faFolderClosed"></fa-icon>
-                    <p>All Products</p>
-                    <p class="number">333</p>
+        <div class="inventory-container">
+            <div class="inventory-title">
+                <p>Inventory Items</p>
+                <div class="input-field">
+                    <img src="../../../assets/search.png" alt="search icon">
+                    <input type="text" placeholder="Search" [formControl]="search">
                 </div>
             </div>
-            <div class="low-stock">
-                <fa-icon [icon]="faTriangleExclamation"></fa-icon>
-                <p>All Products</p>
-                <p class="number">333</p>
-            </div>
-            <div class="discounted">
-                <fa-icon [icon]="faPercent"></fa-icon>
-                <p>All Products</p>
-                <p class="number">333</p>
-            </div>
+            <app-coffee-list [coffeeList]="list" (deleted)="coffeeDeleted($event)"
+                (updated)="coffeeUpdated($event)"></app-coffee-list>
         </div>
-    </div>
 
-    <div class="inventory-container">
-        <p>Inventory Items</p>
-        <app-coffee-list *ngIf="coffeeList$ | async as list" [coffeeList]="list" (deleted)="coffeeDeleted($event)"
-            (updated)="coffeeUpdated($event)"></app-coffee-list>
     </div>
-
-</div>
+</ng-container>

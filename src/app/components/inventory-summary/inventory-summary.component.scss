@@ -1,5 +1,5 @@
 .inventory-summary {
-  width: 1313px;
+  // width: 100%;
   .title {
     display: flex;
     justify-content: space-between;
@@ -22,15 +22,16 @@
   .content {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 
     .all-products,
     .published-products,
     .low-stock,
     .discounted {
       width: 317px;
-      height: 145px;
+      // height: 145px;
       border-radius: 15px;
-      padding: 11px 15px 11px 15px;
+      padding: 0px 15px;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -60,7 +61,7 @@
       }
     }
     .all-products {
-      height: 145px;
+      // height: 145px;
       background-color: #fa8354;
     }
     .published-products {

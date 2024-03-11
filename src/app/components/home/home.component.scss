@@ -8,9 +8,13 @@
   background-color: #edebe7;
   padding-top: 20px;
 
+  .inventory-summary {
+    width: 90%;
+  }
   .inventory-container {
     margin-top: 20px;
-    width: 1313px;
+    width: 90%;
+    // 1313px;
     border-radius: 12px;
     background-color: #ffffff;
     p {

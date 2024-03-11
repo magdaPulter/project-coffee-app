@@ -1,11 +1,17 @@
 <app-nav></app-nav>
 
-<ng-container *ngIf="coffeeList$ | async as list">
+<ng-container *ngIf="searchedCoffeeList$ | async as list">
     <div class="main-content">
         <app-inventory-summary [coffeeList]="list" (productAdded)="openDialog()"></app-inventory-summary>
 
         <div class="inventory-container">
-            <p>Inventory Items</p>
+            <div class="inventory-title">
+                <p>Inventory Items</p>
+                <div class="input-field">
+                    <img src="../../../assets/search.png" alt="search icon">
+                    <input type="text" placeholder="Search" [formControl]="search">
+                </div>
+            </div>
             <app-coffee-list [coffeeList]="list" (deleted)="coffeeDeleted($event)"
                 (updated)="coffeeUpdated($event)"></app-coffee-list>
         </div>

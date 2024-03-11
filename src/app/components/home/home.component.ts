@@ -1,14 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
+import { map, startWith, switchMap } from 'rxjs/operators';
 import { CoffeeListComponent } from '../coffee-list/coffee-list.component';
 import { CoffeeWithUrlQueryModel } from '../../querymodels/coffeeWithUrl.querymodel';
 import { CoffeeService } from '../../services/coffee.service';
@@ -28,15 +23,34 @@ import { NavComponent } from '../nav/nav.component';
     CoffeeListComponent,
     InventorySummaryComponent,
     NavComponent,
+    ReactiveFormsModule,
   ],
 })
 export class HomeComponent {
+  readonly search: FormControl = new FormControl('');
+
   private _refreshListSubject: BehaviorSubject<void> =
     new BehaviorSubject<void>(void 0);
   readonly coffeeList$: Observable<CoffeeWithUrlQueryModel[]> =
     this._refreshListSubject
       .asObservable()
       .pipe(switchMap(() => this._coffeeService.getAllWithUrl()));
+
+  readonly searchedCoffeeList$: Observable<CoffeeWithUrlQueryModel[]> =
+    combineLatest([
+      this.search.valueChanges.pipe(startWith('')),
+      this.coffeeList$,
+    ]).pipe(
+      map(([searchedValue, list]) => {
+        if (searchedValue === '') {
+          return list;
+        } else {
+          return list.filter((product) =>
+            product.name.toLowerCase().includes(searchedValue.toLowerCase())
+          );
+        }
+      })
+    );
 
   constructor(
     private _matDialog: MatDialog,

@@ -79,22 +79,6 @@
       "unPublished": false,
       "image": "73599342-08ef-46b1-b322-e93746161599",
       "id": 18
-    },
-    {
-      "name": "coffe1",
-      "code": 1914,
-      "category": "Coffee",
-      "price": "122",
-      "quantity": "3",
-      "producer": "Coffee Roastery",
-      "discount": 23,
-      "discountToggle": true,
-      "description": null,
-      "longDescription": null,
-      "date": "11.03.2024",
-      "image": null,
-      "unPublished": null,
-      "id": 19
     }
   ],
   "files": [

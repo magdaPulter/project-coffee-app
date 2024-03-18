@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
 import { CoffeeWithUrlQueryModel } from 'src/app/querymodels/coffeeWithUrl.querymodel';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -11,13 +10,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   standalone: true,
   templateUrl: './coffee-list.component.html',
   styleUrls: ['./coffee-list.component.scss'],
-  imports: [
-    CommonModule,
-    RouterLink,
-    MatButtonModule,
-    MatTableModule,
-    MatPaginatorModule,
-  ],
+  imports: [CommonModule, MatButtonModule, MatTableModule, MatPaginatorModule],
 })
 export class CoffeeListComponent {
   @Input() coffeeList!: CoffeeWithUrlQueryModel[];

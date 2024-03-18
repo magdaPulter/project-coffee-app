@@ -47,7 +47,7 @@ export class LoginPageComponent {
       .pipe(
         map((isAuthenticated) => {
           if (isAuthenticated) {
-            this._router.navigate(['/']);
+            this._router.navigate(['/home']);
           }
         })
       )
@@ -56,6 +56,6 @@ export class LoginPageComponent {
 
   registerFormHandled(formRegistered: SignUpModel) {
     this._registerService.create(formRegistered).subscribe();
-    this._router.navigate(['/']);
+    this._router.navigate(['/home']);
   }
 }

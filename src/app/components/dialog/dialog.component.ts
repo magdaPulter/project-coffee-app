@@ -18,7 +18,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { CoffeeService } from '../../services/coffee.service';
 import { CoffeeModel } from '../../models/coffee.model';
@@ -87,7 +86,7 @@ export class DialogComponent implements OnInit {
     if (form.valid) {
       if (this.data) {
         this._coffeeService.update(this.data.id!, form.value).subscribe(() => {
-          this._router.navigate(['']);
+          this._router.navigate(['/home']);
           console.log(form);
         });
       } else {

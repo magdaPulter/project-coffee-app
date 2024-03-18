@@ -5,7 +5,12 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, canActivate: [authGuard] },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [authGuard],
+  },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginPageComponent },
 ];
 

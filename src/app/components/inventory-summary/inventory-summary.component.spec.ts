@@ -8,9 +8,8 @@ describe('InventorySummaryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ InventorySummaryComponent ]
-    })
-    .compileComponents();
+      imports: [InventorySummaryComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(InventorySummaryComponent);
     component = fixture.componentInstance;

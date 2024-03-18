@@ -79,6 +79,38 @@
       "unPublished": false,
       "image": "73599342-08ef-46b1-b322-e93746161599",
       "id": 18
+    },
+    {
+      "name": "coffee",
+      "code": 2585,
+      "category": "Coffee",
+      "price": "34",
+      "quantity": "7",
+      "producer": null,
+      "discount": 56,
+      "discountToggle": true,
+      "description": null,
+      "longDescription": null,
+      "date": "18.03.2024",
+      "unPublished": null,
+      "image": null,
+      "id": 19
+    },
+    {
+      "name": "coffeeee",
+      "code": 9248,
+      "category": null,
+      "price": "89",
+      "quantity": "78",
+      "producer": null,
+      "discount": null,
+      "discountToggle": null,
+      "description": null,
+      "longDescription": null,
+      "date": "18.03.2024",
+      "image": null,
+      "unPublished": null,
+      "id": 20
     }
   ],
   "files": [

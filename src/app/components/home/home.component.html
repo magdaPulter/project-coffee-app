@@ -12,6 +12,10 @@
                     <img src="../../../assets/search.png" alt="search icon">
                     <input type="text" placeholder="Search" [formControl]="search">
                 </div>
+                <div class="input-field">
+                    <img src="../../../assets/filter.png" alt="filter icon">
+                    <input type="text" placeholder="Search">
+                </div>
             </div>
             <app-coffee-list [coffeeList]="list" (deleted)="coffeeDeleted($event)"
                 (updated)="coffeeUpdated($event)"></app-coffee-list>

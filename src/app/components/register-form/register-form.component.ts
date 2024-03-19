@@ -20,7 +20,7 @@ import { RegisteredViewModel } from 'src/app/viewmodels/registered.viewmodel';
 export class RegisterFormComponent {
   @Input() registerForm: FormGroup = new FormGroup(
     {
-      email: new FormControl(null, Validators.email),
+      email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required]),
       confirmPassword: new FormControl(null, [Validators.required]),
     },

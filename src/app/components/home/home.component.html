@@ -8,9 +8,15 @@
         <div class="inventory-container">
             <div class="inventory-title">
                 <p>Inventory Items</p>
-                <div class="input-field">
-                    <img src="../../../assets/search.png" alt="search icon">
-                    <input type="text" placeholder="Search" [formControl]="search">
+                <div class="search-filter">
+                    <div class="input-field">
+                        <img src="../../../assets/search.png" alt="search icon">
+                        <input type="text" placeholder="Search" [formControl]="search">
+                    </div>
+                    <div class="input-field">
+                        <img src="../../../assets/filter.png" alt="filter icon">
+                        <input type="text" placeholder="Filter">
+                    </div>
                 </div>
             </div>
             <app-coffee-list [coffeeList]="list" (deleted)="coffeeDeleted($event)"

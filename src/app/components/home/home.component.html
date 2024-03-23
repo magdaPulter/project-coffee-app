@@ -13,8 +13,9 @@
                         <img class="search-icon" src="../../../assets/search.png" alt="search icon">
                         <input type="text" placeholder="Search" [formControl]="search">
                     </div>
-                    <div class="input-field filter">
-                        <img src="../../../assets/filter.png" alt="filter icon">
+                    <!-- <div class="input-field"> -->
+                    <app-filter-options class="filter"></app-filter-options>
+                    <!-- <img src="../../../assets/filter.png" alt="filter icon">
                         <p>Filter</p>
                         <img src="../../../assets/dropdown.png" alt="dropdown icon"
                             class="dropdown profile dropdown-toggle" type="button" data-bs-toggle="dropdown">
@@ -22,8 +23,8 @@
                             <div class="checkbox-section">
                                 <mat-checkbox *ngFor="let filter of filtersOption">{{filter}}</mat-checkbox>
                             </div>
-                        </section>
-                    </div>
+                        </section> -->
+                    <!-- </div> -->
                 </div>
             </div>
             <app-coffee-list [coffeeList]="list" (deleted)="coffeeDeleted($event)"

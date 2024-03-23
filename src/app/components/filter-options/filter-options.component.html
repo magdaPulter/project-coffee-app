@@ -1,0 +1,13 @@
+<img src="../../../assets/filter.png" alt="filter icon">
+<p>Filter</p>
+<img src="../../../assets/dropdown.png" alt="dropdown icon" class="dropdown profile dropdown-toggle" type="button"
+    data-bs-toggle="dropdown">
+<section class="dropdown-menu">
+    <div class="checkbox-section" [formGroup]="filtersGroup">
+        <mat-checkbox formControlName="category">Category</mat-checkbox>
+        <mat-checkbox formControlName="price">Price</mat-checkbox>
+        <mat-checkbox formControlName="stock">Stock</mat-checkbox>
+        <mat-checkbox formControlName="discount">Discount</mat-checkbox>
+        <mat-checkbox formControlName="published">published</mat-checkbox>
+    </div>
+</section>

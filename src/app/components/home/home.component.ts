@@ -11,7 +11,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
 import { InventorySummaryComponent } from '../inventory-summary/inventory-summary.component';
 import { NavComponent } from '../nav/nav.component';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FilterOptionsComponent } from '../filter-options/filter-options.component';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +25,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     InventorySummaryComponent,
     NavComponent,
     ReactiveFormsModule,
-    MatCheckboxModule,
+    FilterOptionsComponent,
   ],
 })
 export class HomeComponent {
@@ -53,14 +53,6 @@ export class HomeComponent {
         }
       })
     );
-
-  readonly filtersOption: string[] = [
-    'Category',
-    'Price',
-    'Stock',
-    'Discount',
-    'Published',
-  ];
 
   constructor(
     private _matDialog: MatDialog,

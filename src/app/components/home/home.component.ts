@@ -53,7 +53,6 @@ export class HomeComponent {
         }
       })
     );
-
   constructor(
     private _matDialog: MatDialog,
     private _coffeeService: CoffeeService

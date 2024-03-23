@@ -79,6 +79,22 @@
       "unPublished": false,
       "image": "73599342-08ef-46b1-b322-e93746161599",
       "id": 18
+    },
+    {
+      "name": "coffee",
+      "code": 2921,
+      "category": null,
+      "price": "23",
+      "quantity": "23",
+      "producer": null,
+      "discount": null,
+      "discountToggle": null,
+      "description": null,
+      "longDescription": null,
+      "date": "23.03.2024",
+      "image": null,
+      "unPublished": null,
+      "id": 19
     }
   ],
   "files": [

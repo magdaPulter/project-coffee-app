@@ -10,12 +10,19 @@
                 <p>Inventory Items</p>
                 <div class="search-filter">
                     <div class="input-field">
-                        <img src="../../../assets/search.png" alt="search icon">
+                        <img class="search-icon" src="../../../assets/search.png" alt="search icon">
                         <input type="text" placeholder="Search" [formControl]="search">
                     </div>
-                    <div class="input-field">
+                    <div class="input-field filter">
                         <img src="../../../assets/filter.png" alt="filter icon">
-                        <input type="text" placeholder="Filter">
+                        <p>Filter</p>
+                        <img src="../../../assets/dropdown.png" alt="dropdown icon"
+                            class="dropdown profile dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <section class="dropdown-menu">
+                            <div class="checkbox-section">
+                                <mat-checkbox *ngFor="let filter of filtersOption">{{filter}}</mat-checkbox>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>

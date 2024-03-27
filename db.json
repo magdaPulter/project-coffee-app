@@ -12,7 +12,7 @@
       "description": "ripe fruit is hand-picked by farmers and processed on their farms. They are pulped and fermented in bags, buckets or tanks for 16 to 38 hours. After fermentation, the coffee is washed in clean water and laid out on terraces to dry, which takes 8 to 14 days.",
       "longDescription": null,
       "date": null,
-      "unPublished": true,
+      "unPublished": false,
       "image": "a85c1858-2227-43c9-abd9-088d90f56a78",
       "id": 12
     },
@@ -95,6 +95,21 @@
       "unPublished": null,
       "image": null,
       "id": 19
+    {
+      "name": "coffeeee",
+      "code": 9248,
+      "category": null,
+      "price": "89",
+      "quantity": "78",
+      "producer": null,
+      "discount": null,
+      "discountToggle": null,
+      "description": null,
+      "longDescription": null,
+      "date": "18.03.2024",
+      "image": null,
+      "unPublished": null,
+      "id": 20
     }
   ],
   "files": [
@@ -475,6 +490,12 @@
       "password": "543",
       "confirmPassword": "543",
       "id": 2
+    },
+    {
+      "email": "123@123",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 3
     }
   ]
 }

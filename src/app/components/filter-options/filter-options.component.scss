@@ -1,0 +1,26 @@
+p {
+  font-size: 13px;
+  font-family: Avenir Next;
+  padding-left: 0px;
+  margin-top: 15px;
+}
+img {
+  height: 15px;
+}
+.checkbox-section {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-family: Avenir Next;
+}
+
+.filter {
+  cursor: pointer;
+  height: 29px;
+  border-radius: 15px;
+  border: 1px solid #1111;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 118px;
+}

@@ -10,15 +10,14 @@
                 <p>Inventory Items</p>
                 <div class="search-filter">
                     <div class="input-field">
-                        <img src="../../../assets/search.png" alt="search icon">
+                        <img class="search-icon" src="../../../assets/search.png" alt="search icon">
                         <input type="text" placeholder="Search" [formControl]="search">
                     </div>
-                    <div class="input-field">
-                        <img src="../../../assets/filter.png" alt="filter icon">
-                        <input type="text" placeholder="Filter">
-                    </div>
+                    <app-filter-options (filtersVisible)="onFilters($event)"></app-filter-options>
                 </div>
             </div>
+            <app-filters-list *ngIf="filtersVisible$ | async" [coffeeList]="list"></app-filters-list>
+
             <app-coffee-list [coffeeList]="list" (deleted)="coffeeDeleted($event)"
                 (updated)="coffeeUpdated($event)"></app-coffee-list>
         </div>

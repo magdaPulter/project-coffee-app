@@ -87,7 +87,6 @@ export class DialogComponent implements OnInit {
       if (this.data) {
         this._coffeeService.update(this.data.id!, form.value).subscribe(() => {
           this._router.navigate(['/home']);
-          console.log(form);
         });
       } else {
         this._coffeeService

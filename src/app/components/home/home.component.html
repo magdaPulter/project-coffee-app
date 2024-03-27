@@ -13,26 +13,11 @@
                         <img class="search-icon" src="../../../assets/search.png" alt="search icon">
                         <input type="text" placeholder="Search" [formControl]="search">
                     </div>
-                    <app-filter-options class="filter"></app-filter-options>
+                    <app-filter-options (filtersVisible)="onFilters($event)"></app-filter-options>
                 </div>
             </div>
-            <div class="filter-container">
-                <div class="filter-item">
-                    <p>Category</p>
-                </div>
-                <div class="filter-item">
-                    <p>Price</p>
-                </div>
-                <div class="filter-item">
-                    <p>Stock</p>
-                </div>
-                <div class="filter-item">
-                    <p>Discount</p>
-                </div>
-                <div class="filter-item">
-                    <p>Published</p>
-                </div>
-            </div>
+            <app-filters-list *ngIf="filtersVisible$ | async" [coffeeList]="list"></app-filters-list>
+
             <app-coffee-list [coffeeList]="list" (deleted)="coffeeDeleted($event)"
                 (updated)="coffeeUpdated($event)"></app-coffee-list>
         </div>

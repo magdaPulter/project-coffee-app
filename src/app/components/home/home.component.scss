@@ -17,18 +17,18 @@
     border-radius: 12px;
     background-color: #ffffff;
 
-    p {
-      font-size: 17px;
-      font-weight: 400;
-      padding: 20px;
-      color: #45464e;
-    }
-
     .inventory-title {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      padding: 20px;
+      // align-items: center;
 
+      p {
+        font-size: 17px;
+        font-weight: 400;
+        // padding: 20px;
+        color: #45464e;
+      }
       .search-filter {
         display: flex;
         .input-field {
@@ -52,24 +52,23 @@
             margin-left: 10px;
           }
         }
-        .filter {
-          height: 29px;
-          border-radius: 15px;
-          border: 1px solid #1111;
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-          width: 118px;
-        }
+        // .filter {
+        //   height: 29px;
+        //   border-radius: 15px;
+        //   border: 1px solid #1111;
+        //   display: flex;
+        //   justify-content: space-around;
+        //   align-items: center;
+        //   width: 118px;
+        // }
       }
     }
-    .filter-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      p {
-        padding: 0px;
-      }
-    }
+    // .filter-container {
+    //   display: flex;
+    //   flex-direction: row;
+    //   justify-content: space-around;
+    //   font-size: 17px;
+    //   font-family: Avenir Next;
+    // }
   }
 }

@@ -1,7 +1,8 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-filter-options',
@@ -11,18 +12,14 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./filter-options.component.scss'],
 })
 export class FilterOptionsComponent {
-  filtersGroup: FormGroup = new FormGroup({
-    category: new FormControl(),
-    price: new FormControl(),
-    stock: new FormControl(),
-    discount: new FormControl(),
-    published: new FormControl(),
-  });
-  readonly filtersOption: string[] = [
-    'Category',
-    'Price',
-    'Stock',
-    'Discount',
-    'Published',
-  ];
+  @Output() filtersVisible: EventEmitter<boolean> = new EventEmitter<boolean>();
+  private _filtersVisibleSubject: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
+  public filtersVisible$: Observable<boolean> =
+    this._filtersVisibleSubject.asObservable();
+    
+  onFilterClicked() {
+    this._filtersVisibleSubject.next(!this._filtersVisibleSubject.getValue());
+    this.filtersVisible.emit(this._filtersVisibleSubject.getValue());
+  }
 }

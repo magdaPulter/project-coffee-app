@@ -13,3 +13,14 @@ img {
   font-size: 13px;
   font-family: Avenir Next;
 }
+
+.filter {
+  cursor: pointer;
+  height: 29px;
+  border-radius: 15px;
+  border: 1px solid #1111;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 118px;
+}

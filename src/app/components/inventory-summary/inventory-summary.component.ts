@@ -27,7 +27,7 @@ import {
   templateUrl: './inventory-summary.component.html',
   styleUrls: ['./inventory-summary.component.scss'],
 })
-export class InventorySummaryComponent implements OnChanges {
+export class InventorySummaryComponent {
   @Input() coffeeList!: CoffeeWithUrlQueryModel[];
   @Output() productAdded: EventEmitter<void> = new EventEmitter<void>();
 
@@ -43,33 +43,22 @@ export class InventorySummaryComponent implements OnChanges {
   public currentCoffeeList$: Observable<CoffeeWithUrlQueryModel[]> =
     this._currentCoffeeListSubject.asObservable();
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this._currentCoffeeListSubject.next(changes['coffeeList'].currentValue);
+  getUnpublished() {
+    return this.coffeeList.filter((product) => {
+      return product.unPublished;
+    }).length;
+  }
+  getLowStock() {
+    return this.coffeeList.filter((product) => {
+      return +product.quantity < 5;
+    }).length;
   }
 
-  readonly unPublished$: Observable<number> = this.currentCoffeeList$.pipe(
-    map((list) => {
-      return list.filter((product) => {
-        return product.unPublished;
-      }).length;
-    })
-  );
-
-  readonly lowStock$: Observable<number> = this.currentCoffeeList$.pipe(
-    map((list) => {
-      return list.filter((product) => {
-        return +product.quantity < 5;
-      }).length;
-    })
-  );
-
-  readonly discounted$: Observable<number> = this.currentCoffeeList$.pipe(
-    map((list) => {
-      return list.filter((product) => {
-        return +product.discount > 0;
-      }).length;
-    })
-  );
+  getDiscounted() {
+    return this.coffeeList.filter((product) => {
+      return +product.discount > 0;
+    }).length;
+  }
 
   addNewProduct() {
     this.productAdded.emit();

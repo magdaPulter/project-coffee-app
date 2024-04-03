@@ -13,14 +13,14 @@
             <div class="column">
                 <fa-icon [icon]="faChartLine"></fa-icon>
                 <p>Published products</p>
-                <p class="number">{{coffeeList.length - (unPublished$ | async)!}}<span>{{(coffeeList.length -
-                        (unPublished$ | async)!)/coffeeList.length
+                <p class="number">{{coffeeList.length - getUnpublished()}}<span>{{(coffeeList.length -
+                        getUnpublished())/coffeeList.length
                         *100 | number: '1.0-0'}}%</span></p>
             </div>
             <div class="column">
                 <fa-icon [icon]="faFolderClosed"></fa-icon>
                 <p>Unpublished</p>
-                <p class="number">{{unPublished$ | async}}<span>{{(unPublished$ | async)!/coffeeList.length
+                <p class="number">{{getUnpublished()}}<span>{{getUnpublished()/coffeeList.length
                         *100 | number: '1.0-0'}}%</span>
                 </p>
             </div>
@@ -28,13 +28,13 @@
         <div class="low-stock">
             <fa-icon [icon]="faTriangleExclamation"></fa-icon>
             <p>Low Stock Alert</p>
-            <p class="number">{{ lowStock$ | async}}
+            <p class="number">{{getLowStock()}}
             </p>
         </div>
         <div class="discounted">
             <fa-icon [icon]="faPercent"></fa-icon>
             <p>Discounted Items</p>
-            <p class="number">{{discounted$ | async}}</p>
+            <p class="number">{{getDiscounted()}}</p>
         </div>
     </div>
 </div>

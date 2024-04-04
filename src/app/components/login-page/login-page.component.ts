@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -26,7 +26,7 @@ import { SignUpModel } from 'src/app/models/sign-up.model';
     RegisterFormComponent,
   ],
 })
-export class LoginPageComponent {
+export class LoginPageComponent implements OnInit {
   private _isRegisteredSubject: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(true);
   public isRegistered$: Observable<boolean> =
@@ -36,6 +36,12 @@ export class LoginPageComponent {
     private _registerService: RegisterService,
     private _router: Router
   ) {}
+
+  ngOnInit(): void {
+    if (this._registerService.isAuthenticated()) {
+      this._router.navigate(['/home']);
+    }
+  }
 
   onRegister(isRegistered: boolean) {
     this._isRegisteredSubject.next(isRegistered);

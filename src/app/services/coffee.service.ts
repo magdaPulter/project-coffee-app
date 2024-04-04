@@ -21,10 +21,6 @@ export class CoffeeService {
     );
   }
 
-  getOne(id: number): Observable<CoffeeModel> {
-    return this._coffeeHttpClientService.getOne<CoffeeModel>('coffee', id);
-  }
-
   update(id: number, coffee: CoffeeModel): Observable<CoffeeModel> {
     return this._coffeeHttpClientService.put<CoffeeModel>('coffee', id, coffee);
   }
@@ -44,15 +40,6 @@ export class CoffeeService {
           const imageUrl = this.displayImageUrl(coffee.image);
           return { ...coffee, imageUrl };
         });
-      })
-    );
-  }
-
-  getOneWithUrl(id: number): Observable<CoffeeWithUrlQueryModel> {
-    return this.getOne(id).pipe(
-      map((coffee) => {
-        const imageUrl = this.displayImageUrl(coffee.image);
-        return { ...coffee, imageUrl };
       })
     );
   }

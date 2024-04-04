@@ -14,13 +14,8 @@ export class CoffeeHttpClientService {
     return this._httpClient.get<T>(`${this.URL}${url}`);
   }
 
-  //czy tak jest ok?
   public post<T, U>(url: string, postData: U): Observable<T> {
     return this._httpClient.post<T>(`${this.URL}${url}`, postData);
-  }
-
-  public getOne<T>(url: string, id: number) {
-    return this._httpClient.get<T>(`${this.URL}${url}/${id}`);
   }
 
   public put<T>(url: string, id: number, putData: T) {

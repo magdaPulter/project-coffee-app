@@ -1,7 +1,9 @@
+@import "../../styles/config";
+
 .stock-inventory {
   display: flex;
   justify-content: space-between;
-  background-color: #ffffff;
+  background-color: $light-primary;
   height: 26px;
   padding: 14px 21px 14px 21px;
 

@@ -1,3 +1,4 @@
+@import "../../styles/config";
 .main-content {
   display: flex;
   flex-direction: column;
@@ -15,18 +16,16 @@
     margin-top: 20px;
     width: 90%;
     border-radius: 12px;
-    background-color: #ffffff;
+    background-color: $light-primary;
 
     .inventory-title {
       display: flex;
       justify-content: space-between;
       padding: 20px;
-      // align-items: center;
 
       p {
         font-size: 17px;
         font-weight: 400;
-        // padding: 20px;
         color: #45464e;
       }
       .search-filter {
@@ -35,7 +34,7 @@
           height: 29px;
           width: 176px;
           border-radius: 15px;
-          border: 1px solid #1111;
+          border: 1px solid $border-light;
           margin-right: 20px;
           input {
             border: none;
@@ -44,7 +43,7 @@
             outline: none;
             padding-left: 25px;
             font-size: 13px;
-            font-family: Avenir Next;
+            font-family: $main-font;
           }
 
           .search-icon {
@@ -52,23 +51,7 @@
             margin-left: 10px;
           }
         }
-        // .filter {
-        //   height: 29px;
-        //   border-radius: 15px;
-        //   border: 1px solid #1111;
-        //   display: flex;
-        //   justify-content: space-around;
-        //   align-items: center;
-        //   width: 118px;
-        // }
       }
     }
-    // .filter-container {
-    //   display: flex;
-    //   flex-direction: row;
-    //   justify-content: space-around;
-    //   font-size: 17px;
-    //   font-family: Avenir Next;
-    // }
   }
 }

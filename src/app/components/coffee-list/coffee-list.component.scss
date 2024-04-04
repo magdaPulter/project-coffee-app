@@ -1,9 +1,11 @@
+@import "../../styles/config";
+
 ::ng-deep .mat-mdc-paginator-container {
   font-size: 15px;
-  line-height: 20.49px;
-  font-family: Avenir Next;
+  line-height: 20px;
+  font-family: $main-font;
   font-weight: 400;
-  color: #2c2d33;
+  color: $dark-secodary;
 }
 
 div.unpublish {
@@ -38,10 +40,10 @@ img.image {
 th,
 td {
   font-size: 15px;
-  line-height: 20.49px;
-  font-family: Avenir Next;
+  line-height: 20px;
+  font-family: $main-font;
   font-weight: 400;
-  color: #2c2d33;
+  color: $dark-secodary;
 }
 
 td {

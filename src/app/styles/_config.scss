@@ -1,8 +1,13 @@
-$dark-primary: rgba(189, 106, 23, 0.8);
-$light-primary: rgba(241, 204, 168, 0.8);
-// $dark-secondary:
-$light-secondary: rgba(234, 231, 227, 0.8);
-$very-light-secondary: rgba(243, 243, 243, 0.8);
+$main-font: Avenir Next;
+
+$light-primary: #ffffff;
+$pink-primary: #be40d3;
+$input-field-primary: #eff1f9;
+$red-alert: #ff0000;
+$dark-secodary: #2c2d33;
+$font-grey: #53545c;
+$border-black: #000000;
+$border-light: #1111;
 
 @mixin btn-primary {
   background-color: $dark-primary;
@@ -27,7 +32,7 @@ $very-light-secondary: rgba(243, 243, 243, 0.8);
         font-weight: 400;
         font-size: 22px;
         span {
-          color: #be40d3;
+          color: $pink-primary;
         }
       }
       p {
@@ -49,21 +54,21 @@ $very-light-secondary: rgba(243, 243, 243, 0.8);
           align-items: center;
           justify-content: space-between;
           height: 52px;
-          border: solid 0.5px black;
+          border: solid 0.5px $border-black;
           border-radius: 20px;
           padding: 20px;
-          background-color: #eff1f9;
+          background-color: $input-field-primary;
           margin: 12px 0px;
 
           input {
             width: 300px;
             border: none;
-            background-color: #eff1f9;
+            background-color: $input-field-primary;
             padding: 10px 10px;
             outline: none;
             font-size: 17px;
-            font-family: Avenir Next;
-            line-height: 23.22px;
+            font-family: $main-font;
+            line-height: 23px;
           }
 
           span img {
@@ -83,8 +88,8 @@ $very-light-secondary: rgba(243, 243, 243, 0.8);
 
             button.submit-btn {
               align-self: self-end;
-              background-color: #000000;
-              color: #ffffff;
+              background-color: $border-black;
+              color: $light-primary;
               width: 180px;
               height: 58px;
               border-radius: 20px;
@@ -95,13 +100,13 @@ $very-light-secondary: rgba(243, 243, 243, 0.8);
           }
           .recover-pass {
             margin-top: 0px;
-            color: #be40d3;
+            color: $pink-primary;
             font-size: 16px;
             font-weight: 200;
             align-self: self-end;
           }
           .incorrect {
-            color: red;
+            color: $red-alert;
             text-align: center;
           }
           .sign-up {
@@ -110,7 +115,7 @@ $very-light-secondary: rgba(243, 243, 243, 0.8);
               color: #8b8d97;
               font-weight: 200;
               span {
-                color: #be40d3;
+                color: $pink-primary;
                 font-size: 16px;
                 cursor: pointer;
               }

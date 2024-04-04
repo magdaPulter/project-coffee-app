@@ -5,14 +5,16 @@ import { map } from 'rxjs';
 
 export const authGuard: CanActivateFn = (route, state) => {
   const registerService = inject(RegisterService);
+  const router = inject(Router);
 
   return registerService.isAuthenticated().pipe(
     map((isAuthenticated) => {
       if (isAuthenticated) {
         return true;
       } else {
-        return false;
+        router.navigate(['/login']);
       }
+      return false;
     })
   );
 };

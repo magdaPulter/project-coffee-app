@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
@@ -14,7 +14,6 @@ import { NavComponent } from '../nav/nav.component';
 import { FilterOptionsComponent } from '../filter-options/filter-options.component';
 import { FiltersListComponent } from '../filters-list/filters-list.component';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',

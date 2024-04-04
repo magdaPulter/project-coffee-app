@@ -2,7 +2,7 @@
 
 .container {
   @include form-style;
-  background-color: #ffffff;
+  background-color: $light-primary;
   width: 443px;
   height: 548px;
   border-radius: 30px;

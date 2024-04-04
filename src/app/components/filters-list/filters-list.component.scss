@@ -1,3 +1,4 @@
+@import "../../styles/config";
 .filter-container {
   display: flex;
   flex-direction: row;
@@ -5,7 +6,7 @@
 
   .filter-item {
     font-size: 15px;
-    font-family: Avenir Next;
+    font-family: $main-font;
     label {
       margin-right: 10px;
     }

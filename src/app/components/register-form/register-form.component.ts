@@ -8,7 +8,7 @@ import {
 } from '@angular/forms';
 import { matchPassword } from 'src/app/utils/match-password';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { RegisteredViewModel } from 'src/app/viewmodels/registered.viewmodel';
+import { SignUpModel } from 'src/app/models/sign-up.model';
 
 @Component({
   selector: 'app-register-form',
@@ -29,8 +29,8 @@ export class RegisterFormComponent {
     }
   );
 
-  @Output() registerFormSubmitted: EventEmitter<RegisteredViewModel> =
-    new EventEmitter<RegisteredViewModel>();
+  @Output() registerFormSubmitted: EventEmitter<SignUpModel> =
+    new EventEmitter<SignUpModel>();
   @Output() registered: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   private _isvisible: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(

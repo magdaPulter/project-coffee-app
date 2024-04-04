@@ -1,3 +1,5 @@
+@import "../../styles/config";
+
 .dialog-title {
   display: flex;
   justify-content: space-between;
@@ -18,8 +20,8 @@ form {
     justify-content: space-between;
 
     span.error {
-      color: red;
-      font-family: Avenir Next;
+      color: $red-alert;
+      font-family: $main-font;
       font-weight: 300;
       margin-left: 10px;
     }
@@ -33,15 +35,15 @@ form {
 
       input,
       select {
-        font-family: Avenir Next;
+        font-family: $main-font;
         width: 275px;
         height: 52px;
         border-radius: 15px;
-        border: 0.5px solid #000000;
+        border: 0.5px solid $border-black;
         padding: 8px 16px 8px 16px;
         outline: none;
         font-size: 14px;
-        color: #53545c;
+        color: $font-grey;
       }
 
       input[type="number"]::-webkit-inner-spin-button,
@@ -68,10 +70,10 @@ form {
       height: 450px;
       margin-right: 20px;
       span {
-        font-family: Avenir Next;
-        color: #53545c;
+        font-family: $main-font;
+        color: $font-grey;
         font-size: 12px;
-        line-height: 16.39px;
+        line-height: 16px;
       }
 
       textarea {
@@ -81,15 +83,15 @@ form {
         border-radius: 15px;
         padding: 16px 2px 2px 16px;
         margin-bottom: 30px;
-        border: 0.5px solid #000000;
+        border: 0.5px solid $border-black;
         outline: none;
-        font-family: Avenir Next;
+        font-family: $main-font;
       }
       .date-field {
-        width: 175.5px;
+        width: 175px;
         height: 52px;
         background-color: #fff;
-        border: 0.5px solid #000000;
+        border: 0.5px solid $border-black;
         border-radius: 15px;
         margin-top: 8px;
         display: flex;
@@ -103,7 +105,7 @@ form {
           width: 120px;
           font-size: 16px;
           height: 24px;
-          font-family: Avenir Next;
+          font-family: $main-font;
         }
       }
     }
@@ -111,7 +113,7 @@ form {
       .upload {
         background-color: #f8f6f1;
         border-radius: 15px;
-        border: 0.5px solid #000000;
+        border: 0.5px solid $border-black;
         width: 275px;
         height: 263px;
         display: flex;
@@ -124,7 +126,7 @@ form {
           border: none;
           cursor: pointer;
           color: #5570f1;
-          font-family: Avenir Next;
+          font-family: $font-grey;
         }
         img.icon {
           color: #5570f1;
@@ -153,8 +155,8 @@ form {
       font-size: 14px;
       border: none;
       cursor: pointer;
-      font-family: Avenir Next;
-      line-height: 19.12px;
+      font-family: $font-grey;
+      line-height: 19px;
     }
     .cancel {
       background-color: #8b8d97;
@@ -162,10 +164,10 @@ form {
   }
 
   span {
-    font-family: Avenir Next;
+    font-family: $font-grey;
     color: #abafb1;
     font-size: 14px;
-    line-height: 16.94px;
+    line-height: 17px;
   }
 }
 .icon {

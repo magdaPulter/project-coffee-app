@@ -1,5 +1,6 @@
 <div (click)="onFilterClicked()" class="filter">
-    <img src="../../../assets/filter.png" alt="filter icon">
+    <!-- <img src="../../../assets/filter.png" alt="filter icon"> -->
+    <i class="icon-filter"></i>
     <p>Filter</p>
     <img [src]="(filtersVisible$ | async) ? '../../../assets/arrow_up.png' : '../../../assets/arrow_down.png'"
         alt="arrow icon">

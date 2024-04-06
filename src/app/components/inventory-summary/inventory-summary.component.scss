@@ -16,7 +16,7 @@
       border-radius: 15px;
       border: none;
       background-color: #1b1c1f;
-      color: #ffffff;
+      color: $light-primary;
       text-align: center;
       font-weight: 300;
     }
@@ -31,22 +31,21 @@
     .low-stock,
     .discounted {
       width: 317px;
-      // height: 145px;
       border-radius: 15px;
       padding: 0px 15px;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      fa-icon {
+      i {
         width: 36px;
-        color: #ffffff;
+        color: $light-primary;
         margin: 15px 0px;
         background-color: rgba(255, 255, 255, 0.16);
         border-radius: 8px;
         text-align: center;
       }
       p {
-        color: #ffffff;
+        color: $light-primary;
         font-family: $main-font;
         font-size: 20px;
         display: flex;
@@ -63,7 +62,6 @@
       }
     }
     .all-products {
-      // height: 145px;
       background-color: #fa8354;
     }
     .published-products {

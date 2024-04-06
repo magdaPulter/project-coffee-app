@@ -26,7 +26,7 @@
       p {
         font-size: 17px;
         font-weight: 400;
-        color: #45464e;
+        color: $font-grey-secondary;
       }
       .search-filter {
         display: flex;
@@ -46,7 +46,8 @@
             font-family: $main-font;
           }
 
-          .search-icon {
+          i {
+            color: $font-grey;
             height: 20px;
             margin-left: 10px;
           }

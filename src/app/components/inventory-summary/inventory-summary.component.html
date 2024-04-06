@@ -5,20 +5,20 @@
     </div>
     <div class="content">
         <div class="all-products">
-            <fa-icon [icon]="faBagShopping"></fa-icon>
+            <i class="icon-shopping-bag"></i>
             <p>All Products</p>
             <p class="number">{{coffeeList.length}}</p>
         </div>
         <div class="published-products">
             <div class="column">
-                <fa-icon [icon]="faChartLine"></fa-icon>
+                <i class="icon-chart-line"></i>
                 <p>Published products</p>
                 <p class="number">{{coffeeList.length - getUnpublished()}}<span>{{(coffeeList.length -
                         getUnpublished())/coffeeList.length
                         *100 | number: '1.0-0'}}%</span></p>
             </div>
             <div class="column">
-                <fa-icon [icon]="faFolderClosed"></fa-icon>
+                <i class="icon-folder-open-empty"></i>
                 <p>Unpublished</p>
                 <p class="number">{{getUnpublished()}}<span>{{getUnpublished()/coffeeList.length
                         *100 | number: '1.0-0'}}%</span>
@@ -26,13 +26,13 @@
             </div>
         </div>
         <div class="low-stock">
-            <fa-icon [icon]="faTriangleExclamation"></fa-icon>
+            <i class="icon-attention"></i>
             <p>Low Stock Alert</p>
             <p class="number">{{getLowStock()}}
             </p>
         </div>
         <div class="discounted">
-            <fa-icon [icon]="faPercent"></fa-icon>
+            <i class="icon-percent"></i>
             <p>Discounted Items</p>
             <p class="number">{{getDiscounted()}}</p>
         </div>

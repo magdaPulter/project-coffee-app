@@ -3,8 +3,9 @@
 
         <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef>Action</th>
-            <td mat-cell *matCellDef="let element" class="icon-field"><img (click)="onUpdate(element)"
-                    src="../../../assets/edit.png" class="icon" alt="edit icon"></td>
+            <td mat-cell *matCellDef="let element" class="icon-field">
+                <button (click)="onUpdate(element)"><i class="icon-pencil"></i></button>
+            </td>
         </ng-container>
 
         <ng-container matColumnDef="name">
@@ -53,13 +54,13 @@
 
         <ng-container matColumnDef="delete">
             <th mat-header-cell *matHeaderCellDef>Delete</th>
-            <td mat-cell *matCellDef="let element" class="icon-field"> <img (click)="onDelete(element.id!)"
-                    src="../../../assets/remove.png" class="icon" alt="remove icon"></td>
+            <td mat-cell *matCellDef="let element" class="icon-field">
+                <button (click)="onDelete(element.id!)"><i class="icon-trash-empty"></i></button>
+            </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <!-- <ng-content></ng-content> -->
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
     </mat-paginator>
 

@@ -31,9 +31,12 @@ div.publish {
 img.image {
   width: 60px;
 }
-
-.icon {
-  width: 20px;
+button {
+  border: none;
+  background-color: $light-primary;
+}
+i {
+  width: 24px;
   cursor: pointer;
 }
 

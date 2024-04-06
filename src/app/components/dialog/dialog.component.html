@@ -1,7 +1,7 @@
 <div class="dialog">
     <div class="dialog-title">
         <h1 mat-dialog-title>NEW PRODUCT</h1>
-        <img [mat-dialog-close]="false" class="icon" src="../../../assets/x_icon.png" alt="close icon">
+        <i [mat-dialog-close]="false" class="icon-cancel-circled-outline"></i>
     </div>
     <form [formGroup]="coffeeForm" (ngSubmit)="onFormSubmit(coffeeForm)">
         <mat-dialog-content>
@@ -44,7 +44,7 @@
                         placeholder="Product Long Description"></textarea>
                     <span>Date Added</span>
                     <div class="date-field">
-                        <img class="icon" src="../../../assets/calendar.png" alt="calendar icon">
+                        <i class="icon-calendar"></i>
                         <input type="text" formControlName="date" readonly placeholder="Date">
                     </div>
                 </div>

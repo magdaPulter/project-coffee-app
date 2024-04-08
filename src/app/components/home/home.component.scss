@@ -56,3 +56,13 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .main-content {
+    .inventory-container {
+      .inventory-title {
+        flex-direction: column;
+      }
+    }
+  }
+}

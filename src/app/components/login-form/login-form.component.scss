@@ -9,3 +9,10 @@
   padding: 44px 34px 44px 34px;
   display: flex;
 }
+
+@media (max-width: 768px) {
+  .container {
+    // background-color: aqua;
+    width: 90vw;
+  }
+}

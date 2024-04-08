@@ -1,27 +1,33 @@
 <form [formGroup]="filterForm">
     <div class="filter-container">
-        <div class="filter-item">
-            <p>Category</p>
-            <mat-radio-group aria-label="Select an option" formControlName="category">
-                <mat-radio-button *ngFor="let category of categories" [value]="category">{{category}}</mat-radio-button>
-            </mat-radio-group>
+        <div class="section">
+            <div class="filter-item">
+                <p>Category</p>
+                <mat-radio-group aria-label="Select an option" formControlName="category">
+                    <mat-radio-button *ngFor="let category of categories"
+                        [value]="category"><span>{{category}}</span></mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="filter-item">
+                <p>Price</p>
+                <label>{{slider.value}}</label>
+                <mat-slider class="example-margin" [max]="1000" [min]="0">
+                    <input matSliderThumb #slider formControlName="price">
+                </mat-slider>
+            </div>
         </div>
-        <div class="filter-item">
-            <p>Price</p>
-            <label>{{slider.value}}</label>
-            <mat-slider class="example-margin" [max]="1000" [min]="0">
-                <input matSliderThumb #slider formControlName="price">
-            </mat-slider>
+        <div class="section">
+            <div class="filter-item">
+                <p>Discount</p>
+                <mat-slide-toggle formControlName="discount">
+                </mat-slide-toggle>
+            </div>
+            <div class="filter-item">
+                <p>Published</p>
+                <mat-slide-toggle formControlName="published">
+                </mat-slide-toggle>
+            </div>
         </div>
-        <div class="filter-item">
-            <p>Discount</p>
-            <mat-slide-toggle formControlName="discount">
-            </mat-slide-toggle>
-        </div>
-        <div class="filter-item">
-            <p>Published</p>
-            <mat-slide-toggle formControlName="published">
-            </mat-slide-toggle>
-        </div>
+
     </div>
 </form>

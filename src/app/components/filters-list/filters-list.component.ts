@@ -31,9 +31,7 @@ import { CoffeeWithUrlQueryModel } from '../../querymodels/coffeeWithUrl.querymo
   templateUrl: './filters-list.component.html',
   styleUrls: ['./filters-list.component.scss'],
 })
-export class FiltersListComponent
-  implements OnChanges, AfterViewInit, OnDestroy
-{
+export class FiltersListComponent implements AfterViewInit, OnDestroy {
   readonly categories: string[] = ['Coffee', 'Accesories'];
   @Input() coffeeList!: CoffeeWithUrlQueryModel[];
 
@@ -54,13 +52,6 @@ export class FiltersListComponent
   public minValue$: Observable<number> = this._minValueSubject.asObservable();
 
   constructor(private _router: Router) {}
-
-  ngOnChanges(changes: SimpleChanges): void {
-    const array = this.coffeeList.map((list) => +list.price);
-
-    this._maxValueSubject.next(Math.max(...array));
-    this._minValueSubject.next(Math.min(...array));
-  }
 
   ngAfterViewInit() {
     this.filterForm.valueChanges

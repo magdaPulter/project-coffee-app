@@ -1,6 +1,6 @@
 <app-nav></app-nav>
 
-<ng-container *ngIf="searchedCoffeeList$ | async as list">
+<ng-container *ngIf="searchedFilteredCoffeeList$| async as list">
     <div class="main-content">
         <app-inventory-summary [coffeeList]="list" (productAdded)="openDialog()"
             class="inventory-summary"></app-inventory-summary>

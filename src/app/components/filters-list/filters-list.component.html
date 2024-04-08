@@ -9,7 +9,7 @@
         <div class="filter-item">
             <p>Price</p>
             <label>{{slider.value}}</label>
-            <mat-slider class="example-margin" [max]="maxValue$ | async" [min]="minValue$ | async">
+            <mat-slider class="example-margin" [max]="1000" [min]="0">
                 <input matSliderThumb #slider formControlName="price">
             </mat-slider>
         </div>

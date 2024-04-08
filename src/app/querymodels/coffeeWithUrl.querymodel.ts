@@ -1,7 +1,7 @@
 export interface CoffeeWithUrlQueryModel {
   readonly name: string;
   readonly code: number;
-  readonly category: string[];
+  readonly category: string;
   readonly price: string;
   readonly quantity: string;
   readonly producer: string[];

@@ -9,6 +9,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatTableResponsiveDirective } from './directives/mat-table-responsive.directive';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HttpClientModule,
     NgbModule,
     FontAwesomeModule,
+    MatTableResponsiveDirective,
   ],
 })
 export class AppModule {}

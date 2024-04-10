@@ -74,3 +74,14 @@ td:not(#name) {
 .mat-mdc-table mdc-table {
   border-bottom: none;
 }
+
+@media (max-width: 768px) {
+  .mat-elevation-z8 {
+    table {
+      width: 70vw;
+    }
+  }
+  .name {
+    flex-direction: column;
+  }
+}

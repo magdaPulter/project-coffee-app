@@ -87,3 +87,36 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .inventory-summary {
+    .title {
+      button {
+        width: 180px;
+      }
+    }
+
+    .content {
+      flex-direction: column;
+      .all-products,
+      .low-stock,
+      .discounted {
+        width: 100%;
+        flex-direction: row;
+        p {
+          margin: auto;
+        }
+      }
+      .published-products {
+        width: 100%;
+        flex-direction: column;
+        p {
+          margin: auto;
+        }
+        .column {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+}

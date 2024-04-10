@@ -130,4 +130,10 @@ $border-light: #1111;
       }
     }
   }
+
+  @media (max-width: 768px) {
+    .content {
+      width: 100%;
+    }
+  }
 }

@@ -15,6 +15,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { MatTableResponsiveDirective } from '../../directives/mat-table-responsive.directive';
 import { CoffeeWithUrlQueryModel } from '../../querymodels/coffeeWithUrl.querymodel';
+import { MobileViewModel } from 'src/app/models/mobile-view.model';
 
 @Component({
   selector: 'app-coffee-list',
@@ -38,7 +39,17 @@ export class CoffeeListComponent implements AfterViewInit {
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
 
-  mobile = false;
+  private desctopDisplayedColumns: string[] = [
+    'action',
+    'name',
+    'category',
+    'unitPrice',
+    'inStock',
+    'discount',
+    'totalValue',
+    'status',
+    'delete',
+  ];
   dataSource = new MatTableDataSource<CoffeeWithUrlQueryModel>();
 
   private _isMobileViewSubject: BehaviorSubject<boolean> =
@@ -47,17 +58,7 @@ export class CoffeeListComponent implements AfterViewInit {
     this._isMobileViewSubject.asObservable();
 
   private _displayedColumnsSubject: BehaviorSubject<string[]> =
-    new BehaviorSubject<string[]>([
-      'action',
-      'name',
-      'category',
-      'unitPrice',
-      'inStock',
-      'discount',
-      'totalValue',
-      'status',
-      'delete',
-    ]);
+    new BehaviorSubject<string[]>(this.desctopDisplayedColumns);
   public displayedColumns$: Observable<string[]> =
     this._displayedColumnsSubject.asObservable();
 
@@ -79,35 +80,8 @@ export class CoffeeListComponent implements AfterViewInit {
   onUpdate(coffee: CoffeeWithUrlQueryModel) {
     this.updated.emit(coffee);
   }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    const width = event.target.innerWidth;
-    const mobileDisplayedColumns: string[] = [
-      'action',
-      'name',
-      'category',
-      'delete',
-    ];
-
-    const DesctopDisplayedColumns: string[] = [
-      'action',
-      'name',
-      'category',
-      'unitPrice',
-      'inStock',
-      'discount',
-      'totalValue',
-      'status',
-      'delete',
-    ];
-
-    if (width < 965) {
-      this._isMobileViewSubject.next(true);
-      this._displayedColumnsSubject.next(mobileDisplayedColumns);
-    } else {
-      this._isMobileViewSubject.next(false);
-      this._displayedColumnsSubject.next(DesctopDisplayedColumns);
-    }
+  changeView(isMobile: MobileViewModel) {
+    this._isMobileViewSubject.next(isMobile.isMobile);
+    this._displayedColumnsSubject.next(isMobile.columns);
   }
 }

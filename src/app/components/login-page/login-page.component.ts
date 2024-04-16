@@ -6,7 +6,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { BehaviorSubject, Observable, map, shareReplay, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { RegisterService } from '../../services/register.service';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginFormComponent } from '../login-form/login-form.component';
 import { RegisterFormComponent } from '../register-form/register-form.component';
 import { SignUpModel } from 'src/app/models/sign-up.model';
@@ -21,7 +20,6 @@ import { SignUpModel } from 'src/app/models/sign-up.model';
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
-    FontAwesomeModule,
     LoginFormComponent,
     RegisterFormComponent,
   ],

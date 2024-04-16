@@ -8,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatTableResponsiveDirective } from './directives/mat-table-responsive.directive';
 
 @NgModule({
@@ -23,7 +22,6 @@ import { MatTableResponsiveDirective } from './directives/mat-table-responsive.d
     DialogComponent,
     HttpClientModule,
     NgbModule,
-    FontAwesomeModule,
     MatTableResponsiveDirective,
   ],
 })

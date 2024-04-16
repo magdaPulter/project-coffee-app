@@ -13,7 +13,6 @@
     background-color: #fef5ea;
     border-radius: 15px;
     padding-top: 5px;
-
     text-align: center;
 
     .stock {
@@ -22,8 +21,33 @@
       padding-top: 10px;
     }
   }
+  .nav-right {
+    display: flex;
+    .dropdown {
+      .dropdown-toggle {
+        background-color: #fef5ea;
+        border-radius: 15px;
+        height: 36px;
+        width: 150px;
+        border: none;
+        font-size: 15px;
+        font-weight: 300;
+        font-family: $main-font;
+      }
+    }
+  }
   .icon-profile-nav {
     display: inline;
+  }
+
+  ul {
+    li {
+      button {
+        font-size: 15px;
+        font-weight: 300;
+        font-family: $main-font;
+      }
+    }
   }
 
   img,

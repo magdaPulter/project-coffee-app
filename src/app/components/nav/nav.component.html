@@ -1,14 +1,27 @@
 <div class="stock-inventory">
     <p><span class="stock">Stock Inventory</span></p>
-    <div class="icon-profile-nav">
-        <i class="icon-bell"></i>
-        <i class="icon-mail"></i>
-        <img src="../../../assets/avatar-female-2.jpg" alt="profile image" class="dropdown profile dropdown-toggle"
-            type="button" data-bs-toggle="dropdown">
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">My account</a></li>
-            <li><a class="dropdown-item" href="#">Shop website</a></li>
-            <li><a class="dropdown-item" [routerLink]="'/login'" (click)="logOut()">Log Out</a></li>
-        </ul>
+    <div class="nav-right">
+        <div class="dropdown">
+            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Language
+            </button>
+            <ul class="dropdown-menu">
+                <li><button (click)="chageLang($event)" class="dropdown-item" type="button" value="en">English</button>
+                </li>
+                <li><button (click)="chageLang($event)" class="dropdown-item" type="button" value="pl">Polish</button>
+                </li>
+            </ul>
+        </div>
+        <div class="icon-profile-nav">
+            <i class="icon-bell"></i>
+            <i class="icon-mail"></i>
+            <img src="../../../assets/avatar-female-2.jpg" alt="profile image" class="dropdown profile dropdown-toggle"
+                type="button" data-bs-toggle="dropdown">
+            <ul class="dropdown-menu">
+                <li><button class="dropdown-item" href="#">My account</button></li>
+                <li><button class="dropdown-item" href="#">Shop website</button></li>
+                <li><button class="dropdown-item" [routerLink]="'/login'" (click)="logOut()">Log Out</button></li>
+            </ul>
+        </div>
     </div>
 </div>

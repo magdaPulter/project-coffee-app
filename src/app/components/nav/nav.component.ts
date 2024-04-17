@@ -16,4 +16,11 @@ export class NavComponent {
     localStorage.clear();
     this._router.navigate(['/login']);
   }
+
+  lang = '';
+  chageLang(event: Event) {
+    // console.log((event.target as HTMLInputElement).value);
+    const selectedLanguage = (event.target as HTMLInputElement).value;
+    localStorage.setItem('lang', selectedLanguage);
+  }
 }

@@ -15,6 +15,7 @@ import { CoffeeService } from '../../services/coffee.service';
 import { QueryParamsService } from '../../services/query-params.service';
 import { DialogComponent } from '../dialog/dialog.component';
 import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -31,6 +32,7 @@ import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component'
     FilterOptionsComponent,
     FiltersListComponent,
     MatExpansionModule,
+    TranslateModule,
   ],
 })
 export class HomeComponent {

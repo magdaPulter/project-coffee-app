@@ -2,10 +2,10 @@ import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
 import { MobileViewModel } from '../models/mobile-view.model';
 
 @Directive({
-  selector: '[matTableResponsive]',
+  selector: '[tableResponsive]',
   standalone: true,
 })
-export class MatTableResponsiveDirective {
+export class TableResponsiveDirective {
   @Output() isMobile: EventEmitter<MobileViewModel> =
     new EventEmitter<MobileViewModel>();
   private mobileDisplayedColumns: string[] = [

@@ -2,7 +2,6 @@ import {
   AfterViewInit,
   Component,
   EventEmitter,
-  HostListener,
   Input,
   Output,
   SimpleChanges,
@@ -13,9 +12,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { MatTableResponsiveDirective } from '../../directives/mat-table-responsive.directive';
+import { TableResponsiveDirective } from '../../directives/table-responsive.directive';
 import { CoffeeWithUrlQueryModel } from '../../querymodels/coffeeWithUrl.querymodel';
 import { MobileViewModel } from 'src/app/models/mobile-view.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-coffee-list',
@@ -28,7 +28,8 @@ import { MobileViewModel } from 'src/app/models/mobile-view.model';
     MatButtonModule,
     MatTableModule,
     MatPaginatorModule,
-    MatTableResponsiveDirective,
+    TableResponsiveDirective,
+    TranslateModule,
   ],
 })
 export class CoffeeListComponent implements AfterViewInit {

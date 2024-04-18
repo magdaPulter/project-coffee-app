@@ -1,13 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  SimpleChange,
-  SimpleChanges,
-} from '@angular/core';
+import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
@@ -17,6 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { debounceTime, filter, map, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { CoffeeWithUrlQueryModel } from '../../querymodels/coffeeWithUrl.querymodel';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-filters-list',
@@ -27,6 +19,7 @@ import { CoffeeWithUrlQueryModel } from '../../querymodels/coffeeWithUrl.querymo
     MatSliderModule,
     MatSlideToggleModule,
     ReactiveFormsModule,
+    TranslateModule,
   ],
   templateUrl: './filters-list.component.html',
   styleUrls: ['./filters-list.component.scss'],

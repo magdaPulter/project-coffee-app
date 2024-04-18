@@ -2,11 +2,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { CoffeeWithUrlQueryModel } from '../../querymodels/coffeeWithUrl.querymodel';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-inventory-summary',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './inventory-summary.component.html',
   styleUrls: ['./inventory-summary.component.scss'],
 })

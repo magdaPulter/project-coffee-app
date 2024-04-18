@@ -5,14 +5,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './components/dialog/dialog.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MatTableResponsiveDirective } from './directives/mat-table-responsive.directive';
+import { TableResponsiveDirective } from './directives/table-responsive.directive';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 @NgModule({
   declarations: [AppComponent],
-  providers: [],
-  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,7 +24,16 @@ import { MatTableResponsiveDirective } from './directives/mat-table-responsive.d
     DialogComponent,
     HttpClientModule,
     NgbModule,
-    MatTableResponsiveDirective,
+    TableResponsiveDirective,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
+  providers: [HttpClient],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

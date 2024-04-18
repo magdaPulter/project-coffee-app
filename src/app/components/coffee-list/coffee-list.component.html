@@ -1,5 +1,5 @@
 <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matTableResponsive (isMobile)="changeView($event)">
+    <table mat-table [dataSource]="dataSource" tableResponsive (isMobile)="changeView($event)">
 
         <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef>{{'Action' | translate}}</th>

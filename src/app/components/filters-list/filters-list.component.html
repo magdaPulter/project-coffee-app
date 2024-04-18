@@ -2,14 +2,14 @@
     <div class="filter-container">
         <div class="section">
             <div class="filter-item">
-                <p>Category</p>
+                <p>{{'Category' | translate}}</p>
                 <mat-radio-group aria-label="Select an option" formControlName="category">
                     <mat-radio-button *ngFor="let category of categories"
                         [value]="category"><span>{{category}}</span></mat-radio-button>
                 </mat-radio-group>
             </div>
             <div class="filter-item">
-                <p>Price</p>
+                <p>{{'Price' | translate}}</p>
                 <label>{{slider.value}}</label>
                 <mat-slider class="example-margin" [max]="1000" [min]="0">
                     <input matSliderThumb #slider formControlName="price">
@@ -18,12 +18,12 @@
         </div>
         <div class="section">
             <div class="filter-item">
-                <p>Discount</p>
+                <p>{{'Discount' | translate}}</p>
                 <mat-slide-toggle formControlName="discount">
                 </mat-slide-toggle>
             </div>
             <div class="filter-item">
-                <p>Published</p>
+                <p>{{'Published' | translate}}</p>
                 <mat-slide-toggle formControlName="published">
                 </mat-slide-toggle>
             </div>

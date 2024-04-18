@@ -2,7 +2,6 @@ import {
   AfterViewInit,
   Component,
   EventEmitter,
-  HostListener,
   Input,
   Output,
   SimpleChanges,
@@ -16,6 +15,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { MatTableResponsiveDirective } from '../../directives/mat-table-responsive.directive';
 import { CoffeeWithUrlQueryModel } from '../../querymodels/coffeeWithUrl.querymodel';
 import { MobileViewModel } from 'src/app/models/mobile-view.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-coffee-list',
@@ -29,6 +29,7 @@ import { MobileViewModel } from 'src/app/models/mobile-view.model';
     MatTableModule,
     MatPaginatorModule,
     MatTableResponsiveDirective,
+    TranslateModule,
   ],
 })
 export class CoffeeListComponent implements AfterViewInit {

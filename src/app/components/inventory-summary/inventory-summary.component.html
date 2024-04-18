@@ -1,25 +1,25 @@
 <div class="inventory-summary">
     <div class="title">
-        <p>Inventory Summary</p>
-        <button (click)="addNewProduct()">+ Add a New Product</button>
+        <p>{{'Inventory Summary' | translate}}</p>
+        <button (click)="addNewProduct()">{{'+ Add a New Product' | translate}}</button>
     </div>
     <div class="content">
         <div class="all-products">
             <i class="icon-shopping-bag"></i>
-            <p>All Products</p>
+            <p>{{'All Products' | translate}}</p>
             <p class="number">{{coffeeList.length}}</p>
         </div>
         <div class="published-products">
             <div class="column">
                 <i class="icon-chart-line"></i>
-                <p>Published products</p>
+                <p>{{'Published products' | translate}}</p>
                 <p class="number">{{coffeeList.length - getUnpublished()}}<span>{{(coffeeList.length -
                         getUnpublished())/coffeeList.length
                         *100 | number: '1.0-0'}}%</span></p>
             </div>
             <div class="column">
                 <i class="icon-folder-open-empty"></i>
-                <p>Unpublished</p>
+                <p>{{'Unpublished' | translate}}</p>
                 <p class="number">{{getUnpublished()}}<span>{{getUnpublished()/coffeeList.length
                         *100 | number: '1.0-0'}}%</span>
                 </p>
@@ -27,13 +27,13 @@
         </div>
         <div class="low-stock">
             <i class="icon-attention"></i>
-            <p>Low Stock Alert</p>
+            <p>{{'Low Stock Alert' | translate}}</p>
             <p class="number">{{getLowStock()}}
             </p>
         </div>
         <div class="discounted">
             <i class="icon-percent"></i>
-            <p>Discounted Items</p>
+            <p>{{'Discounted Items' | translate}}</p>
             <p class="number">{{getDiscounted()}}</p>
         </div>
     </div>

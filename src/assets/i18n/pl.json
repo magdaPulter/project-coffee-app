@@ -1,0 +1,23 @@
+{
+  "Stock Inventory": "Stany Magazynowe",
+  "Language": "Język",
+  "Inventory Summary": "Podsumowanie Zapasów",
+  "Add a New Product": "+ Dodaj Produkt",
+  "All Products": "Wszystkie Produkty",
+  "Published products": "Opublikowane Produkty",
+  "Unpublished": "Nieopublikowane Produkty",
+  "Low Stock Alert": "Niski poziom zapasów",
+  "Discounted Items": "Przecenione",
+  "Inventory Items": "Spis Produktów",
+  "Action": "Akcja",
+  "Product Name": "Nazwa",
+  "Category": "Kategoria",
+  "Unit Price": "Cena Jednostkowa",
+  "In Stock": "W magazynie",
+  "Discount": "Przecena",
+  "Total Value": "Cena Calkowica",
+  "Status": "Status",
+  "Delete": "Usuń",
+  "Items per page:": "il. produktów na stronę:",
+  "Price": "Cena"
+}

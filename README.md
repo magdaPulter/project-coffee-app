@@ -2,6 +2,10 @@
 
 Coffee Project App is my own web application for managing an online store from the administrator's side. The main motivation to create this application was the need to present my skills in using Angular technology by performing crud operations, and the readiness to create an aesthetic platform in cooperation with a UI Designer for managing an online store with coffee and coffee accessories.
 
+## Demo:
+https://github.com/user-attachments/assets/0086ccb2-7787-4f82-bcfa-480546913271
+
+
 ## Technologies:
 
 - Angular16
